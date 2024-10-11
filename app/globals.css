@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #ce9100;
+  --color-primary-hover: #6b8e23;
+  --color-secondary: #556b2f;
+  --color-secondary-hover: #bc8f8f;
+  --color-neutral: #282520;
+  --neutral-n-800: #33302b;
+  --color-tertiary: #d32f2f;
+  --color-tertiary-Hover: #e57373;
+  --color-body: #4d6581;
+  --color-grey: #eee;
+  --color-white: #fff;
+  --color-black: #09114a;
+  --fontSize: 16px;
+  --transition: 0.5s;
+  --font-poppins: "Poppins", sans-serif;
+  --theme-gradient1: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-secondary) 51%,
+    var(--color-primary) 100%
+  );
+  --theme-gradient2: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  --theme-gradient3: linear-gradient(
+    48deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  --theme-gradient4: linear-gradient(
+    to right,
+    var(--color-primary) 25%,
+    var(--color-secondary) 100%
+  );
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.contact-info li:after {
+  content: "|";
+  margin: 0 8px;
+}
+
+.contact-info li:last-child:after{
+  content: "";
+  margin: 0;
+}
