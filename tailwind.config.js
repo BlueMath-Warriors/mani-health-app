@@ -18,8 +18,6 @@ module.exports = {
         'tertiary-hover': '#e57373',
         body: '#4d6581',
         grey: '#eee',
-        white: '#fff',
-        black: '#09114a',
       },
     },
   },
