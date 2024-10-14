@@ -1,7 +1,21 @@
 import { poppins } from "@/app/layout";
+import { appointmentDays, socialLinks } from "@/Constants/footerData";
 import { quickLinks, servicesLinks } from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
 import Link from "next/link";
+
+const SocialLink = ({ href, src, alt, height, width }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="rounded-[50px] bg-[#6B8E23] h-[35px] w-[35px] flex justify-center items-center"
+    >
+      <Image src={src} alt={alt} height={height} width={width} />
+    </a>
+  );
+};
 
 const Footer = () => {
   return (
@@ -21,18 +35,12 @@ const Footer = () => {
             appointment.
           </p>
           <ul className="flex flex-col text-base font-normal gap-4">
-            <li className="flex justify-between items-center">
-              <p>Tuesday</p>
-              <p>8:00 AM - 3:00 PM</p>
-            </li>
-            <li className="flex justify-between items-center">
-              <p>Wednesday</p>
-              <p>8:00 AM - 3:00 PM</p>
-            </li>
-            <li className="flex justify-between items-center">
-              <p>Thursday</p>
-              <p>8:00 AM - 3:00 PM</p>
-            </li>
+            {appointmentDays.map((day, index) => (
+              <li key={index} className="flex justify-between items-center">
+                <p>{day}</p>
+                <p>8:00 AM - 3:00 PM</p>
+              </li>
+            ))}
             <li className="mb-4">And by Appointment</li>
           </ul>
         </div>
@@ -93,48 +101,22 @@ const Footer = () => {
             </li>
           </ul>
           <div className="flex gap-1">
-            <a
-              href="https://web.facebook.com/AlManiHealthInstituteOfficial"
-              target="blank"
-              className="rounded-[50px] bg-[#6B8E23] h-[35px] w-[35px] flex justify-center items-center"
-            >
-              <Image
-                src={"/images/facebook-icon.svg"}
-                alt="facebook icon"
-                height={13}
-                width={8}
+            {socialLinks.map((link, index) => (
+              <SocialLink
+                key={index}
+                href={link.href}
+                src={link.src}
+                alt={link.alt}
+                height={link.height}
+                width={link.width}
               />
-            </a>
-            <a
-              href="https://www.instagram.com/almanihealthinstituteofficial"
-              target="blank"
-              className="rounded-[50px] bg-[#6B8E23] h-[35px] w-[35px] flex justify-center items-center"
-            >
-              <Image
-                src={"/images/instagram-icon.svg"}
-                alt="instagram icon"
-                height={12}
-                width={11}
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/al-mani-health-institute-14b612202/"
-              target="blank"
-              className="rounded-[50px] bg-[#6B8E23] h-[35px] w-[35px] flex justify-center items-center"
-            >
-              <Image
-                src={"/images/linkedin-icon.svg"}
-                alt="linkedin icon"
-                height={12}
-                width={11}
-              />
-            </a>
+            ))}
           </div>
         </div>
       </div>
       <div className="max-w-[1320px] w-full responsive-padding flex flex-col md:flex-row justify-between text-base md:ml-7 lg:ml-0">
         <div className="flex flex-wrap items-center max-[396px]:justify-center px-3 mb-4">
-         <p className="whitespace-nowrap">© Copyright 2024 revealsite By</p>{" "}
+          <p className="whitespace-nowrap">© Copyright 2024 revealsite By</p>{" "}
           <a href="https://revealsite.com/" className="relative">
             <Image
               src={"/images/revealsite-logo.svg"}
