@@ -26,28 +26,35 @@ const PositionCard = ({
   );
 };
 
-const StepOne = ({ position, setPosition }) => {
+const StepOne = ({ position, setPosition, showError }) => {
   return (
-    <div className="grid gap-2 sm:gap-4 grid-cols-2 w-full items-center justify-center">
-      <PositionCard
-        position={position}
-        title={"Adjuster"}
-        value={"adjuster"}
-        img={"/illustrations/adjuster.svg"}
-        handleSelectPosition={() => {
-          setPosition("adjuster");
-        }}
-      />
+    <div className="flex flex-col w-full">
+      <div className="grid gap-2 sm:gap-4 grid-cols-2 w-full items-center justify-center">
+        <PositionCard
+          position={position}
+          title={"Adjuster"}
+          value={"adjuster"}
+          img={"/illustrations/adjuster.svg"}
+          handleSelectPosition={() => {
+            setPosition("adjuster");
+          }}
+        />
 
-      <PositionCard
-        position={position}
-        title={"Employer or Lawyer"}
-        value={"lawyers"}
-        img={"/illustrations/lawyers.svg"}
-        handleSelectPosition={() => {
-          setPosition("lawyers");
-        }}
-      />
+        <PositionCard
+          position={position}
+          title={"Employer or Lawyer"}
+          value={"lawyers"}
+          img={"/illustrations/lawyers.svg"}
+          handleSelectPosition={() => {
+            setPosition("lawyers");
+          }}
+        />
+      </div>
+      {showError && (
+        <p className="text-error text-sm mb-5 mt-1 ml-4">
+          Role selection is required
+        </p>
+      )}
     </div>
   );
 };
