@@ -7,6 +7,7 @@ import StepFour from "./StepFour";
 import StepFive from "./StepFive";
 import StepSix from "./StepSix";
 import Button from "../../common/Button";
+import { STEPS_TITLES } from "@/app/constants/steps";
 
 const Steps = ({ currentStep, nextStep, prevStep }) => {
   const [position, setPosition] = useState();
@@ -60,7 +61,7 @@ const Steps = ({ currentStep, nextStep, prevStep }) => {
     <div className="flex flex-col items-center justify-center w-11/12 lg:max-w-[824px] lg:w-full px-6 py-5 lg:p-16 bg-white rounded-lg referral-card-shadow">
       <div className="w-full flex flex-col items-center justify-center ">
         <h3 className="text-dark text-lg mb-8 font-semibold">
-          Choose your Position
+          {STEPS_TITLES[currentStep - 1]}
         </h3>
         <StepsTracker currentStep={currentStep} />
         {steps[currentStep - 1]}
