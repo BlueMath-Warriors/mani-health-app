@@ -4,11 +4,13 @@ import {
   workersCompLinks,
 } from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
+import NavbarDropdown from "../NavbarDropdown/page";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <>
-      <div className="hidden lg:block bg-neutral py-4 text-white text-sm font-normal">
+      <div className="hidden large:block bg-neutral py-4 text-white text-sm font-normal">
         <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] min-[1331px]:px-24 mx-auto whitespace-nowrap">
           <p className="">Phone: (954)-633-5454</p>
           <ul className="flex items-center contact-info">
@@ -38,7 +40,7 @@ const Header = () => {
         </div>
       </div>
       <div className="bg-white py-4 text-[#33302B] text-sm font-normal relative">
-        <div className="flex w-full max-w-[1500px] justify-between items-center px-24 gap-0 lg:gap-[57px] min-[1223px]:gap-0 mx-auto">
+        <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] lg:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
           <div className="w-[100px] h-[50px]">
             <Image
               src={"/images/Al-Mani-logo.svg"}
@@ -48,9 +50,13 @@ const Header = () => {
               className="h-full w-full"
             />
           </div>
-          <ul className="hidden lg:flex flex-wrap justify-between gap-x-[38px] gap-y-[2px] text-base">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">About</li>
+          <ul className="hidden large:flex flex-wrap justify-between gap-x-[38px] gap-y-[2px] text-base">
+            <Link href="/">
+              <li className="cursor-pointer">Home</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer">About</li>
+            </Link>
             <li className="flex justify-between gap-[9px] relative group cursor-pointer">
               <p>Services</p>
               <Image
@@ -114,18 +120,14 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li className="cursor-pointer">Senior Living</li>
-            <li className="cursor-pointer">Contact Us</li>
+            <Link href={"/"}>
+              <li className="cursor-pointer">Senior Living</li>
+            </Link>
+            <Link href={"/"}>
+              <li className="cursor-pointer">Contact Us</li>
+            </Link>
           </ul>
-          <div className="block lg:hidden h-[20px] w-[30px]">
-            <Image
-              src={"/images/navbar-icon.svg"}
-              alt="navbar icon"
-              height={20}
-              width={30}
-              className="h-full w-full"
-            />
-          </div>
+          <NavbarDropdown />
         </div>
       </div>
     </>
