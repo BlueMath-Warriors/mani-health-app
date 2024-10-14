@@ -10,7 +10,7 @@ const PositionCard = ({
   return (
     <div
       className={
-        "flex w-full h-full items-center justify-center rounded-2xl border-[5px] p-0 sm:p-2 hover:border-[#ebd296] cursor-pointer " +
+        "flex w-full h-full items-center justify-center rounded-2xl border-[5px] p-0 sm:p-2 hover:border-[#ebd296] cursor-pointer transition-all ease-linear duration-300 " +
         (position === value ? "border-[#ebd296]" : "border-transparent")
       }
       onClick={handleSelectPosition}

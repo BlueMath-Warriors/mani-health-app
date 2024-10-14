@@ -8,7 +8,7 @@ const Button = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex w-full px-4 py-3.5 items-center justify-center font-medium rounded-md focus:outline-none transition-all";
+    "inline-flex w-full px-4 py-3.5 items-center justify-center font-medium rounded-md focus:outline-none transition-all ease-linear duration-300";
 
   const variantStyles = {
     primary: "bg-[#ce9100] text-white hover:bg-[#d6a42b] primary-btn-shadow ",
@@ -19,7 +19,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${className} `}
       {...props}
     >
       {children}
