@@ -1,4 +1,8 @@
-import { legalSupportLinks, servicesLinks, workersCompLinks } from "@/Constants/navbarDropdownLinks";
+import {
+  legalSupportLinks,
+  servicesLinks,
+  workersCompLinks,
+} from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
 
 const Header = () => {
@@ -47,9 +51,7 @@ const Header = () => {
           <ul className="hidden lg:flex flex-wrap justify-between gap-x-[38px] gap-y-[2px] text-base">
             <li className="cursor-pointer">Home</li>
             <li className="cursor-pointer">About</li>
-            <li
-              className="flex justify-between gap-[9px] relative group cursor-pointer"
-            >
+            <li className="flex justify-between gap-[9px] relative group cursor-pointer">
               <p>Services</p>
               <Image
                 src={"/images/arrow-down-black.svg"}
@@ -57,15 +59,18 @@ const Header = () => {
                 height={11}
                 width={14}
               />
-                <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-75 delay-100">
-                  <ul className="text-sm top-full left-0">
-                    {servicesLinks.map((service, index) => (
-                      <li key={index} className="p-[13px] border-b border-gray-300 last:border-none">
-                        <a href={service.destination}>{service.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
+                <ul className="text-sm top-full left-0">
+                  {servicesLinks.map((service, index) => (
+                    <li
+                      key={index}
+                      className="p-[13px] border-b border-gray-300 last:border-none"
+                    >
+                      <a href={service.destination}>{service.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
             <li className="flex justify-between gap-[9px] relative group cursor-pointer">
               <p>Legal Support</p>
@@ -75,15 +80,18 @@ const Header = () => {
                 height={11}
                 width={14}
               />
-              <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-75 delay-100">
-                  <ul className="text-sm top-full left-0">
-                    {legalSupportLinks.map((service, index) => (
-                      <li key={index} className="p-[13px] border-b border-gray-300 last:border-none">
-                        <a href={service.destination}>{service.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[284px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
+                <ul className="text-sm top-full left-0">
+                  {legalSupportLinks.map((service, index) => (
+                    <li
+                      key={index}
+                      className="p-[13px] border-b border-gray-300 last:border-none"
+                    >
+                      <a href={service.destination}>{service.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
             <li className="flex justify-between gap-[9px] relative group cursor-pointer">
               <p>{"Workers' Comp"}</p>
@@ -93,15 +101,18 @@ const Header = () => {
                 height={11}
                 width={14}
               />
-              <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-75 delay-100">
-                  <ul className="text-sm top-full left-0">
-                    {workersCompLinks.map((service, index) => (
-                      <li key={index} className="p-[13px] border-b border-gray-300 last:border-none">
-                        <a href={service.destination}>{service.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[140px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-linear">
+                <ul className="text-sm top-full left-0">
+                  {workersCompLinks.map((service, index) => (
+                    <li
+                      key={index}
+                      className="p-[13px] border-b border-gray-300 last:border-none"
+                    >
+                      <a href={service.destination}>{service.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
             <li className="cursor-pointer">Senior Living</li>
             <li className="cursor-pointer">Contact Us</li>

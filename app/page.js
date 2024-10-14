@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex w-full h-full items-center justify-center">
+    <div className="flex w-full h-[1500px] items-center justify-center bg-slate-400">
       Almani App
     </div>
   );
