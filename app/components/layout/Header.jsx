@@ -1,6 +1,4 @@
-import {
-  QUICK_LINKS,
-} from "@/Constants/navbarDropdownLinks";
+import { QUICK_LINKS } from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
 import Menu from "../Menu";
 import Link from "next/link";
@@ -12,23 +10,14 @@ const NavItem = ({ label, href, links, hasDropdown = false }) => {
         <p>{label}</p>
       </Link>
       {hasDropdown && (
-          <Image
-            src={"/images/arrow-down-black.svg"}
-            alt="arrow down"
-            height={11}
-            width={14}
-            className="group-hover:hidden"
-          />
-        )}
-        {hasDropdown && (
-          <Image
-            src={"/images/arrow-up-black.svg"}
-            alt="arrow down"
-            height={11}
-            width={14}
-            className="hidden group-hover:block"
-          />
-        )}
+        <Image
+          src={"/images/arrow-down-black.svg"}
+          alt="arrow down"
+          height={11}
+          width={14}
+          className="transition-transform group-hover:rotate-180"
+        />
+      )}
       {hasDropdown && (
         <div className="absolute left-0 top-[69.5%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
           <ul className="text-sm top-full left-0">
@@ -37,7 +26,12 @@ const NavItem = ({ label, href, links, hasDropdown = false }) => {
                 key={index}
                 className="p-[13px] border-b border-gray-300 last:border-none"
               >
-                <Link href={link.destination} className="break-words whitespace-normal">{link.name}</Link>
+                <Link
+                  href={link.destination}
+                  className="break-words whitespace-normal"
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
