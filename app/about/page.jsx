@@ -1,15 +1,16 @@
 import React from "react";
 import { poppins } from "../layout";
 import Image from "next/image";
+import Link from "next/link";
 
 const AboutPage = () => {
   return (
     <div
-      className={`bg-white text-neutral font-normal text-base ${poppins.className}`}
+      className={`bg-white text-neutral font-normal text-base flex justify-center py-[45px] px-[25px] ${poppins.className}`}
     >
-      <div className="max-w-[1476px] flex flex-col md:flex-row gap-3 px-0 lg:px-12">
-        <div className="w-1/2 flex justify-center items-center">
-          <div className="w-[450px] h-[250px] large:w-[600px] large:h-[400px]">
+      <div className="max-w-[1500px] flex flex-col md:flex-row items-center gap-9 large:gap-3 px-0 lg:px-12">
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          <div className="w-[450px] h-[250px] md:w-[375px] md:h-[222px] lg:w-[450px] lg:h-[250px] large:w-[600px] large:h-[400px]">
             <Image
               src={"/illustrations/pharmacy.webp"}
               alt={"Pharmacy image"}
@@ -19,7 +20,7 @@ const AboutPage = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-5 w-1/2">
+        <div className="flex flex-col gap-5 w-full md:w-1/2">
           <p className="text-secondary font-medium text-base lg:text-2xl">
             Expertise in Workers’ Compensation Pharmacy
           </p>
@@ -36,13 +37,16 @@ const AboutPage = () => {
             cohesive and efficient healthcare experience for every individual we
             serve.
           </p>
-          <div className="flex justify-start gap-3 font-medium">
-            <button className="bg-primary rounded-lg text-white py-3 px-4">
+          <div className="flex justify-start gap-3 font-medium w-full whitespace-nowrap">
+            <a
+              className="bg-primary rounded-lg text-white py-3 px-4 flex items-center"
+              href={"/contact"}
+            >
               Contact Us
-            </button>
-            <button className="rounded-lg border border-neutral py-3.5 px-[17px]">
+            </a>
+            <a className="rounded-lg border border-neutral py-3.5 px-4" href={"/referral_form"}>
               Submit Your Referral
-            </button>
+            </a>
           </div>
         </div>
       </div>
