@@ -15,7 +15,7 @@ const NavItem = ({ label, href, links, hasDropdown = false }) => {
           alt="arrow down"
           height={11}
           width={14}
-          className="transition-transform group-hover:rotate-180"
+          className="transition-transform duration-0 group-hover:rotate-180"
         />
       )}
       {hasDropdown && (
