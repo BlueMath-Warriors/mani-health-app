@@ -1,36 +1,29 @@
-import { useState } from "react";
 import Input from "../../common/Input";
 
-const StepTwo = () => {
-  const [formData, setFormData] = useState({
-    insuranceCompany: "",
-    policyNumber: "",
-    claimNumber: "",
-  });
-
+const StepFive = ({ insuranceInfo, setInsuranceInfo }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setInsuranceInfo({
+      ...insuranceInfo,
       [name]: value,
     });
   };
 
   return (
-    <form className="grid grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
+    <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
       <Input
         label="Insurance Company"
-        name="insuranceCompany"
-        value={formData.insuranceCompany}
+        name="company"
+        value={insuranceInfo.company}
         onChange={handleChange}
         required
-        className="col-span-6"
+        className="col-span-12"
       />
 
       <Input
         label="Policy Number"
         name="policyNumber"
-        value={formData.policyNumber}
+        value={insuranceInfo.policyNumber}
         onChange={handleChange}
         required
         className="col-span-6"
@@ -39,13 +32,13 @@ const StepTwo = () => {
       <Input
         label="Claim Number"
         name="claimNumber"
-        value={formData.claimNumber}
+        value={insuranceInfo.claimNumber}
         onChange={handleChange}
         required
-        className="col-span-12"
+        className="col-span-6"
       />
     </form>
   );
 };
 
-export default StepTwo;
+export default StepFive;

@@ -5,7 +5,7 @@ const StepsTracker = ({ currentStep }) => {
 
   return (
     <div className="w-full px-2">
-      <ol className="flex relative items-center justify-between w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base my-4 md:mb-16 md:mt-0">
+      <ol className="flex relative items-center justify-between w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base my-4 md:mb-16 md:mt-0 overflow-hidden">
         {/* Line behind steps */}
         <div className="z-0 absolute w-full h-[3px] bg-black" />
         {/* Progress Line */}
@@ -18,7 +18,7 @@ const StepsTracker = ({ currentStep }) => {
             <span className="relative z-20 flex items-center justify-center border-white border-4 sm:border-8 rounded-full ">
               <span
                 className={
-                  "flex items-center justify-center bg-white border-[3px] rounded-full w-6 h-6 md:h-11 md:w-11 " +
+                  "flex items-center justify-center bg-white border-[3px] rounded-full w-6 h-6 sm:w-8 sm:h-8 md:h-11 md:w-11 " +
                   (step < currentStep
                     ? "border-[#CE9100] text-[#CE9100]"
                     : "border-[#A3AAB2] text-dark")
