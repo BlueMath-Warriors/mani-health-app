@@ -39,3 +39,13 @@ export const WORKERS_COMP_LINKS = [
   { name: "Lawyers and Attorneys", destination: "/" },
   { name: "Payers", destination: "/" },
 ];
+
+export const QUICK_LINKS = [
+  { name: "Home", destination: "/" },
+  { name: "About Us", destination: "/" },
+  { name: "Services", destination: "/" },
+  { name: "Legal Support", destination: "/" },
+  { name: "Workers Comp", destination: "/" },
+  { name: "Senior Living", destination: "/" },
+  { name: "Contact", destination: "/" },
+];
