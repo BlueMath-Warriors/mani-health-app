@@ -123,6 +123,12 @@ body {
   left: 5px;
 }
 
+@media (min-width: 1200px) {
+  .burger input:checked {
+    display: none;
+  }
+}
+
 .responsive-padding {
   padding-left: calc((100vw - 590px) * 0.5);
   padding-right: calc((100vw - 590px) * 0.5);
