@@ -1,6 +1,6 @@
-export const appointmentDays = ["Tuesday", "Wednesday", "Thursday"];
+export const APPOINTMENT_DAYS = ["Tuesday", "Wednesday", "Thursday"];
 
-export const socialLinks = [
+export const SOCIAL_LINKS = [
   {
     href: "https://web.facebook.com/AlManiHealthInstituteOfficial",
     src: "/images/facebook-icon.svg",

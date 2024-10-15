@@ -1,6 +1,6 @@
 import { poppins } from "@/app/layout";
-import { appointmentDays, socialLinks } from "@/Constants/footerData";
-import { quickLinks, servicesLinks } from "@/Constants/navbarDropdownLinks";
+import { APPOINTMENT_DAYS, SOCIAL_LINKS } from "@/Constants/footerData";
+import { QUICK_LINKS, SERVICES_LINKS } from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,7 +22,7 @@ const Footer = () => {
             appointment.
           </p>
           <ul className="flex flex-col text-base font-normal gap-4">
-            {appointmentDays.map((day, index) => (
+            {APPOINTMENT_DAYS.map((day, index) => (
               <li key={index} className="flex justify-between items-center">
                 <p>{day}</p>
                 <p>8:00 AM - 3:00 PM</p>
@@ -37,7 +37,7 @@ const Footer = () => {
           </h1>
           <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
           <ul>
-            {servicesLinks.map((service, index) => (
+            {SERVICES_LINKS.map((service, index) => (
               <li key={index} className="leading-4 mb-3">
                 <Link href={service.destination}>{service.name}</Link>
               </li>
@@ -50,7 +50,7 @@ const Footer = () => {
           </h1>
           <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
           <ul>
-            {quickLinks.map((service, index) => (
+            {QUICK_LINKS.map((service, index) => (
               <li key={index} className="leading-4 mb-3">
                 <Link href={service.destination}>{service.name}</Link>
               </li>
@@ -88,7 +88,7 @@ const Footer = () => {
             </li>
           </ul>
           <div className="flex gap-1">
-            {socialLinks.map((link, index) => (
+            {SOCIAL_LINKS.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
