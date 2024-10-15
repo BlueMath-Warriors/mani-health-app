@@ -1,4 +1,4 @@
-export const servicesLinks = [
+export const SERVICES_LINKS = [
   { name: "Comprehensive Orthopaedic Care", destination: "/" },
   { name: "Enhanced Recovery After Surgery (ERAS)", destination: "/" },
   { name: "Durable Medical Equipment (DME)", destination: "/" },
@@ -11,7 +11,7 @@ export const servicesLinks = [
   { name: "Kyphoplasty Services", destination: "/" },
 ];
 
-export const legalSupportLinks = [
+export const LEGAL_SUPPORT_LINKS = [
   {
     name: "Personal Injury Evaluation",
     destination: "/",
@@ -34,7 +34,7 @@ export const legalSupportLinks = [
   },
 ];
 
-export const workersCompLinks = [
+export const WORKERS_COMP_LINKS = [
   { name: "Adjusters", destination: "/" },
   { name: "Lawyers and Attorneys", destination: "/" },
   { name: "Payers", destination: "/" },

@@ -1,10 +1,10 @@
 import {
-  legalSupportLinks,
-  servicesLinks,
-  workersCompLinks,
+  LEGAL_SUPPORT_LINKS,
+  SERVICES_LINKS,
+  WORKERS_COMP_LINKS,
 } from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
-import NavbarDropdown from "../NavbarDropdown/page";
+import Menu from "../Menu";
 import Link from "next/link";
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
         </div>
       </div>
       <div className="bg-white py-4 text-[#33302B] text-sm font-normal relative">
-        <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] lg:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
+        <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] large:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
           <div className="w-[100px] h-[50px]">
             <Image
               src={"/images/Al-Mani-logo.svg"}
@@ -50,45 +50,52 @@ const Header = () => {
               className="h-full w-full"
             />
           </div>
-          <ul className="hidden large:flex flex-wrap justify-between gap-x-[38px] gap-y-[2px] text-base">
+          <ul className="hidden large:flex justify-between gap-x-[38px] text-base whitespace-nowrap">
             <Link href="/">
               <li className="cursor-pointer">Home</li>
             </Link>
             <Link href="/">
               <li className="cursor-pointer">About</li>
             </Link>
-            <li className="flex justify-between gap-[9px] relative group cursor-pointer">
-              <p>Services</p>
-              <Image
-                src={"/images/arrow-down-black.svg"}
-                alt={"arrow down"}
-                height={11}
-                width={14}
-              />
+            <li className="relative group cursor-pointer">
+              <Link href="/services" className="flex justify-between gap-[9px]">
+                <p>Services</p>
+                <Image
+                  src={"/images/arrow-down-black.svg"}
+                  alt={"arrow down"}
+                  height={11}
+                  width={14}
+                />
+              </Link>
               <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
                 <ul className="text-sm top-full left-0">
-                  {servicesLinks.map((service, index) => (
+                  {SERVICES_LINKS.map((service, index) => (
                     <li
                       key={index}
                       className="p-[13px] border-b border-gray-300 last:border-none"
                     >
-                      <a href={service.destination}>{service.name}</a>
+                      <Link href={service.destination}>{service.name}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
             </li>
-            <li className="flex justify-between gap-[9px] relative group cursor-pointer">
-              <p>Legal Support</p>
-              <Image
-                src={"/images/arrow-down-black.svg"}
-                alt={"arrow down"}
-                height={11}
-                width={14}
-              />
+            <li className="relative group cursor-pointer">
+              <Link
+                href="/legal-support"
+                className="flex justify-between gap-[9px]"
+              >
+                <p>Legal Support</p>
+                <Image
+                  src={"/images/arrow-down-black.svg"}
+                  alt={"arrow down"}
+                  height={11}
+                  width={14}
+                />
+              </Link>
               <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[284px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
                 <ul className="text-sm top-full left-0">
-                  {legalSupportLinks.map((service, index) => (
+                  {LEGAL_SUPPORT_LINKS.map((service, index) => (
                     <li
                       key={index}
                       className="p-[13px] border-b border-gray-300 last:border-none"
@@ -99,22 +106,27 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li className="flex justify-between gap-[9px] relative group cursor-pointer">
-              <p>{"Workers' Comp"}</p>
-              <Image
-                src={"/images/arrow-down-black.svg"}
-                alt={"arrow down"}
-                height={11}
-                width={14}
-              />
+            <li className="relative group cursor-pointer">
+              <Link
+                href="/workers-comp"
+                className="flex justify-between gap-[9px]"
+              >
+                <p>{"Workers' Comp"}</p>
+                <Image
+                  src={"/images/arrow-down-black.svg"}
+                  alt={"arrow down"}
+                  height={11}
+                  width={14}
+                />
+              </Link>
               <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[140px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-linear">
                 <ul className="text-sm top-full left-0">
-                  {workersCompLinks.map((service, index) => (
+                  {WORKERS_COMP_LINKS.map((service, index) => (
                     <li
                       key={index}
                       className="p-[13px] border-b border-gray-300 last:border-none"
                     >
-                      <a href={service.destination}>{service.name}</a>
+                      <Link href={service.destination}>{service.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -127,7 +139,7 @@ const Header = () => {
               <li className="cursor-pointer">Contact Us</li>
             </Link>
           </ul>
-          <NavbarDropdown />
+          <Menu />
         </div>
       </div>
     </>
