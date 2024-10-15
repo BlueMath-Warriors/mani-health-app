@@ -43,8 +43,11 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  /* font-family: 'Poppins', sans-serif; */
+  background: #fafbfb;
+}
+
+.poppins {
+  font: "Poppins", sans-serif;
 }
 
 @layer utilities {
@@ -58,7 +61,7 @@ body {
   margin: 0 8px;
 }
 
-.contact-info li:last-child:after{
+.contact-info li:last-child:after {
   content: "";
   margin: 0;
 }
@@ -123,11 +126,23 @@ body {
   left: 5px;
 }
 
-@media (min-width: 1200px) {
-  .burger input:checked {
-    display: none;
-  }
+.text-dark {
+  color: #121212;
 }
+
+.primary-btn-shadow {
+  @apply shadow-none;
+}
+
+.primary-btn-shadow:hover {
+  box-shadow: 0 8px 10px 0 rgba(206, 145, 0, 0.2);
+}
+
+.referral-card-shadow {
+  box-shadow: 0 4px 50px 0 hsla(0, 0%, 78%, 0.25);
+}
+
+
 
 .responsive-padding {
   padding-left: calc((100vw - 590px) * 0.5);

@@ -27,6 +27,7 @@ module.exports = {
         screen: "1140px",
         large: "1200px",
         desktop: "1440px",
+        error: "#d9534f",
       },
     },
   },

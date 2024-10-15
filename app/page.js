@@ -1,9 +1,5 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex w-full h-[1500px] items-center justify-center bg-slate-400">
-      Almani App
-    </div>
+    <div className="flex w-full items-center justify-center py-12"> Home</div>
   );
 }
