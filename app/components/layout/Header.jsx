@@ -7,27 +7,37 @@ import Link from "next/link";
 
 const NavItem = ({ label, href, links, hasDropdown = false }) => {
   return (
-    <li className="relative group cursor-pointer">
-      <Link href={href} className="flex justify-between gap-[9px]">
+    <li className="relative group flex justify-between items-center gap-[9px] cursor-pointer h-full">
+      <Link href={href} className="flex justify-between items-center h-full">
         <p>{label}</p>
-        {hasDropdown && (
+      </Link>
+      {hasDropdown && (
           <Image
             src={"/images/arrow-down-black.svg"}
             alt="arrow down"
             height={11}
             width={14}
+            className="group-hover:hidden"
           />
         )}
-      </Link>
+        {hasDropdown && (
+          <Image
+            src={"/images/arrow-up-black.svg"}
+            alt="arrow down"
+            height={11}
+            width={14}
+            className="hidden group-hover:block"
+          />
+        )}
       {hasDropdown && (
-        <div className="absolute left-0 top-[140%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
+        <div className="absolute left-0 top-[69.5%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
           <ul className="text-sm top-full left-0">
             {links?.map((link, index) => (
               <li
                 key={index}
                 className="p-[13px] border-b border-gray-300 last:border-none"
               >
-                <Link href={link.destination}>{link.name}</Link>
+                <Link href={link.destination} className="break-words whitespace-normal">{link.name}</Link>
               </li>
             ))}
           </ul>
@@ -80,7 +90,7 @@ const Header = () => {
               className="h-full w-full"
             />
           </div>
-          <ul className="hidden large:flex justify-between gap-x-[38px] text-base whitespace-nowrap">
+          <ul className="hidden large:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
             {QUICK_LINKS.map((item, index) => (
               <NavItem
                 key={index}

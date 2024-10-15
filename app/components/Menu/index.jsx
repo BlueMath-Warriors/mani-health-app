@@ -4,25 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const NavItem = ({ label, href, dropdownLinks, hasDropdown = false }) => {
+const NavItem = ({ label, href, dropdownLinks, hasDropdown = false, isOpen, toggleDropdown }) => {
   return (
     <li
       className={`p-4 ${
         label !== "Contact" ? "border-b-2 border-gray-300" : null
-      } relative group`}
+      } relative group flex justify-between`}
     >
-      <Link href={href} className="flex justify-between">
+      <Link href={href} className="flex justify-between items-center">
         <p>{label}</p>
-        {dropdownLinks && (
+      </Link>
+      {dropdownLinks && (
           <Image
-            src={"/images/arrow-down-black.svg"}
-            alt="arrow down"
+            src={isOpen? "/images/arrow-up-black.svg" :"/images/arrow-down-black.svg"}
+            alt={isOpen? "arrow up" : "arrow down"}
             width={14}
             height={16}
+            onClick={toggleDropdown}
           />
         )}
-      </Link>
-      {hasDropdown && (
+      {hasDropdown && isOpen && (
         <div className="absolute left-0 top-[65%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-75 ease-in-out">
           <ul className="text-sm top-full left-0">
             {dropdownLinks?.map((item, index) => (
@@ -58,6 +59,11 @@ const MenuButton = ({ isOpen, setIsOpen }) => {
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setOpenDropdownIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -91,6 +97,8 @@ const Menu = () => {
               href={link.destination}
               hasDropdown={link.hasDropdown}
               dropdownLinks={link.linksName}
+              isOpen={openDropdownIndex === index}
+              toggleDropdown={() => toggleDropdown(index)}
             />
           ))}
         </ul>
