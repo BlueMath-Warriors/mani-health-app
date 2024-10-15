@@ -62,3 +62,22 @@ body {
   content: "";
   margin: 0;
 }
+
+.responsive-padding {
+  padding-left: calc((100vw - 590px) * 0.5);
+  padding-right: calc((100vw - 590px) * 0.5);
+}
+
+@media (max-width: 590px) {
+  .responsive-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .responsive-padding {
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+  }
+}
