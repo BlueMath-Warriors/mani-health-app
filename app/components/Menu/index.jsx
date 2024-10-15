@@ -69,6 +69,7 @@ const Menu = () => {
     const handleResize = () => {
       if (window.innerWidth >= 1200) {
         setIsOpen(false);
+        setOpenDropdownIndex(null);
       }
     };
 
