@@ -47,23 +47,54 @@ export const HEALTH_AND_LAW_DATA = [
     description:
       "Our team of orthopedic specialists and physical therapists offer top-notch care, ensuring effective treatment and recovery.",
     imageSrc: "/images/medical_team_icon.svg",
+    width: 14,
   },
   {
     title: "Legal and Insurance Insight",
     description:
       "With our deep understanding of legal and insurance processes, we offer invaluable support for road accident and workers' compensation cases.",
     imageSrc: "/images/balance_scale_icon.svg",
+    width: 20,
   },
   {
     title: "Specialized Pharmacy Services",
     description:
       "Our state-of-the-art pharmacy services are tailored to meet the specific needs of injured workers and nursing home residents.",
     imageSrc: "/images/pills_icon.svg",
+    width: 18,
   },
   {
     title: "Collaborative Approach",
     description:
       "We believe in working closely with lawyers, case managers, and insurance professionals to ensure seamless and efficient care coordination.",
     imageSrc: "/images/handshake_icon.svg",
+    width: 20,
   },
 ];
+
+export const WELCOME_SECTION_TEXTS = {
+  WELCOME_TITLE: "Welcome to AMHI",
+  WELCOME_DESCRIPTION: `Welcome to our dedicated team. We bring the highest clinical expertise with a commitment to comprehensive care for all our patients. With a focus on excellence, we ensure seamless operations that prioritize effective communication with payers, eliminating delays and obstacles to deliver optimal patient care. Your well-being is our priority, and we pride ourselves on providing a cohesive and efficient healthcare experience for every individual we serve.`,
+  EXPERTISE_DESCRIPTION: "Expertise in Workers’ Compensation Pharmacy",
+  CONTACT_BUTTON_TEXT: "Contact Us",
+  REFERRAL_BUTTON_TEXT: "Submit Your Referral",
+};
+
+export const WELCOME_SECTION_IMAGES = {
+  PHARMACY_IMAGE: "/illustrations/pharmacy.webp",
+};
+
+export const SERVICES_SECTION_TEXTS = {
+  SUBTITLE: "Our Services at a Glance",
+  TITLE: "Services Glance",
+  HOURS_OF_OPERATION_TITLE: "Hours Of Operation",
+  HOURS_OF_OPERATION_DESCRIPTION:
+    "AMHI Pharmacy has been a cornerstone of health in our neighborhood.",
+};
+
+export const HEALTH_AND_LAW_SECTION_TEXTS = {
+  TITLE: "Why Choose AMHI?",
+  SUBTITLE: "Bridging Health and Law for Your Wellness",
+  DESCRIPTION:
+    "At AMHI, we provide unparalleled services in the field of workers' compensation medical coordination, blending healthcare expertise with legal acumen.",
+};
