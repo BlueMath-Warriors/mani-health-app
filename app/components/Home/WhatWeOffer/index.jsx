@@ -18,7 +18,7 @@ const WhatWeOffer = () => {
           Exceptional Services To Support Your Health And Well-Being
         </p>
       </div>
-      <div className="grid grid-cols-1 min-[980px]:grid-cols-3 justify-center gap-8">
+      <div className="grid grid-cols-1 mid:grid-cols-3 justify-center gap-8">
         {WHAT_WE_OFFER_CARDS_CONTENT.map((content, index) => (
           <OfferCard
             image={content.image}
