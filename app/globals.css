@@ -49,7 +49,7 @@ body {
 }
 
 .poppins {
-  font: "Poppins", sans-serif;
+  /* font: "Poppins", sans-serif; */
 }
 
 @layer utilities {
@@ -151,11 +151,32 @@ body {
 .client-type-card:hover {
   border: 1px solid black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: border 0.15s ease-in, box-shadow 0.5s ease-in;
+  transition: border 0.1s ease-in, box-shadow 0.5s ease-in;
 }
 
 .client-type-card:hover {
   border: 1px solid #e3bf6b;
   box-shadow: 0 4px 8px 0 rgba(206, 145, 0, 0.2);
-  transition: border 0.2s ease-in, box-shadow 1s ease-in;
+  transition: border 0.15s ease-in, box-shadow 1s ease-in;
+}
+
+.offer-card-shadow {
+  box-shadow: 0 4px 10px 0 hsla(0, 0%, 46%, 0.1);
+}
+
+.offer-card-shadow:hover {
+  box-shadow: 0 4px 20px 0 hsla(0, 0%, 46%, 0.5);
+}
+
+.three-lines {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  line-clamp: 3 !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-transition {
+  transition: all 0.3s ease;
 }

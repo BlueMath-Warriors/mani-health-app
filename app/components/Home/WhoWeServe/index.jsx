@@ -33,7 +33,7 @@ const WhoWeServe = () => {
           />
         ))}
       </div>
-      <Button width="fit" className="mt-11 text-base" onClick={handleContact}>
+      <Button width="fit" className="mt-11 !text-base" onClick={handleContact}>
         Get in touch now
       </Button>
     </div>
