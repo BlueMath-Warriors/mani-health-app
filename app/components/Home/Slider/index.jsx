@@ -51,10 +51,9 @@ const SlickCarousel = () => {
       ref={carouselRef}
     >
       <Slider {...settings}>
-        {slidesData.map((slide) => (
-          <div>
+        {slidesData.map((slide, index) => (
+          <div key={`carousel-slide-${index}`}>
             <div
-              key={slide.id}
               className="bg-cover bg-center h-[700px] md:h-[800px] "
               style={{ backgroundImage: `url('${slide.bgImage}')` }}
             >

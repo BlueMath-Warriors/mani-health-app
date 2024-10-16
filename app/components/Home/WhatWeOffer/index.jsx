@@ -21,6 +21,7 @@ const WhatWeOffer = () => {
       <div className="grid grid-cols-1 mid:grid-cols-3 justify-center gap-8">
         {WHAT_WE_OFFER_CARDS_CONTENT.map((content, index) => (
           <OfferCard
+            key={`offer-card-${index}`}
             image={content.image}
             title={content.title}
             caption={content.caption}
