@@ -16,8 +16,8 @@ export const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html className={`${poppins.className} antialiased`} lang="en">
-      <body className="flex flex-col ">
-        {/* <Header /> */}
+      <body>
+        <Header />
         {children}
         <Footer />
       </body>
