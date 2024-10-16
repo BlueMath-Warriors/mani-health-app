@@ -41,11 +41,11 @@ export const WORKERS_COMP_LINKS = [
 ];
 
 export const QUICK_LINKS = [
-  { name: "Home", destination: "/" },
-  { name: "About Us", destination: "/" },
-  { name: "Services", destination: "/" },
-  { name: "Legal Support", destination: "/" },
-  { name: "Workers Comp", destination: "/" },
-  { name: "Senior Living", destination: "/" },
-  { name: "Contact", destination: "/" },
+  { name: "Home", destination: "/", hasDropdown: false, },
+  { name: "About Us", destination: "/about", hasDropdown: false, },
+  { name: "Services", destination: "/services", hasDropdown: true, linksName: SERVICES_LINKS },
+  { name: "Legal Support", destination: "/legal-support", hasDropdown: true, linksName: LEGAL_SUPPORT_LINKS  },
+  { name: "Workers Comp", destination: "/workers-comp", hasDropdown: true, linksName: WORKERS_COMP_LINKS },
+  { name: "Senior Living", destination: "/senior-living", hasDropdown: false, },
+  { name: "Contact", destination: "/contact", hasDropdown: false, },
 ];

@@ -18,6 +18,15 @@ module.exports = {
         "tertiary-hover": "#e57373",
         body: "#4d6581",
         grey: "#eee",
+        white: "#fff",
+        black: "#09114a",
+      },
+      screens: {
+        mobile: "200px",
+        tablet: "834px",
+        screen: "1140px",
+        large: "1200px",
+        desktop: "1440px",
         error: "#d9534f",
       },
       screens: {
