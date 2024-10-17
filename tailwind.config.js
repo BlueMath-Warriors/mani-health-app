@@ -24,11 +24,15 @@ module.exports = {
       },
       screens: {
         mobile: "200px",
+        Sm: "480px",
         tablet: "834px",
         mid: "980px",
         screen: "1140px",
         large: "1200px",
         desktop: "1440px",
+      },
+      boxShadow: {
+        'custom-shadow-lg':  '0 4px 8px 0 hsla(0, 0%, 46%, 0.2)',
       },
     },
   },
