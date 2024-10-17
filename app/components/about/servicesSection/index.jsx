@@ -15,8 +15,8 @@ const ServicesSection = () => {
         <h1 className="font-semibold text-[25px] lg:text-4xl mb-[52px] text-center">
           {SERVICES_SECTION_TEXTS.SUBTITLE}
         </h1>
-        <div className="flex flex-col gap-4 large:flex-row">
-          <ul className="flex flex-wrap gap-3 w-full large:w-[63%]">
+        <div className="flex flex-col gap-4 w-full large:flex-row large:justify-center">
+          <ul className="flex flex-wrap gap-3 w-full large:w-[56%] desktop:w-[63%]">
             {SERVICES_DATA.map((service) => (
               <li
                 key={service.title}

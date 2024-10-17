@@ -36,7 +36,7 @@ const HealthAndLawSection = () => {
             ))}
           </ul>
         </div>
-        <div className="w-full lg:w-1/2 px-3">
+        <div className="max-h-[426px] lg:max-h-[690px] lg:w-1/2 px-3">
           <Image
             src={"/illustrations/lawyer.webp"}
             alt="lawyer"
