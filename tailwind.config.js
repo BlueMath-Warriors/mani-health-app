@@ -30,6 +30,9 @@ module.exports = {
         large: "1200px",
         desktop: "1440px",
       },
+      boxShadow: {
+        'custom-shadow-lg':  '0 4px 8px 0 hsla(0, 0%, 46%, 0.2)',
+      },
     },
   },
   plugins: [],
