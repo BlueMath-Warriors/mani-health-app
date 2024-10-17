@@ -1,5 +1,8 @@
-export default function Home() {
+import Home from "./components/Home";
+export default function HomePage() {
   return (
-    <div className="flex w-full items-center justify-center py-12"> Home</div>
+    <div className="">
+      <Home />
+    </div>
   );
 }

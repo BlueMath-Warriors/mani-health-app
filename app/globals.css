@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 :root {
   --color-primary: #ce9100;
@@ -47,7 +49,7 @@ body {
 }
 
 .poppins {
-  font: "Poppins", sans-serif;
+  /* font: "Poppins", sans-serif; */
 }
 
 @layer utilities {
@@ -142,8 +144,6 @@ body {
   box-shadow: 0 4px 50px 0 hsla(0, 0%, 78%, 0.25);
 }
 
-
-
 .responsive-padding {
   padding-left: calc((100vw - 590px) * 0.5);
   padding-right: calc((100vw - 590px) * 0.5);
@@ -204,4 +204,81 @@ textarea:not(:placeholder-shown) ~ label {
   font-size: 12px;
   color: (#DEE2E6);
   opacity: 0.65;
+}
+.home-slider-gradient {
+  background: linear-gradient(
+    108deg,
+    rgb(229, 229, 229) 2.32%,
+    rgba(229, 229, 229, 0.7) 43.39%,
+    rgba(255, 211, 106, 0) 100.5%
+  );
+}
+
+.custom-dots {
+  display: flex !important;
+  gap: 8px;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  margin-right: auto !important;
+  z-index: 10;
+}
+
+.custom-dots li {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #a5a3a1;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-dots li.slick-active {
+  background-color: #ce9100;
+}
+
+.custom-dots li button {
+  width: 20px;
+  height: 20px;
+  color: transparent;
+}
+
+.client-type-card {
+  border: none;
+  box-shadow: none;
+  transition: border 0.3s ease-in, box-shadow 0.3s ease-in;
+}
+
+.client-type-card:hover {
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: border 0.1s ease-in, box-shadow 0.5s ease-in;
+}
+
+.client-type-card:hover {
+  border: 1px solid #e3bf6b;
+  box-shadow: 0 4px 8px 0 rgba(206, 145, 0, 0.2);
+  transition: border 0.15s ease-in, box-shadow 1s ease-in;
+}
+
+.offer-card-shadow {
+  box-shadow: 0 4px 10px 0 hsla(0, 0%, 46%, 0.1);
+}
+
+.offer-card-shadow:hover {
+  box-shadow: 0 4px 20px 0 hsla(0, 0%, 46%, 0.5);
+}
+
+.three-lines {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  line-clamp: 3 !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-transition {
+  transition: all 0.3s ease;
 }
