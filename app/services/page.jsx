@@ -6,7 +6,7 @@ const Services = () => {
   return (
     <>
       <ServicesListSection />
-      <div className="appointment-background flex justify-center items-center py-[50px] px-4">
+      <div className="appointment-background flex justify-center items-center h-full py-[50px] px-4">
         <GetInTouchForm />
       </div>
     </>

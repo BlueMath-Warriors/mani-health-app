@@ -39,7 +39,7 @@ const TextAreaInput = ({ placeholder, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <>
       <textarea
         name="message"
         id="message"
@@ -65,7 +65,7 @@ const TextAreaInput = ({ placeholder, value, onChange }) => {
       >
         {placeholder}
       </label>
-    </div>
+    </>
   );
 };
 
@@ -92,7 +92,7 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
       /*TODO: Add submit functionality */
     }
   };
-  
+
   return (
     <div
       className={`max-w-[520px] md:max-w-[700px] lg:max-w-[950px] flex flex-col flex-grow text-base text-neutral font-normal p-[50px] ${
@@ -147,19 +147,21 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
             }
           />
         </div>
-        <TextAreaInput
-          placeholder="Message*"
-          value={formData.message}
-          onChange={(e) =>
-            handleInputChange({
-              target: { name: "message", value: e.target.value },
-            })
-          }
-        />
+        <div className="relative w-full">
+          <TextAreaInput
+            placeholder="Message*"
+            value={formData.message}
+            onChange={(e) =>
+              handleInputChange({
+                target: { name: "message", value: e.target.value },
+              })
+            }
+          />
+        </div>
         <div className="flex justify-center sm:justify-start">
           <button
             type="submit"
-            className="bg-primary text-white font-medium rounded-lg py-3.5 px-6"
+            className="bg-primary text-white font-medium rounded-lg hover:opacity-80 py-3.5 px-6"
           >
             Submit
           </button>
