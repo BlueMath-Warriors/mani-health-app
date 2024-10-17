@@ -4,14 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const NavItem = ({ label, href, dropdownLinks, hasDropdown = false, isOpen, toggleDropdown }) => {
+const NavItem = ({ label, href, dropdownLinks, hasDropdown = false, isOpen, setIsOpen, toggleDropdown }) => {
   return (
     <li
       className={`p-4 ${
         label !== "Contact" ? "border-b-2 border-gray-300" : null
       } relative group flex justify-between`}
     >
-      <Link href={href} className="flex justify-between items-center">
+      <Link href={href} className="flex justify-between items-center" onClick={()=>setIsOpen(false)}>
         <p>{label}</p>
       </Link>
       {dropdownLinks && (
@@ -99,6 +99,7 @@ const Menu = () => {
               hasDropdown={link.hasDropdown}
               dropdownLinks={link.linksName}
               isOpen={openDropdownIndex === index}
+              setIsOpen={setIsOpen}
               toggleDropdown={() => toggleDropdown(index)}
             />
           ))}
