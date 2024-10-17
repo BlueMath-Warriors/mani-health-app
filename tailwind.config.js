@@ -20,6 +20,7 @@ module.exports = {
         grey: "#eee",
         white: "#fff",
         black: "#09114a",
+        error: "#d9534f",
       },
       screens: {
         mobile: "200px",
@@ -27,8 +28,10 @@ module.exports = {
         screen: "1140px",
         large: "1200px",
         desktop: "1440px",
-        error: "#d9534f",
       },
+      boxShadow: {
+        servicesCustomShadow: "0 4px 10px 0 hsla(0, 0%, 46%, .1)",
+      }
     },
   },
   plugins: [],
