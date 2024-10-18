@@ -46,6 +46,10 @@ const NavItem = ({
               <li
                 key={index}
                 className="p-[13px] border-b border-gray-300 last:border-none"
+                onClick={() => {
+                  setIsOpen(false);
+                  toggleDropdown();
+                }}
               >
                 <Link href={item.destination}>{item.name}</Link>
               </li>
