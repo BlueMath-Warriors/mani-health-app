@@ -40,12 +40,16 @@ const NavItem = ({
         />
       )}
       {hasDropdown && isOpen && (
-        <div className="absolute left-0 top-[65%] mt-4 w-72 Sm:w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-10 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[550px] group-hover:opacity-100 transition-[max-height,opacity] duration-75 ease-in-out">
+        <div className="absolute left-0 top-[65%] mt-4 w-72 Sm:w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-20 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[550px] group-hover:opacity-100 transition-[max-height,opacity] duration-75 ease-in-out">
           <ul className="text-sm top-full left-0">
             {dropdownLinks?.map((item, index) => (
               <li
                 key={index}
                 className="p-[13px] border-b border-gray-300 last:border-none"
+                onClick={() => {
+                  setIsOpen(false);
+                  toggleDropdown();
+                }}
               >
                 <Link href={item.destination}>{item.name}</Link>
               </li>
