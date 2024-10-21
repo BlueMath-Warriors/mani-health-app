@@ -285,3 +285,22 @@ textarea:not(:placeholder-shown) ~ label {
 .custom-transition {
   transition: all 0.3s ease;
 }
+
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.animate-1{
+  animation: slideInUp .3s cubic-bezier(.25,.46,.45,.94) both;
+  animation-delay: .1s;
+}
+
