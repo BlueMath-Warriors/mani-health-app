@@ -5,7 +5,6 @@ import Button from "../../common/Button";
 
 const WhoWeServe = () => {
   const handleContact = () => {
-    console.log("apple");
   };
 
   return (
