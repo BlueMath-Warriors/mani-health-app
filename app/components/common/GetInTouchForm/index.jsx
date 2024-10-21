@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Button from "../Button";
 
 const FormInput = ({ type, placeholder, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -159,12 +160,14 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
           />
         </div>
         <div className="flex justify-center sm:justify-start">
-          <button
+          <Button
             type="submit"
-            className="bg-primary text-white font-medium rounded-lg hover:opacity-80 py-3.5 px-6"
+            variant="primary"
+            width="fit"
+            className="!text-base"
           >
             Submit
-          </button>
+          </Button>
         </div>
       </form>
     </div>

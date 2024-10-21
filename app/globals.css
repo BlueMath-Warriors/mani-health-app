@@ -70,7 +70,7 @@ body {
 
 .burger {
   position: relative;
-  width: 24px;  
+  width: 24px;
   height: 18px;
   background: transparent;
   cursor: pointer;
@@ -84,7 +84,7 @@ body {
 .burger span {
   display: block;
   position: absolute;
-  height: 3px; 
+  height: 3px;
   width: 100%;
   background: black;
   border-radius: 9px;
@@ -124,7 +124,7 @@ body {
 
 .burger input:checked ~ span:nth-of-type(3) {
   transform: rotate(-45deg);
-  top: 17.4px; 
+  top: 17.4px;
   left: 5px;
 }
 
@@ -164,10 +164,10 @@ body {
 }
 
 .appointment-background {
-  background-image: url('/images/services_appointment.webp');
+  background-image: url("/images/services_appointment.webp");
   background-repeat: no-repeat;
-  background-size: cover; 
-  background-attachment: fixed; 
+  background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   height: 100%;
 }
@@ -181,19 +181,19 @@ input:not(:placeholder-shown) ~ label {
   top: 7px;
   left: 13px;
   font-size: 12px;
-  color: (#DEE2E6);
+  color: (#dee2e6);
   opacity: 0.65;
 }
 
 input {
-  transition: padding-top 0.3s ease; 
+  transition: padding-top 0.3s ease;
 }
 
 input::placeholder {
-  color: transparent; 
+  color: transparent;
 }
 
-.message::placeholder{
+.message::placeholder {
   color: (var(--color-neutral));
 }
 
@@ -202,7 +202,7 @@ textarea:not(:placeholder-shown) ~ label {
   top: 8px;
   left: 13px;
   font-size: 12px;
-  color: (#DEE2E6);
+  color: (#dee2e6);
   opacity: 0.65;
 }
 .home-slider-gradient {
@@ -262,11 +262,11 @@ textarea:not(:placeholder-shown) ~ label {
   transition: border 0.15s ease-in, box-shadow 1s ease-in;
 }
 
-.offer-card-shadow {
+.services-card {
   box-shadow: 0 4px 10px 0 hsla(0, 0%, 46%, 0.1);
 }
 
-.offer-card-shadow:hover {
+.services-card:hover {
   box-shadow: 0 4px 20px 0 hsla(0, 0%, 46%, 0.5);
 }
 

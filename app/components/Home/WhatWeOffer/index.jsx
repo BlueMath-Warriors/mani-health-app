@@ -1,5 +1,5 @@
 "use client";
-import OfferCard from "./OfferCard";
+import ServicesCard from "../../common/ServicesCard";
 import { WHAT_WE_OFFER_CARDS_CONTENT } from "@/Constants/PageContent/home";
 import Button from "../../common/Button";
 
@@ -20,7 +20,7 @@ const WhatWeOffer = () => {
       </div>
       <div className="grid grid-cols-1 mid:grid-cols-3 justify-center gap-8">
         {WHAT_WE_OFFER_CARDS_CONTENT.map((content, index) => (
-          <OfferCard
+          <ServicesCard
             key={`offer-card-${index}`}
             image={content.image}
             title={content.title}
