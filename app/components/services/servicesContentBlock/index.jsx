@@ -20,7 +20,7 @@ const ServicesContentBlock = ({ content }) => {
               alt="bullet icon"
               height={20}
               width={20}
-              className="self-start mt-0.5"
+              className="self-start mt-1"
             />
             <div className="inline">
               <span className="font-medium">{point.title}</span>

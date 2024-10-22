@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const ServicesLayout = ({ children }) => {
+const ServicesLayout = ({ children, selectedLink }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   return (
     <div
@@ -28,7 +28,7 @@ const ServicesLayout = ({ children }) => {
             {SERVICES_LINKS.map((service, index) => (
               <li
                 key={index}
-                className="w-full border-dashed border-b border-[#a4a4a4] hover:text-primary py-2.5 px-4"
+                className={`w-full border-dashed border-b border-[#a4a4a4] ${`/services/${selectedLink}` === service.link? "text-primary": "text-[#a4a4a4]"} hover:text-primary py-2.5 px-4`}
               >
                 <Link href={service.link} className="block self-auto">
                   {service.name}

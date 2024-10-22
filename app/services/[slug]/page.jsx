@@ -24,7 +24,7 @@ const ServiceDetailPage = () => {
 
   return (
     <>
-      <ServicesLayout>
+      <ServicesLayout selectedLink={slug}>
         {slug === "expert-witness-reports" && <ExpertWitnessReports />}
         {slug === "enhanced-recovery-after-surgery-eras" && (
           <EnhancedRecoveryAfterSurgery />
