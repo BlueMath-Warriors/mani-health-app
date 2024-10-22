@@ -19,6 +19,7 @@ const Button = ({
     primary: "bg-[#ce9100] text-white hover:bg-[#d6a42b] primary-btn-shadow ",
     "primary-outline":
       "border border-[#ce9100] text-[#ce9100] hover:bg-[#ce9100]/10",
+    outline: "border border-[#282520] text-[#282520]",
   };
 
   return (

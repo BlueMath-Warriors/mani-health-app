@@ -45,3 +45,43 @@ export const WHAT_WE_OFFER_CARDS_CONTENT = [
       "At AMHI Health Care, we offer top-quality durable medical equipment to facilitate a smoother recovery process. Our range of equipment is designed to enhance your comfort and aid in rehabilitation, ensuring you have the essential support you need throughout your recovery journey...",
   },
 ];
+
+export const COMPREHENSIVE_CARE_CARD_CONTENT = [
+  {
+    bgImage: "/images/comprehensive-care/orthopedic_physical_therapy.webp",
+    icon: "/images/comprehensive-care/orthopedic_physical_therapy_icon.svg",
+    title: "Orthopedic and Physical Therapy",
+    caption:
+      "Specialized treatment for patients recovering from road accidents and work-related injuries, facilitating effective recovery.",
+  },
+  {
+    bgImage: "/images/comprehensive-care/legal_insurance_collaboration.webp",
+    icon: "/images/comprehensive-care/legal_insurance_collaboration_icon.svg",
+    title: "Legal and Insurance Collaboration",
+    caption:
+      "Assisting road accident and workers' comp lawyers, adjusters, and payers with medical expertise and support.",
+  },
+  {
+    bgImage: "/images/comprehensive-care/nursing_home_support.webp",
+    icon: "/images/comprehensive-care/nursing_home_support_icon.svg",
+    title: "Support for Nursing Hoems",
+    caption:
+      "Providing nursing homes with essential pharmacy services and durable medical equipment to enhance resident care.",
+  },
+];
+
+export const ABOUT_LIST_CONTENT = [
+  {
+    title: "Integrated Medical Services",
+    caption: "Expert orthopedic and physical therapy care for injury recovery.",
+  },
+  {
+    title: "Legal and Insurance Expertise",
+    caption: "Collaborative support for professionals handling injury cases.",
+  },
+  {
+    title: "Pharmacy and Equipment for Nursing Homes",
+    caption:
+      "Reliable supply of medications and medical equipment for nursing home residents.",
+  },
+];
