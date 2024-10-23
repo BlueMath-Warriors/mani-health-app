@@ -320,3 +320,7 @@ textarea:not(:placeholder-shown) ~ label {
   background-repeat: no-repeat;
 }
 
+.handleNewLine {
+  white-space: pre-line;
+}
+
