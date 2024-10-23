@@ -28,7 +28,7 @@ import {
   const LegalSupportForInjurySection = () => {
     return (
       <div
-        className={`relative bg-white text-neutral font-normal leading-normal text-base flex justify-center py-[45px] Sm:py-[90px] px-[25px]`}
+        className={`relative law-picture bg-white text-neutral font-normal leading-normal text-base flex justify-center py-[45px] Sm:py-[90px] px-[25px]`}
       >
         <div className="max-w-[1440px] flex flex-col items-start">
           <div className="flex flex-col items-start w-full lg:w-1/2 mb-10">
