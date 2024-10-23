@@ -17,7 +17,7 @@ const ComprehensiveOrthopedicCare = () => {
             (speciality, index) => (
               <li
                 key={index}
-                className="max-w-[294px] flex justify-center items-center flex-col rounded-lg shadow-orthopedic-card-shadow cursor-pointer px-3 py-8"
+                className="max-w-[294px] flex justify-center items-center flex-col rounded-lg shadow-servicesCustomShadow cursor-pointer px-3 py-8 m-2"
                 onClick={()=>router.push(speciality.link)}
               >
                 <div className="bg-[#faf4e6] rounded-full w-[120px] h-[120px] flex justify-center items-center">

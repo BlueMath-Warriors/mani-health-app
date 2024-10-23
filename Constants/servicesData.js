@@ -1,3 +1,19 @@
+import ComprehensiveOrthopedicCare from "@/app/components/services/servicesSubPages/ComprehensiveOrthopedicCare";
+import DurableMedicalEquipment from "@/app/components/services/servicesSubPages/DurableMedicalEquipment";
+import EmergencyMedicalCondition from "@/app/components/services/servicesSubPages/EmergencyMedicalCondition";
+import EnhancedRecoveryAfterSurgery from "@/app/components/services/servicesSubPages/EnhancedRecoveryAfterSurgery";
+import ExpertMedicalAdvisors from "@/app/components/services/servicesSubPages/ExpertMedicalAdvisors";
+import ExpertWitnessReports from "@/app/components/services/servicesSubPages/ExpertWitnessReports";
+import FootAndAnkleOrthopedic from "@/app/components/services/servicesSubPages/FootAndAnkleOrthopedic";
+import HandUpperExtremityOrthopedic from "@/app/components/services/servicesSubPages/HandUpperExtremityOrthopedic";
+import HipAndKneeOrthopedic from "@/app/components/services/servicesSubPages/HipAndKneeOrthopedic";
+import IndependantMedicalEvaluation from "@/app/components/services/servicesSubPages/IndependantMedicalEvaluation";
+import KyphoplastyServices from "@/app/components/services/servicesSubPages/KyphoplastyServices";
+import MaximumMedicalImprovement from "@/app/components/services/servicesSubPages/MaximumMedicalImprovement";
+import PersonalInjuryEvaluation from "@/app/components/services/servicesSubPages/PersonalInjuryEvaluation";
+import RepairSolutions from "@/app/components/services/servicesSubPages/RepairSolutions";
+import SpinalOrthopedicSurgeon from "@/app/components/services/servicesSubPages/SpinalOrthopedicSurgeon";
+
 export const SERVICES_LIST = [
   {
     title: "Comprehensive Orthopedic Care",
@@ -1364,4 +1380,22 @@ export const KYOPLASTY = {
       },
     ],
   },
+};
+
+export const COMPONENTS_MAP = {
+  "expert-witness-reports": ExpertWitnessReports,
+  "enhanced-recovery-after-surgery-eras": EnhancedRecoveryAfterSurgery,
+  "durable-medical-equipment-dme": DurableMedicalEquipment,
+  "revitalize-repair-solutions": RepairSolutions,
+  "maximum-medical-improvement-mmi": MaximumMedicalImprovement,
+  "personal-injury-evaluation": PersonalInjuryEvaluation,
+  "expert-medical-advisors": ExpertMedicalAdvisors,
+  "independent-medical-evaluation-ime": IndependantMedicalEvaluation,
+  "hip-and-knee-orthopedic-specialist": HipAndKneeOrthopedic,
+  "spinal-orthopedic-surgeon": SpinalOrthopedicSurgeon,
+  "foot-and-ankle-orthopedic-specialist": FootAndAnkleOrthopedic,
+  "emergency-medical-condition-emc-evaluation": EmergencyMedicalCondition,
+  "hand-and-upper-extremity-orthopedic-surgeon": HandUpperExtremityOrthopedic,
+  "kyphoplasty-services": KyphoplastyServices,
+  "comprehensive-orthopedic-care": ComprehensiveOrthopedicCare,
 };
