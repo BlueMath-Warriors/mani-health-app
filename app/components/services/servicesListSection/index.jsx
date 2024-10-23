@@ -20,7 +20,7 @@ const ServicesListSection = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 mid:grid-cols-3 justify-center gap-8">
-        {SERVICES_LIST.map((service, index) => (
+          {SERVICES_LIST.map((service, index) => (
             <ServicesCard
               key={`services-card-${index}`}
               image={service.imageSrc}

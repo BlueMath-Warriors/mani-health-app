@@ -1,6 +1,9 @@
+"use client";
 import Button from "@/app/components/common/Button";
+import { useRouter } from "next/navigation";
 
 const ServicesCard = ({ image, title, caption, link = "#" }) => {
+  const router = useRouter();
   return (
     <div className="flex services-card col-span-1 flex-col w-full h-full max-w-md mid:max-w-[360px] min-w-60 bg-white cursor-pointer custom-transition group rounded-b-lg ">
       <div
@@ -20,6 +23,7 @@ const ServicesCard = ({ image, title, caption, link = "#" }) => {
           width="fit"
           variant="primary-outline"
           className="!text-base !py-2 !px-4 mid:mr-auto "
+          onClick={()=>router.push(link)}
         >
           Learn More
         </Button>
