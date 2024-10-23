@@ -18,6 +18,9 @@ import SpinalOrthopedicSurgeon from "@/app/components/services/servicesSubPages/
 import FootAndAnkleOrthopedic from "@/app/components/services/servicesSubPages/FootAndAnkleOrthopedic";
 import EmergencyMedicalCondition from "@/app/components/services/servicesSubPages/EmergencyMedicalCondition";
 import KyphoplastyServices from "@/app/components/services/servicesSubPages/KyphoplastyServices";
+import ComprehensiveOrthopedicCare from "@/app/components/services/servicesSubPages/ComprehensiveOrthopedicCare";
+import DurableMedicalEquipmentSection from "@/app/components/services/durableMedicalSection";
+import HandUpperExtremityOrthopedic from "@/app/components/services/servicesSubPages/HandUpperExtremityOrthopedic";
 
 const ServiceDetailPage = () => {
   const { slug } = useParams();
@@ -32,27 +35,19 @@ const ServiceDetailPage = () => {
         {slug === "durable-medical-equipment-dme" && (
           <DurableMedicalEquipment />
         )}
-        {slug === "revitalize-repair-solutions" && (
-          <RepairSolutions />
-        )}
+        {slug === "revitalize-repair-solutions" && <RepairSolutions />}
         {slug === "maximum-medical-improvement-mmi" && (
           <MaximumMedicalImprovement />
         )}
-        {slug === "personal-injury-evaluation" && (
-          <PersonalInjuryEvaluation />
-        )}
-        {slug === "expert-medical-advisors" && (
-          <ExpertMedicalAdvisors />
-        )}
+        {slug === "personal-injury-evaluation" && <PersonalInjuryEvaluation />}
+        {slug === "expert-medical-advisors" && <ExpertMedicalAdvisors />}
         {slug === "independent-medical-evaluation-ime" && (
           <IndependantMedicalEvaluation />
         )}
         {slug === "hip-and-knee-orthopedic-specialist" && (
           <HipAndKneeOrthopedic />
         )}
-        {slug === "spinal-orthopedic-surgeon" && (
-          <SpinalOrthopedicSurgeon />
-        )}
+        {slug === "spinal-orthopedic-surgeon" && <SpinalOrthopedicSurgeon />}
         {slug === "foot-and-ankle-orthopedic-specialist" && (
           <FootAndAnkleOrthopedic />
         )}
@@ -60,12 +55,16 @@ const ServiceDetailPage = () => {
           <EmergencyMedicalCondition />
         )}
         {slug === "hand-and-upper-extremity-orthopedic-surgeon" && (
-          <EmergencyMedicalCondition />
+          <HandUpperExtremityOrthopedic />
         )}
-        {slug === "kyphoplasty-services" && (
-          <KyphoplastyServices />
+        {slug === "kyphoplasty-services" && <KyphoplastyServices />}
+        {slug === "comprehensive-orthopedic-care" && (
+          <ComprehensiveOrthopedicCare />
         )}
       </ServicesLayout>
+      {slug === "durable-medical-equipment-dme" && (
+        <DurableMedicalEquipmentSection />
+      )}
       <ReferralAction />
     </>
   );

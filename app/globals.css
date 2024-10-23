@@ -304,3 +304,7 @@ textarea:not(:placeholder-shown) ~ label {
   animation-delay: .1s;
 }
 
+.handleNewLine {
+  white-space: pre-line;
+}
+

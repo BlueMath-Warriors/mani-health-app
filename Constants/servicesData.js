@@ -169,6 +169,39 @@ export const SERVICES_LINKS = [
   { name: "Kyphoplasty Services", link: "/services/kyphoplasty-services" },
 ];
 
+export const COMPREHENSIVE_ORTHOPEDIC_CARE ={
+  INTRODUCTION: {
+    title: "Comprehensive Orthopedic Care",
+    text: "At AMHI, we take pride in our team of specialized orthopedic doctors, each expertly trained in specific areas of orthopedic care. Our diverse team includes Foot and Ankle Doctors, Hand and Upper Extremities Surgeons, Hip and Knee Specialists, and Spine Experts. Each doctor brings a wealth of knowledge and experience, ensuring that our patients receive the most advanced and personalized care for their specific needs. This range of specializations allows us to provide comprehensive orthopedic solutions under one roof, tailored to each patient's unique health journey.",
+  },
+  ORTHOPEDIC_SPECIALITIES : [
+    {
+      title: "Hip and Knee Orthopedic Specialist",
+      text: "Accurate diagnosis and assessment are critical first steps in effectively treating hip and knee conditions. At our facility, we employ a comprehensive...",
+      imageSrc: "/images/HipAndKneeOrthopedic.svg",
+      link: "/services/hip-and-knee-orthopedic-specialist",
+    },
+    {
+      title: "Spinal Orthopedic Surgeon",
+      text: "Spine surgeons play a critical role in the management and recovery of workers who suffer from spinal injuries. Their expertise is essential in diagnos...",
+      imageSrc: "/images/SpinalOrthopedicSurgeon.svg",
+      link: "/services/spinal-orthopedic-surgeon",
+    },
+    {
+      title: "Foot and Ankle Orthopedic Specialist",
+      text: "Our orthopedic doctors, specialized in Foot and Ankle care, are dedicated to providing the highest standard of treatment for a variety of conditions a...",
+      imageSrc: "/images/FootAndAnkleOrthopedic.webp",
+      link: "/services/foot-and-ankle-orthopedic-specialist",
+    },
+    {
+      title: "Hand and Upper Extremity Orthopedic Surgeon",
+      text: "Our Hand and Upper Extremities Surgeon is skilled in diagnosing and treating a wide range of conditions affecting the hands, wrists, elbows, and shoul...",
+      imageSrc: "/images/HandAndUpperExtremity.svg",
+      link: "/services/hand-and-upper-extremity-orthopedic-surgeon",
+    }
+  ],
+};
+
 export const EXPERT_WITNESS_REPORTS = {
   EXPERT_WITNESSES: {
     title: "The Role of Expert Witnesses in Workers' Compensation Cases",
@@ -545,9 +578,7 @@ export const PERSONAL_INJURY_EVALUATION = {
   },
   DEALING_WITH_INSURANCE: {
     title: "Dealing with Insurance After an Injury",
-    text: `Handling insurance in personal injury cases can be complex. It's about talking to insurance companies to make sure they understand the injury and what's fair. This means knowing your policy well and standing up for your rights. It can be tough, but it's about getting the support needed to recover.
-    
-    Understanding Insurance in Personal Injury Cases:`,
+    text: `Handling insurance in personal injury cases can be complex. It's about talking to insurance companies to make sure they understand the injury and what's fair. This means knowing your policy well and standing up for your rights. It can be tough, but it's about getting the support needed to recover.\n\nUnderstanding Insurance in Personal Injury Cases:`,
     points: [
       {
         title: "Understanding your insurance policy's details.",
@@ -976,7 +1007,7 @@ export const SPINAL_ORTHOPEDIC_SURGEON = {
 export const FOOT_AND_ANKLE_ORTHOPEDIC = {
   CONDITIONS_TREATED: {
     title: "Common Conditions Treated",
-    text: "Our orthopedic doctors, specialized in Foot and Ankle care, are dedicated to providing the highest standard of treatment for a variety of conditions affecting these critical areas of the body. With a deep understanding of the complexities of foot and ankle anatomy, they employ a comprehensive approach to both diagnosis and treatment, ensuring that each patient receives personalized and effective care.",
+    text: "Our orthopedic doctors, specialized in Foot and Ankle care, are dedicated to providing the highest standard of treatment for a variety of conditions affecting these critical areas of the body. With a deep understanding of the complexities of foot and ankle anatomy, they employ a comprehensive approach to both diagnosis and treatment, ensuring that each patient receives personalized and effective care.\n\nCommon conditions treated include:",
     points: [
       {
         title: "Bunions:",
@@ -1012,7 +1043,7 @@ export const FOOT_AND_ANKLE_ORTHOPEDIC = {
   },
   TREATMENT_APPROACHES: {
     title: "Treatment Approaches",
-    text: "At AMHI's Foot and Ankle Orthopedic department, we utilize a comprehensive range of treatment approaches to ensure the best possible outcomes for our patients. Our multidisciplinary team employs the latest medical advancements alongside time-tested methods, offering personalized treatment plans tailored to each patient's unique needs. From conservative care to advanced surgical techniques, our goal is to restore functionality and alleviate pain effectively.",
+    text: "At AMHI's Foot and Ankle Orthopedic department, we utilize a comprehensive range of treatment approaches to ensure the best possible outcomes for our patients. Our multidisciplinary team employs the latest medical advancements alongside time-tested methods, offering personalized treatment plans tailored to each patient's unique needs. From conservative care to advanced surgical techniques, our goal is to restore functionality and alleviate pain effectively.\n\nKey treatment approaches include:",
     points: [
       {
         title: "Physical Therapy:",
@@ -1162,8 +1193,8 @@ export const EMERGENCY_MEDICAL_CONDITION = {
 export const HAND_UPPER_EXTREMITY_ORTHOPEDIC = {
   COMMON_CONDITIONS: {
     title: "Common Conditions Treated",
-    text: "Our Hand and Upper Extremities Surgeon is skilled in diagnosing and treating a wide range of conditions affecting the hands, wrists, elbows, and shoulders. These conditions can range from acute injuries to chronic disorders, and our approach is always tailored to meet the unique needs of each patient. We are dedicated to providing the highest standard of care to ensure the best possible outcomes.",
-    conditions: [
+    text: `Our Hand and Upper Extremities Surgeon is skilled in diagnosing and treating a wide range of conditions affecting the hands, wrists, elbows, and shoulders. These conditions can range from acute injuries to chronic disorders, and our approach is always tailored to meet the unique needs of each patient. We are dedicated to providing the highest standard of care to ensure the best possible outcomes.\n\n Key Conditions Our Specialist Treats`,
+    points: [
       {
         title: "Carpal Tunnel Syndrome:",
         text: "A common condition causing pain, numbness, and tingling in the hand and arm.",
@@ -1198,8 +1229,8 @@ export const HAND_UPPER_EXTREMITY_ORTHOPEDIC = {
   },
   REHABILITATION_RECOVERY: {
     title: "Rehabilitation and Recovery",
-    text: "Rehabilitation and recovery are critical components of the healing process following hand and upper extremity surgeries. This journey is tailored to each patient’s specific needs, focusing on restoring functionality, reducing pain, and preventing further injury. Our dedicated team employs a variety of techniques and therapies to ensure optimal recovery and return to daily activities.",
-    elements: [
+    text: "Rehabilitation and recovery are critical components of the healing process following hand and upper extremity surgeries. This journey is tailored to each patient’s specific needs, focusing on restoring functionality, reducing pain, and preventing further injury. Our dedicated team employs a variety of techniques and therapies to ensure optimal recovery and return to daily activities.\n\nKey Elements of Rehabilitation and Recovery:",
+    points: [
       {
         title: "Physical Therapy Techniques:",
         text: "Utilizing exercises and therapies to improve movement, strength, and flexibility.",

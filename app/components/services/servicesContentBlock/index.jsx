@@ -7,7 +7,7 @@ const ServicesContentBlock = ({ content }) => {
       <h1 className="text-[#000000] text-[32px] font-semibold leading-[48px] flex justify-start w-full mb-2">
         {content.title}
       </h1>
-      <p className="mb-4">{content.text}</p>
+      <p className="mb-4 handleNewLine text-[#646464]">{content.text}</p>
       <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {content.points?.map((point, index) => (
           <li key={index} className="w-full lg:max-w-[380px] flex gap-4 px-3 mb-2">
