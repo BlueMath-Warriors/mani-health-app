@@ -8,7 +8,7 @@ const ExpertWitnessSection = () => {
     >
       <div className="max-w-[1350px] expert-witness-bg flex flex-wrap justify-between items-center py-[45px] px-[24px] md:px-[40px] lg:px-[75px]">
         <div className="w-full md:w-1/2 flex flex-col">
-          <h1 className="text-[25px] lg:text-4xl text-[#728452] lg:leading-[54px] font-semibold mb-6">
+          <h1 className="text-4xl text-[#728452] lg:leading-[54px] font-semibold mb-6">
             Expert Witness Collaboration
           </h1>
           <p className="text-[#33302B] text-[18px] mb-6">
