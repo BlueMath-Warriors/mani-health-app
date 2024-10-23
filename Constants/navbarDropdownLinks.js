@@ -14,23 +14,23 @@ export const SERVICES_LINKS = [
 export const LEGAL_SUPPORT_LINKS = [
   {
     name: "Personal Injury Evaluation",
-    destination: "/",
+    destination: "/services/personal-injury-evaluation",
   },
   {
     name: "Expert Medical Advisors",
-    destination: "/",
+    destination: "/services/expert-medical-advisors",
   },
   {
     name: "Independent Medical Evaluation (IME)",
-    destination: "/",
+    destination: "/services/independent-medical-evaluation-ime",
   },
   {
     name: "Expert Witness Reports",
-    destination: "/",
+    destination: "/services/expert-witness-reports",
   },
   {
     name: "Emergency Medical Condition (EMC) Evaluation",
-    destination: "/",
+    destination: "/services/emergency-medical-condition-emc-evaluation",
   },
 ];
 
