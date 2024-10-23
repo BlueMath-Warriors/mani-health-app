@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ServicesContentBlock from "../../servicesContentBlock";
 import { COMPREHENSIVE_ORTHOPEDIC_CARE } from "@/Constants/servicesData";

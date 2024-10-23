@@ -47,5 +47,5 @@ export const QUICK_LINKS = [
   { name: "Legal Support", destination: "/legal-support", hasDropdown: true, linksName: LEGAL_SUPPORT_LINKS  },
   { name: "Workers' Comp", destination: "/workers-comp", hasDropdown: true, linksName: WORKERS_COMP_LINKS },
   { name: "Senior Living", destination: "/senior-living", hasDropdown: false, },
-  { name: "Contact", destination: "/contact", hasDropdown: false, },
+  { name: "Contact Us", destination: "/contact", hasDropdown: false, },
 ];
