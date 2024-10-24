@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
+import BreadCrumb from "./components/layout/BreadCrumb";
 import { Poppins } from "next/font/google";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html className={`${poppins.className} antialiased`} lang="en">
       <body>
         <Header />
+        <BreadCrumb/>
         {children}
         <Footer />
       </body>
