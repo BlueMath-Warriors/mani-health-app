@@ -304,6 +304,22 @@ textarea:not(:placeholder-shown) ~ label {
   animation-delay: .1s;
 }
 
+.law-picture{
+  background-image: 
+    linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 59.38%),
+    url('/images/lawsuit.png');
+    background-size: auto;
+  background-repeat: repeat-y;
+}
+
+.expert-witness-bg{
+  background-image: 
+    url('/images/Legal_Sections_bg.png');
+    background-size: cover;
+    background-position: 50%;
+  background-repeat: no-repeat;
+}
+
 .handleNewLine {
   white-space: pre-line;
 }
