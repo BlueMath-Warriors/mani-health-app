@@ -85,3 +85,21 @@ export const ABOUT_LIST_CONTENT = [
       "Reliable supply of medications and medical equipment for nursing home residents.",
   },
 ];
+
+export const SOCIAL_MEDIA_CONTENT = [
+  {
+    id: "facebook",
+    icon: "/images/socials/facebook.svg",
+    link: "https://web.facebook.com/AlManiHealthInstituteOfficial",
+  },
+  {
+    id: "instagram",
+    icon: "/images/socials/instagram.svg",
+    link: "https://instagram.com/almanihealthinstituteofficial",
+  },
+  {
+    id: "linkedin",
+    icon: "/images/socials/linkedin.svg",
+    link: "https://www.linkedin.com/in/al-mani-health-institute-14b612202/",
+  },
+];

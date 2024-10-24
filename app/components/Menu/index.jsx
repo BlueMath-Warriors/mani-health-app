@@ -15,16 +15,17 @@ const NavItem = ({
 }) => {
   return (
     <li
-      className={`p-4 ${
+      className={`py-4 ${
         label !== "Contact" ? "border-b-2 border-gray-300" : null
       } relative group flex justify-between`}
     >
       <Link
         href={href}
-        className="flex justify-between items-center"
+        className="relative flex items-center hover-mask ml-4"
         onClick={() => setIsOpen(false)}
       >
-        <p>{label}</p>
+        <span className="mask-lnk">{label}</span>
+        <span className="mask-lnk mask-lnk-hover">{label}</span>
       </Link>
       {dropdownLinks && (
         <Image

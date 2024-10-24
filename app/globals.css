@@ -42,7 +42,7 @@
     var(--color-secondary) 100%
   );
 }
-*{
+* {
   transition: all 0.3s ease;
 }
 
@@ -216,15 +216,9 @@ textarea:not(:placeholder-shown) ~ label {
     rgba(255, 211, 106, 0) 100.5%
   );
 }
-
 .custom-dots {
-  display: flex !important;
+  display: flex;
   gap: 8px;
-  justify-content: flex-start;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  margin-right: auto !important;
   z-index: 10;
 }
 
@@ -286,7 +280,6 @@ textarea:not(:placeholder-shown) ~ label {
   transition: all 0.3s ease;
 }
 
-
 @keyframes slideInUp {
   0% {
     transform: translateY(100%);
@@ -298,29 +291,79 @@ textarea:not(:placeholder-shown) ~ label {
   }
 }
 
-
-.animate-1{
-  animation: slideInUp .3s cubic-bezier(.25,.46,.45,.94) both;
-  animation-delay: .1s;
+.animate-1 {
+  animation: slideInUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.1s;
 }
 
-.law-picture{
-  background-image: 
-    linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 59.38%),
-    url('/images/lawsuit.png');
-    background-size: auto;
+.law-picture {
+  background-image: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 59.38%
+    ),
+    url("/images/lawsuit.png");
+  background-size: auto;
   background-repeat: repeat-y;
 }
 
-.expert-witness-bg{
-  background-image: 
-    url('/images/Legal_Sections_bg.png');
-    background-size: cover;
-    background-position: 50%;
+.expert-witness-bg {
+  background-image: url("/images/Legal_Sections_bg.png");
+  background-size: cover;
+  background-position: 50%;
   background-repeat: no-repeat;
 }
 
 .handleNewLine {
   white-space: pre-line;
 }
+
+.hover-mask {
+  position: relative;
+  overflow-y: hidden;
+}
+
+.hover-mask .mask-lnk {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+}
+
+.hover-mask:hover .mask-lnk {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  transition: opacity 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    color 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+  animation-delay: 150ms;
+}
+
+.hover-mask .mask-lnk-hover {
+  position: absolute;
+  opacity: 0;
+  color: #fff;
+  transform: translateY(40px);
+  -webkit-transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    color 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+}
+
+.hover-mask:hover .mask-lnk-hover {
+  position: relative;
+  opacity: 1;
+  color: #ce9100;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  animation-delay: 150ms;
+  transition: opacity 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    color 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+}
+
+.slick-slider div { transition: none; }
 
