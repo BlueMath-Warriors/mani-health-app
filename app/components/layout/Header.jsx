@@ -46,11 +46,19 @@ const Header = () => {
     <>
       <div className="hidden large:block bg-neutral py-4 text-white text-sm font-normal">
         <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] min-[1331px]:px-24 mx-auto whitespace-nowrap">
-          <p className="">Phone: (954)-633-5454</p>
+          <p className="">
+            Phone:{" "}
+            <a href="tel:9546335454" className="hover:text-primary">
+              (954)-633-5454
+            </a>
+          </p>
           <ul className="flex items-center contact-info">
             <li>
               Email:{" "}
-              <a href="mailto:info@almaniinstitute.org">
+              <a
+                href="mailto:info@almaniinstitute.org"
+                className="hover:text-primary"
+              >
                 info@almaniinstitute.org
               </a>
             </li>
@@ -75,7 +83,7 @@ const Header = () => {
       </div>
       <div className="bg-white py-4 text-[#33302B] text-sm font-normal relative">
         <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] large:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
-          <div className="w-[100px] h-[50px]">
+          <Link href="/" className="w-[100px] h-[50px]">
             <Image
               src={"/images/Al-Mani-logo.svg"}
               height={50}
@@ -83,7 +91,7 @@ const Header = () => {
               alt={"Al Mani Logo"}
               className="h-full w-full"
             />
-          </div>
+          </Link>
           <ul className="hidden large:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
             {QUICK_LINKS.map((item, index) => (
               <NavItem
