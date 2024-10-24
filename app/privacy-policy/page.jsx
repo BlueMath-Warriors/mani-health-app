@@ -7,17 +7,7 @@ import {
   TYPES_OF_PERSONAL_INFORMATION,
 } from "@/Constants/privacyPolicyData";
 import React from "react";
-
-const TitleAndText = ({ details }) => {
-  return (
-    <>
-      <h2 className="font-medium text-[26px] md:text-[28px] lg:text-[32px] leading-[27px] sm:leading-[32px] md:leading-[38px] mb-2 md:mb-3">
-        {details.title}
-      </h2>
-      <p className="leading-[19.2px] mb-4">{details.content}</p>
-    </>
-  );
-};
+import { TitleAndText } from "../components/common/TitleAndText";
 
 const PrivacyPolicy = () => {
   return (
