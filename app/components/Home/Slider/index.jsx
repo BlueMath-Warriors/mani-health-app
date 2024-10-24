@@ -105,10 +105,12 @@ const SlickCarousel = () => {
               <div className="flex items-start justify-center h-full bg-black bg-opacity-30 home-slider-gradient px-3 sm:px-8 ">
                 <div className="max-w-[1450px] w-full text-center sm:text-left px-0 sm:px-24 pt-24 sm:pt-[146px]">
                   <div className="flex flex-col gap-4 max-w-[800px]">
-                    <p className={`text-lg sm:text-2xl font-medium text-[#556B2F]`}>
+                    <p
+                      className={`text-lg leading-normal sm:text-2xl font-medium text-[#556B2F]`}
+                    >
                       {slide.service}
                     </p>
-                    <p className="leading-normal text-2xl sm:text-3xl tablet:text-[40px] large:text-[57px] font-semibold mb-2">
+                    <p className="tablet:leading-normal text-2xl sm:text-3xl tablet:text-[40px] large:text-[57px] font-semibold mb-2">
                       {slide.title}
                     </p>
                     <p className="font-medium text-[#403d39] mb-4">
