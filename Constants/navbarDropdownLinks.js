@@ -1,5 +1,5 @@
 export const SERVICES_LINKS = [
-  { name: "Comprehensive Orthopaedic Care", destination: "/services/comprehensive-orthopedic-care" },
+  { name: "Comprehensive Orthopedic Care", destination: "/services/comprehensive-orthopedic-care" },
   { name: "Enhanced Recovery After Surgery (ERAS)", destination: "/services/enhanced-recovery-after-surgery-eras" },
   { name: "Durable Medical Equipment (DME)", destination: "/services/durable-medical-equipment-dme" },
   { name: "Revitalize and Repair Solutions", destination: "/services/revitalize-repair-solutions" },
