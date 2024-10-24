@@ -42,7 +42,7 @@
     var(--color-secondary) 100%
   );
 }
-*{
+* {
   transition: all 0.3s ease;
 }
 
@@ -286,7 +286,6 @@ textarea:not(:placeholder-shown) ~ label {
   transition: all 0.3s ease;
 }
 
-
 @keyframes slideInUp {
   0% {
     transform: translateY(100%);
@@ -298,10 +297,9 @@ textarea:not(:placeholder-shown) ~ label {
   }
 }
 
-
-.animate-1{
-  animation: slideInUp .3s cubic-bezier(.25,.46,.45,.94) both;
-  animation-delay: .1s;
+.animate-1 {
+  animation: slideInUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.1s;
 }
 
 .law-picture{
@@ -324,3 +322,11 @@ textarea:not(:placeholder-shown) ~ label {
   white-space: pre-line;
 }
 
+.bradcrumb-bg {
+  background: rgba(0, 0, 128, 0.6);
+  background-blend-mode: multiply;
+}
+
+.bradcrumb-gradient {
+  background-image: linear-gradient(270deg, hsla(42, 68%, 65%, 0.09) 23.37%, #faf4e6 86.19%);
+}
