@@ -1,5 +1,5 @@
 export const SERVICES_LINKS = [
-  { name: "Comprehensive Orthopaedic Care", destination: "/services/comprehensive-orthopedic-care" },
+  { name: "Comprehensive Orthopedic Care", destination: "/services/comprehensive-orthopedic-care" },
   { name: "Enhanced Recovery After Surgery (ERAS)", destination: "/services/enhanced-recovery-after-surgery-eras" },
   { name: "Durable Medical Equipment (DME)", destination: "/services/durable-medical-equipment-dme" },
   { name: "Revitalize and Repair Solutions", destination: "/services/revitalize-repair-solutions" },
@@ -35,9 +35,9 @@ export const LEGAL_SUPPORT_LINKS = [
 ];
 
 export const WORKERS_COMP_LINKS = [
-  { name: "Adjusters", destination: "/" },
-  { name: "Lawyers and Attorneys", destination: "/" },
-  { name: "Payers", destination: "/" },
+  { name: "Adjusters", destination: "/workers-comp/adjusters" },
+  { name: "Lawyers and Attorneys", destination: "/workers-comp/lawyers-attorneys" },
+  { name: "Payers", destination: "/workers-comp/payers" },
 ];
 
 export const QUICK_LINKS = [
