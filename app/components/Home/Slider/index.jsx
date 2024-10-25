@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "../../common/Button";
+import PlatformSection from "./platformSection";
 import { useRouter } from "next/navigation";
 
 const slidesData = [
@@ -45,8 +46,8 @@ const slidesData = [
 const SlickCarousel = () => {
   const [isInView, setIsInView] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [animateClasses, setAnimateClasses] = useState({});
-  const carouselRef = useRef(null);
+  const carouselRef = useRef(null); // Reference to the slider container
+  const sliderRef = useRef(null); // Reference to the Slider instance
   const router = useRouter();
 
   const handleClick = (btnLink) => {
@@ -73,31 +74,20 @@ const SlickCarousel = () => {
     };
   }, []);
 
-  const handleBeforeChange = (newIndex) => {
+  const handleBeforeChange = (oldIndex, newIndex) => {
     setCurrentSlide(newIndex);
-    setTimeout(() => {
-      setAnimateClasses({});
-    }, 10);
-  };
-
-  const handleAfterChange = (newIndex) => {
-    setCurrentSlide(newIndex);
-    setTimeout(() => {
-      setAnimateClasses({ 1: "animate-1" });
-    }, 10);
   };
 
   const settings = {
-    dots: true,
+    dots: false, // Disable default dots
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: isInView,
     autoplaySpeed: 6000,
-    dotsClass: "custom-dots",
     beforeChange: handleBeforeChange,
-    afterChange: handleAfterChange,
+    ref: sliderRef, // Set the ref on the slider instance
   };
 
   return (
@@ -109,27 +99,27 @@ const SlickCarousel = () => {
         {slidesData.map((slide, index) => (
           <div key={`carousel-slide-${index}`}>
             <div
-              className="bg-cover bg-center h-[700px] md:h-[800px] "
+              className="bg-cover bg-center h-[700px] md:h-[800px] relative"
               style={{ backgroundImage: `url('${slide.bgImage}')` }}
             >
-              <div className="flex items-start justify-center h-full bg-black bg-opacity-30 home-slider-gradient px-8 ">
-                <div className="max-w-[1450px] w-full px-24 pt-[146px] relative">
+              <div className="flex items-start justify-center h-full bg-black bg-opacity-30 home-slider-gradient px-3 sm:px-8 ">
+                <div className="max-w-[1450px] w-full text-center sm:text-left px-0 sm:px-24 pt-24 sm:pt-[146px]">
                   <div className="flex flex-col gap-4 max-w-[800px]">
                     <p
-                      className={`text-2xl font-medium text-[#556B2F] ${"animate-1"}`}
+                      className={`text-lg leading-normal sm:text-2xl font-medium text-[#556B2F]`}
                     >
                       {slide.service}
                     </p>
-                    <p className="text-[57px] font-semibold mb-2">
+                    <p className="tablet:leading-normal text-2xl sm:text-3xl tablet:text-[40px] large:text-[57px] font-semibold mb-2">
                       {slide.title}
                     </p>
                     <p className="font-medium text-[#403d39] mb-4">
                       {slide.detail}
                     </p>
-                    <div className="flex w-full items-center justify-start mt-12 gap-4">
+                    <div className="flex w-full items-center justify-center sm:justify-start mt-4 sm:mt-12 gap-4 home-btn-container">
                       <Button
                         width="fit"
-                        className="!text-base"
+                        className="!text-xs sm:!text-base"
                         onClick={() => handleClick(slide.btnLink)}
                       >
                         {slide.btnText}
@@ -137,11 +127,28 @@ const SlickCarousel = () => {
                       <Button
                         variant="outline"
                         width="fit"
-                        className="!text-base"
+                        className="!text-xs sm:!text-base"
                       >
                         Contact Us
                       </Button>
                     </div>
+                    <div className="flex w-full justify-center sm:justify-start">
+                      <ul className="relative custom-dots mt-6">
+                        {slidesData.map((_, index) => (
+                          <li
+                            key={index}
+                            className={
+                              currentSlide === index ? "slick-active" : ""
+                            }
+                            onClick={() => sliderRef.current.slickGoTo(index)}
+                          >
+                            <button type="button"></button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <PlatformSection />
                   </div>
                 </div>
               </div>
