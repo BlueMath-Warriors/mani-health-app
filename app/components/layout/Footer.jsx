@@ -3,6 +3,7 @@ import { APPOINTMENT_DAYS, SOCIAL_LINKS } from "@/Constants/footerData";
 import { QUICK_LINKS, SERVICES_LINKS } from "@/Constants/navbarDropdownLinks";
 import Image from "next/image";
 import Link from "next/link";
+import SocialLink from "./SocialLinks";
 
 const Footer = () => {
   return (
@@ -11,12 +12,14 @@ const Footer = () => {
     >
       <div className="max-w-[1320px] flex flex-wrap justify-between responsive-padding md:ml-4 lg:ml-0">
         <div className="w-full md:w-1/2 lg:w-[30%] px-3">
-          <Image
-            src={"/images/logo-white.svg"}
-            alt={"Al-mani Logo"}
-            height={100}
-            width={120}
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/images/logo-white.svg"}
+              alt={"Al-mani Logo"}
+              height={100}
+              width={120}
+            />
+          </Link>
           <p className="my-8 leading-4">
             Get in touch with AMHI Pharmacy for any inquiries or to schedule an
             appointment.
@@ -38,7 +41,7 @@ const Footer = () => {
           <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
           <ul>
             {SERVICES_LINKS.map((service, index) => (
-              <li key={index} className="leading-4 mb-3">
+              <li key={index} className="leading-4 mb-3 hover:scale-[1.02]">
                 <Link href={service.destination}>{service.name}</Link>
               </li>
             ))}
@@ -51,7 +54,7 @@ const Footer = () => {
           <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
           <ul>
             {QUICK_LINKS.map((service, index) => (
-              <li key={index} className="leading-4 mb-3">
+              <li key={index} className="leading-4 mb-3 hover:scale-[1.02]">
                 <Link href={service.destination}>{service.name}</Link>
               </li>
             ))}
@@ -66,7 +69,7 @@ const Footer = () => {
             <li className="flex">
               <p className="w-1/4 lg:w-[28%] xl:w-1/4">Address:</p>
               <a
-                className="w-3/4 lg:w-[72%] xl:w-3/4"
+                className="w-3/4 lg:w-[72%] xl:w-3/4 hover:scale-[1.02]"
                 href="https://maps.app.goo.gl/8qzySpCUDJ1Afa1Y7"
               >
                 7710 NW 71st Court, Suite 201 A, Tamarac, FL 65355
@@ -74,35 +77,29 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <p className="w-1/4">Email:</p>
-              <a href="mailto:info@almaniinstitute.org">
+              <a
+                href="mailto:info@almaniinstitute.org"
+                className="hover:scale-[1.02]"
+              >
                 info@almaniinstitute.org
               </a>
             </li>
             <li className="flex items-center">
               <p className="w-1/4">Phone:</p>
-              <p>(954)-633-5454</p>
+              <a href="tel:9546335454" className="hover:scale-[1.02]">
+                (954)-633-5454
+              </a>
             </li>
             <li className="flex items-center mb-4">
               <p className="w-1/4">Fax:</p>
-              <p>(954)-678-2916</p>
+              <a href="tel:9546782916" className="hover:scale-[1.02]">
+                (954)-678-2916
+              </a>
             </li>
           </ul>
           <div className="flex gap-1">
             {SOCIAL_LINKS.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-[50px] bg-[#6B8E23] h-[35px] w-[35px] flex justify-center items-center"
-              >
-                <Image
-                  src={link.src}
-                  alt={link.alt}
-                  height={link.height}
-                  width={link.width}
-                />
-              </a>
+              <SocialLink link={link} key={index} />
             ))}
           </div>
         </div>
