@@ -2,11 +2,10 @@
 import ServicesCard from "../../common/ServicesCard";
 import { WHAT_WE_OFFER_CARDS_CONTENT } from "@/Constants/PageContent/home";
 import Button from "../../common/Button";
+import { useRouter } from "next/navigation";
 
 const WhatWeOffer = () => {
-  const handleContact = () => {
-    
-  };
+  const router = useRouter();
 
   return (
     <div className="max-w-[1320px] mx-auto mt-11 px-3 py-11 flex flex-col gap-4 items-center justify-center w-full text-center ">
@@ -25,10 +24,15 @@ const WhatWeOffer = () => {
             image={content.image}
             title={content.title}
             caption={content.caption}
+            link={content.link}
           />
         ))}
       </div>
-      <Button width="fit" className="mt-11 !text-base" onClick={handleContact}>
+      <Button
+        width="fit"
+        className="mt-11 !text-base"
+        onClick={() => router.push("/services")}
+      >
         See More Services
       </Button>
     </div>

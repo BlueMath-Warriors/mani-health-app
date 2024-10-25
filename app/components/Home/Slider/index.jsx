@@ -128,6 +128,7 @@ const SlickCarousel = () => {
                         variant="outline"
                         width="fit"
                         className="!text-xs sm:!text-base"
+                        onClick={() => handleClick("/contact")}
                       >
                         Contact Us
                       </Button>
