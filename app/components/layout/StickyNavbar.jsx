@@ -8,7 +8,7 @@ import { QUICK_LINKS } from "@/Constants/navbarDropdownLinks";
 const NavItem = ({ label, href, links, hasDropdown = false }) => {
   return (
     <li className="relative group flex justify-between items-center gap-[9px] cursor-pointer h-full">
-      <Link href={href} className="flex justify-between items-center h-full">
+      <Link href={href} className="flex justify-between items-center h-full hover:text-primary">
         <p>{label}</p>
       </Link>
       {hasDropdown && (

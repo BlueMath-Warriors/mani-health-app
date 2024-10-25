@@ -106,16 +106,9 @@ const Footer = () => {
       </div>
       <div className="max-w-[1320px] w-full responsive-padding flex flex-col md:flex-row justify-between text-base md:ml-7 lg:ml-0">
         <div className="flex flex-wrap items-center max-[396px]:justify-center px-3 mb-4">
-          <p className="whitespace-nowrap">© Copyright 2024 revealsite By</p>{" "}
-          <a href="https://revealsite.com/" className="relative">
-            <Image
-              src={"/images/revealsite-logo.svg"}
-              alt="revealsite logo"
-              width={70}
-              height={24}
-              className="mb-2 ml-2"
-            />
-          </a>
+          <p className="whitespace-nowrap">
+            © Copyright 2024 AL MANI HEALTH INSTITUTE
+          </p>
         </div>
         <div className="flex gap-4 px-3 mb-4">
           <Link href={"/terms-of-use"}>Terms Of Use</Link>
