@@ -1,11 +1,15 @@
+"use client";
 import Image from "next/image";
-const ServiceCard = ({ bgImage, icon, title, caption }) => {
+import { useRouter } from "next/navigation";
+const ServiceCard = ({ bgImage, icon, title, caption, link }) => {
+  const router = useRouter();
   return (
     <div
       className="group service-card-2 relative overflow-hidden flex items-end bg-cover bg-center rounded-lg h-[415px] w-[350px] custom-transition text-left p-6 cursor-pointer"
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(217, 217, 217, 0) 2.29%, #2f2100 100%), url(${bgImage})`,
       }}
+      onClick={() => router.push(link)}
     >
       <p className="text-white text-2xl font-semibold block group-hover:hidden">
         {title}

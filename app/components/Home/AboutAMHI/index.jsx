@@ -1,9 +1,13 @@
+"use client";
 import Button from "../../common/Button";
 import List from "../../common/List";
 import Image from "next/image";
 import { ABOUT_LIST_CONTENT } from "@/Constants/PageContent/home";
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 const AboutAMHI = () => {
+  const router = useRouter();
   return (
     <div className="flex items-center justify-center bg-[#fbfbfb]">
       <div className="grid mid:grid-cols-2 w-full max-w-[1320px] gap-4 items-start justify-center text-left px-3 py-11">
@@ -24,7 +28,11 @@ const AboutAMHI = () => {
             care and effective support for all involved.
           </p>
           <List items={ABOUT_LIST_CONTENT} />
-          <Button width="fit" className="!text-base mt-12 mr-auto">
+          <Button
+            width="fit"
+            className="!text-base mt-12 mr-auto"
+            onClick={() => router.push("/about")}
+          >
             Learn More About Us
           </Button>
         </div>
