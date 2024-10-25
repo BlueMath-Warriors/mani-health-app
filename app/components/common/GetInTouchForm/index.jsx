@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Button from "../Button";
 
-const FormInput = ({ type, placeholder, value, onChange }) => {
+export const FormInput = ({ type, placeholder, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ const FormInput = ({ type, placeholder, value, onChange }) => {
   );
 };
 
-const TextAreaInput = ({ placeholder, value, onChange }) => {
+export const TextAreaInput = ({ placeholder, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
