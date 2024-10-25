@@ -319,6 +319,23 @@ textarea:not(:placeholder-shown) ~ label {
   white-space: pre-line;
 }
 
+.hand-shake-picture {
+  background-image: 
+    linear-gradient(270deg, rgba(226, 190, 105, 0.09) 23.37%, rgb(250, 244, 230) 86.19%),
+    url('/images/shakeHand.png');
+  background-position: right center; 
+  background-size: 65% 100%;
+  background-repeat: no-repeat;
+  background-color: rgb(250, 244, 230); 
+}
+
+@media (max-width: 1024px) {
+  .hand-shake-picture {
+    background-image: none; 
+    background-color: rgb(250, 244, 230); 
+  }
+}
+
 .hover-mask {
   position: relative;
   overflow-y: hidden;
