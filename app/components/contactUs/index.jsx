@@ -33,80 +33,74 @@ const ContactUs = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="max-w-[1320px] flex flex-col mt-[90px] w-full px-6">
-        <div className="flex flex-col  lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-0 px-4 py-8 text-center lg:text-left">
-          <div className="contact-info w-full lg:w-1/2 flex flex-col items-start text-left ">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-0 px-4 py-8 text-center lg:text-left">
+          {/* Contact Information Section */}
+          <div className="contact-info w-full lg:w-1/2 flex flex-col items-start text-left">
             <p className="text-4xl font-semibold mb-7 mx-auto lg:mx-0">
               Contact Information
             </p>
-            <div className="flex items-center w-full mt-2.5 mb-4 ">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2 text-nowrap">
-                Phone Number
-              </p>
-              <p className="text-[#403d39] w-3/5 px-2 text-right lg:text-left">
-                (954)-633-5454
-              </p>
-            </div>
+
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2 text-nowrap">
-                Fax Number
-              </p>
+              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Phone Number</p>
+              <a
+                href="tel:9546335454"
+                className="text-[#403d39] w-3/5 px-2 text-right lg:text-left hover:text-[#CE9100] transition-colors duration-300"
+              >
+                (954)-633-5454
+              </a>
+            </div>
+
+            <div className="flex items-center w-full mt-2.5 mb-4">
+              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Fax Number</p>
               <p className="text-[#403d39] w-3/5 px-2 text-right lg:text-left">
                 (954)-678-2916
               </p>
             </div>
 
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2 text-nowrap">
-                Email Address
-              </p>
-              <p className="text-[#403d39] w-3/5 px-2 text-right lg:text-left">
+              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Email Address</p>
+              <a
+                href="mailto:info@almaniinstitute.org"
+                className="text-[#403d39] w-3/5 px-2 text-right lg:text-left hover:text-[#CE9100] transition-colors duration-300"
+              >
                 info@almaniinstitute.org
-              </p>
+              </a>
             </div>
 
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2 text-nowrap">
-                Address
-              </p>
+              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Address</p>
               <p className="text-[#403d39] w-3/5 px-2 text-right lg:text-left">
                 7710 NW 71st Court, Suite 201 A, Tamarac, FL 65355
               </p>
             </div>
           </div>
 
-          <div className="working-hours lg:border-l-2 border-[#989694] lg:pl-14  w-full lg:w-1/2 flex flex-col items-start ">
+          {/* Working Hours Section */}
+          <div className="working-hours lg:border-l-2 border-[#989694] lg:pl-14 w-full lg:w-1/2 flex flex-col items-start">
             <p className="text-4xl font-semibold mb-7 mx-auto lg:mx-0">
-              {" "}
               Working Hours
             </p>
             <p className="mb-4 text-center">
               Since opening our doors, AMHI Pharmacy has been a cornerstone of
               health in our neighborhood.
             </p>
-
-            <div className="flex items-center justify-between w-full mt-2.5 mb-4 text-[#403d39] ">
-              <p>Tuesday</p>
-              <p className="">8:00 AM - 3:00 PM</p>
-            </div>
-
-            <div className="flex items-center justify-between w-full mt-2.5 mb-4 text-[#403d39] ">
-              <p>Wednesday</p>
-              <p className="">8:00 AM - 3:00 PM</p>
-            </div>
-
-            <div className="flex items-center justify-between w-full mt-2.5 mb-4 text-[#403d39] ">
-              <p>Thursday</p>
-              <p className="">8:00 AM - 3:00 PM</p>
-            </div>
-
-            <div className="flex items-center justify-between w-full mt-2.5 mb-4 text-[#403d39] ">
+            {["Tuesday", "Wednesday", "Thursday"].map((day) => (
+              <div
+                key={day}
+                className="flex items-center justify-between w-full mt-2.5 mb-4 text-[#403d39]"
+              >
+                <p>{day}</p>
+                <p>8:00 AM - 3:00 PM</p>
+              </div>
+            ))}
+            <div className="flex items-center justify-between w-full mt-2.5 mb-4 text-[#403d39]">
               <p>And by appointment</p>
             </div>
           </div>
         </div>
-        <div
-          className={`flex flex-col flex-grow text-base text-neutral font-normal p-[50px] `}
-        >
+
+        {/* Contact Form Section */}
+        <div className="flex flex-col text-base font-normal p-[50px]">
           <h1 className="text-[25px] lg:text-4xl font-semibold text-center sm:text-start mb-14 mt-4">
             Get In Touch With Us
           </h1>
@@ -166,7 +160,7 @@ const ContactUs = () => {
                 }
               />
             </div>
-            <div className="flex justify-center sm:justify-start">
+            <div className="flex justify-center sm:justify-start mt-6">
               <Button
                 type="submit"
                 variant="primary"
@@ -178,14 +172,11 @@ const ContactUs = () => {
             </div>
           </form>
         </div>
+
         {/* Google Map Section */}
         {/* <div className="mt-14 w-full">
           <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-            <GoogleMap
-              mapContainerStyle={mapStyles}
-              zoom={15}
-              center={defaultCenter}
-            >
+            <GoogleMap mapContainerStyle={mapStyles} zoom={15} center={defaultCenter}>
               <Marker position={defaultCenter} />
             </GoogleMap>
           </LoadScript>
