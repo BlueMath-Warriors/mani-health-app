@@ -3,13 +3,13 @@ import { useState } from "react";
 import { TextAreaInput, FormInput } from "../common/GetInTouchForm";
 import Button from "../common/Button";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
+import { submitContactForm } from "@/app/lib/api";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
-    phoneNumber: "",
+    phone_number: "",
     message: "",
   });
 
@@ -28,6 +28,17 @@ const ContactUs = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    console.log("Apple");
+    e.preventDefault();
+    try {
+      const result = await submitContactForm(formData);
+      console.log("Form submitted successfully:", result);
+    } catch (error) {
+      console.error("Failed to submit contact form:", error);
+    }
   };
 
   return (
@@ -104,25 +115,25 @@ const ContactUs = () => {
           <h1 className="text-[25px] lg:text-4xl font-semibold text-center sm:text-start mb-14 mt-4">
             Get In Touch With Us
           </h1>
-          <form className="w-full" onSubmit={() => {}}>
+          <form className="w-full" onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row justify-between gap-6 w-full mb-6">
               <FormInput
                 type="text"
                 placeholder="First Name*"
-                value={formData.firstName}
+                value={formData.first_name}
                 onChange={(e) =>
                   handleInputChange({
-                    target: { name: "firstName", value: e.target.value },
+                    target: { name: "first_name", value: e.target.value },
                   })
                 }
               />
               <FormInput
                 type="text"
                 placeholder="Last Name*"
-                value={formData.lastName}
+                value={formData.last_name}
                 onChange={(e) =>
                   handleInputChange({
-                    target: { name: "lastName", value: e.target.value },
+                    target: { name: "last_name", value: e.target.value },
                   })
                 }
               />
@@ -141,10 +152,10 @@ const ContactUs = () => {
               <FormInput
                 type="text"
                 placeholder="Phone number*"
-                value={formData.phoneNumber}
+                value={formData.phone_number}
                 onChange={(e) =>
                   handleInputChange({
-                    target: { name: "phoneNumber", value: e.target.value },
+                    target: { name: "phone_number", value: e.target.value },
                   })
                 }
               />

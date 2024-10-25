@@ -10,7 +10,11 @@ const BreadCrumb = () => {
   const pathParts = pathname.split("/").filter(Boolean);
 
   // If there are no parts (i.e., it's the base path), don't render the breadcrumb
-  if (pathParts.length === 0) {
+  if (
+    pathParts.length === 0 ||
+    pathname === "/privacy-policy" ||
+    pathname === "/terms-of-use"
+  ) {
     return null;
   }
 

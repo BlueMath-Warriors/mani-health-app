@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Button from "../Button";
+import { submitContactForm } from "@/app/lib/api";
 
 export const FormInput = ({ type, placeholder, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -72,10 +73,10 @@ export const TextAreaInput = ({ placeholder, value, onChange }) => {
 
 const GetInTouchForm = ({ contactUsPageFlow = false }) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
-    phoneNumber: "",
+    phone_number: "",
     message: "",
   });
 
@@ -87,10 +88,13 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    {
-      /*TODO: Add submit functionality */
+    try {
+      const result = await submitContactForm(formData);
+      console.log("Form submitted successfully:", result);
+    } catch (error) {
+      console.error("Failed to submit contact form:", error);
     }
   };
 
@@ -108,20 +112,20 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
           <FormInput
             type="text"
             placeholder="First Name*"
-            value={formData.firstName}
+            value={formData.first_name}
             onChange={(e) =>
               handleInputChange({
-                target: { name: "firstName", value: e.target.value },
+                target: { name: "first_name", value: e.target.value },
               })
             }
           />
           <FormInput
             type="text"
             placeholder="Last Name*"
-            value={formData.lastName}
+            value={formData.last_name}
             onChange={(e) =>
               handleInputChange({
-                target: { name: "lastName", value: e.target.value },
+                target: { name: "last_name", value: e.target.value },
               })
             }
           />
@@ -140,10 +144,10 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
           <FormInput
             type="text"
             placeholder="Phone number*"
-            value={formData.phoneNumber}
+            value={formData.phone_number}
             onChange={(e) =>
               handleInputChange({
-                target: { name: "phoneNumber", value: e.target.value },
+                target: { name: "phone_number", value: e.target.value },
               })
             }
           />

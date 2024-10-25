@@ -7,14 +7,14 @@ const StepThree = ({ accidentDetails, setAccidentDetails }) => {
       ...accidentDetails,
       [name]: value,
     });
-  };
+};
 
   return (
     <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
       <Input
         label="Date of Injury/Accident"
-        name="date"
-        value={accidentDetails.date}
+        name="date_of_injury"
+        value={accidentDetails.date_of_injury}
         onChange={handleChange}
         required
         type="date"

@@ -8,27 +8,27 @@ export const STEPS_TITLES = [
 ];
 
 export const INITIAL_PATIENT_INFO = {
-  fullName: "",
+  full_name: "",
   address: "",
-  phone: "",
-  employerName: "",
+  phone_number: "",
+  employer_name: "",
 };
 
 export const INITIAL_ACCIDENT_DETAILS = {
-  date: "",
+  date_of_injury: "",
   time: "",
   location: "",
   circumstance: "",
 };
 
 export const INITIAL_INSURANCE_INFO = {
-  company: "",
-  policyNumber: "",
-  claimNumber: "",
+  insurance_company: "",
+  policy_number: "",
+  claim_number: "",
 };
 
 export const INITIAL_ADJUSTER_INFO = {
-  fullName: "",
-  phoneNumber: "",
-  email: "",
+  adjuster_full_name: "",
+  adjsuter_phone_number: "",
+  adjsuter_email: "",
 };

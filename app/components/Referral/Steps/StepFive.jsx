@@ -13,8 +13,8 @@ const StepFive = ({ insuranceInfo, setInsuranceInfo }) => {
     <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
       <Input
         label="Insurance Company"
-        name="company"
-        value={insuranceInfo.company}
+        name="insurance_company"
+        value={insuranceInfo.insurance_company}
         onChange={handleChange}
         required
         className="col-span-12"
@@ -22,8 +22,8 @@ const StepFive = ({ insuranceInfo, setInsuranceInfo }) => {
 
       <Input
         label="Policy Number"
-        name="policyNumber"
-        value={insuranceInfo.policyNumber}
+        name="policy_number"
+        value={insuranceInfo.policy_number}
         onChange={handleChange}
         required
         className="col-span-6"
@@ -31,8 +31,8 @@ const StepFive = ({ insuranceInfo, setInsuranceInfo }) => {
 
       <Input
         label="Claim Number"
-        name="claimNumber"
-        value={insuranceInfo.claimNumber}
+        name="claim_number"
+        value={insuranceInfo.claim_number}
         onChange={handleChange}
         required
         className="col-span-6"

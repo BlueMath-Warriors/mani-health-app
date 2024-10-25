@@ -13,8 +13,8 @@ const StepTwo = ({ patientInfo, setPatientInfo }) => {
     <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
       <Input
         label="First Name"
-        name="fullName"
-        value={patientInfo.fullName}
+        name="full_name"
+        value={patientInfo.full_name}
         onChange={handleChange}
         required
         className="col-span-6"
@@ -30,8 +30,8 @@ const StepTwo = ({ patientInfo, setPatientInfo }) => {
 
       <Input
         label="Phone Number"
-        name="phone"
-        value={patientInfo.phone}
+        name="phone_number"
+        value={patientInfo.phone_number}
         onChange={handleChange}
         required
         className="col-span-6"
@@ -39,8 +39,8 @@ const StepTwo = ({ patientInfo, setPatientInfo }) => {
 
       <Input
         label="Employer Name"
-        name="employerName"
-        value={patientInfo.employerName}
+        name="employer_name"
+        value={patientInfo.employer_name}
         onChange={handleChange}
         className="col-span-6"
       />
