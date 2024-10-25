@@ -17,7 +17,7 @@ const PositionCard = ({
     >
       {/* Inner Div with Content */}
       <div className="w-full p-2 sm:p-4 md:p-6 rounded-xl flex flex-col gap-1 sm:gap-2 md:gap-4 items-center justify-center bg-[#faf4e6] ">
-        <Image src={img} width={257} height={166} alt="adjuster illustration" />
+        <Image src={img} width={257} height={166} alt="Adjuster illustration" />
         <p className="text-[10px] sm:text-sm text-[#2e3e50] font-semibold">
           {title}
         </p>
@@ -33,20 +33,20 @@ const StepOne = ({ position, setPosition, showError }) => {
         <PositionCard
           position={position}
           title={"Adjuster"}
-          value={"adjuster"}
-          img={"/illustrations/adjuster.svg"}
+          value={"Adjuster"}
+          img={"/illustrations/Adjuster.svg"}
           handleSelectPosition={() => {
-            setPosition("adjuster");
+            setPosition("Adjuster");
           }}
         />
 
         <PositionCard
           position={position}
           title={"Employer or Lawyer"}
-          value={"lawyers"}
-          img={"/illustrations/lawyers.svg"}
+          value={"Employer_or_Lawyer"}
+          img={"/illustrations/Employer_or_Lawyer.svg"}
           handleSelectPosition={() => {
-            setPosition("lawyers");
+            setPosition("Employer_or_Lawyer");
           }}
         />
       </div>

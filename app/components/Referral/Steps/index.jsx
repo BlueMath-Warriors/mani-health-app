@@ -15,6 +15,7 @@ import {
   INITIAL_INSURANCE_INFO,
   INITIAL_PATIENT_INFO,
 } from "@/app/constants/steps";
+import { submitReferralForm } from "@/app/lib/api";
 
 const Steps = ({ currentStep, nextStep, prevStep }) => {
   const [position, setPosition] = useState();
@@ -27,6 +28,38 @@ const Steps = ({ currentStep, nextStep, prevStep }) => {
   const [insuranceInfo, setInsuranceInfo] = useState(INITIAL_INSURANCE_INFO);
   const [adjusterInfo, setAdjusterInfo] = useState(INITIAL_ADJUSTER_INFO);
   const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  const handleReferralSubmission = async () => {
+    const formData = new FormData();
+
+    // Append non-file fields
+    formData.append("position", position);
+    Object.entries(patientInfo).forEach(([key, value]) =>
+      formData.append(key, value)
+    );
+    Object.entries(insuranceInfo).forEach(([key, value]) =>
+      formData.append(key, value)
+    );
+    Object.entries(accidentDetails).forEach(([key, value]) =>
+      formData.append(key, value)
+    );
+    Object.entries(adjusterInfo).forEach(([key, value]) =>
+      formData.append(key, value)
+    );
+
+    // Append file fields
+    uploadedFiles.forEach((file, index) => {
+      formData.append(`media_files[${index}]`, file);
+    });
+
+    try {
+      const response = await submitReferralForm(formData);
+      console.log("Form submitted successfully:", response);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
   const steps = [
     <StepOne
       key={1}
@@ -70,14 +103,13 @@ const Steps = ({ currentStep, nextStep, prevStep }) => {
         }
         break;
       case 2:
-        if (!patientInfo.fullName || !patientInfo.phone) {
-          console.log(patientInfo);
+        if (!patientInfo.full_name || !patientInfo.phone_number) {
           setShowError(true);
           return false;
         }
         break;
       case 3:
-        if (!accidentDetails.date) {
+        if (!accidentDetails.date_of_injury) {
           setShowError(true);
           return false;
         }
@@ -86,9 +118,9 @@ const Steps = ({ currentStep, nextStep, prevStep }) => {
         break;
       case 5:
         if (
-          !insuranceInfo.company ||
-          !insuranceInfo.policyNumber ||
-          !insuranceInfo.claimNumber
+          !insuranceInfo.insurance_company ||
+          !insuranceInfo.policy_number ||
+          !insuranceInfo.claim_number
         ) {
           setShowError(true);
           return false;
@@ -146,7 +178,7 @@ const Steps = ({ currentStep, nextStep, prevStep }) => {
       </div>
       <div className="flex w-full flex-col gap-4 my-4 md:my-12">
         {currentStep === 6 ? (
-          <Button onClick={handleSubmit}>
+          <Button onClick={handleReferralSubmission}>
             {loading ? "...submitting" : "Submit"}
           </Button>
         ) : (

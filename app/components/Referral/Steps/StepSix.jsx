@@ -13,24 +13,24 @@ const StepSix = ({ adjusterInfo, setAdjusterInfo }) => {
     <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
       <Input
         label="Adjuster’s Full Name"
-        name="fullName"
-        value={adjusterInfo.fullName}
+        name="adjsuter_full_name"
+        value={adjusterInfo.adjsuter_full_name}
         onChange={handleChange}
         className="col-span-12"
       />
 
       <Input
         label="Adjuster’s Phone Number"
-        name="phoneNumber"
-        value={adjusterInfo.phoneNumber}
+        name="adjsuter_phone_number"
+        value={adjusterInfo.adjsuter_phone_number}
         onChange={handleChange}
         className="col-span-6"
       />
 
       <Input
         label="Adjuster’s Email Address"
-        name="email"
-        value={adjusterInfo.email}
+        name="adjuster_email"
+        value={adjusterInfo.adjuster_email}
         onChange={handleChange}
         className="col-span-6"
       />
