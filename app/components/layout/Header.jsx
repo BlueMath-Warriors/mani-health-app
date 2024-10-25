@@ -6,8 +6,12 @@ import Link from "next/link";
 const NavItem = ({ label, href, links, hasDropdown = false }) => {
   return (
     <li className="relative group flex justify-between items-center gap-[9px] cursor-pointer h-full">
-      <Link href={href} className="flex justify-between items-center h-full">
-        <p>{label}</p>
+      <Link
+        href={href}
+        className="flex justify-between items-center h-full hover-mask relative"
+      >
+        <span className="mask-lnk">{label}</span>
+        <span className="mask-lnk mask-lnk-hover">{label}</span>
       </Link>
       {hasDropdown && (
         <Image
