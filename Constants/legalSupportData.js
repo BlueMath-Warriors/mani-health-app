@@ -2,14 +2,17 @@ export const EXPERT_EVALUATIONS = [
   {
     title: "Independent Medical Evaluation (IME)",
     text: "These reports offer unbiased, second-opinion assessments, crucial for workers' compensation and personal injury cases. They provide clear, objective evaluations of injuries and treatments, aiding in the fair resolution of legal disputes.",
+    link: "/services/independent-medical-evaluation-ime",
   },
   {
     title: "Emergency Medical Condition (EMC) Evaluation",
     text: "Our EMC Reports deliver detailed medical analyses, essential for understanding the severity and impact of accident-related injuries. These evaluations form the basis for accurate, informed legal claims and decisions.",
+    link: "/services/emergency-medical-condition-emc-evaluation",
   },
   {
     title: "Expert Witness Reports",
     text: "Specializing in specific medical issues, these reports are vital for legal cases. Prepared by medical expert witnesses, they blend clinical expertise with legal knowledge, offering clear, impactful insights for courtroom proceedings.",
+    link: "/services/expert-witness-reports",
   },
 ];
 
