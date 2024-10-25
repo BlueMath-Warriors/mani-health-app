@@ -8,7 +8,7 @@ export const PlatformSection = () => {
       <div className="hidden sm:block border-b border-[#282520] w-36" />
       <div className="flex items-center gap-4 sm:gap-7 pr-8 sm:pr-0">
         {SOCIAL_MEDIA_CONTENT.map((social, index) => (
-          <div className="flex items-center justify-center rounded-full bg-[#faf4e6] w-12 h-12">
+          <div key={`social-${index}`} className="flex items-center justify-center rounded-full bg-[#faf4e6] w-12 h-12">
             <Image
               src={social.icon}
               width={social.id === "facebook" ? 15 : 24}
