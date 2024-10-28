@@ -57,8 +57,8 @@ const StickyNavbar = () => {
 
   return (
     <div
-      className={`bg-white py-4 text-[#33302B] text-sm font-normal ${
-        isScrolled ? "fixed top-0 left-0 w-full shadow-lg z-50" : "relative"
+      className={`bg-white py-4 text-[#33302B] text-sm font-normal transition-transform duration-500 ease-in-out ${
+        isScrolled ? "fixed top-0 left-0 w-full shadow-lg z-50" : "relative bottom-[-80px] transform -translate-y-full"
       }`}
     >
       <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] large:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
