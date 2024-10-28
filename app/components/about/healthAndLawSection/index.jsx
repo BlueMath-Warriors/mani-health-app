@@ -6,7 +6,7 @@ import React from "react";
 const HealthAndLawSection = () => {
   return (
     <div
-      className={`bg-[#000000] text-white font-normal text-base flex justify-center py-12 px-6 Sm:px-12 md:px-16 ${poppins.className}`}
+      className={`bg-[#000000] text-white font-normal text-base flex justify-center py-12 px-6 Sm:px-12 md:px-16 large:px-24 ${poppins.className}`}
     >
       <div className="max-w-[1320px] flex flex-col lg:flex-row items-center">
         <div className="w-full lg:w-1/2 px-3">

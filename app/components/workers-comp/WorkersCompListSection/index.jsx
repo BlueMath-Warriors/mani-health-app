@@ -5,7 +5,7 @@ import CircleCheckSmall from "../../common/CircleCheckSmall";
 const WorkersCompListSection = ({ title="", content }) => {
   return (
     <div
-      className={`relative bg-white text-neutral font-normal leading-normal flex justify-center px-6 md:px-12 large:px-16 py-12`}
+      className={`relative bg-white text-neutral font-normal leading-normal flex justify-center px-6 md:px-12 large:px-20 py-12`}
     >
       <div className="max-w-[1700px] flex flex-col items-center justify-center">
         <h1 className={`text-base sm:text-xl lg:text-2xl font-medium text-[#212529] w-full text-center px-3 lg:text-start lg:self-start lg:max-w-[900px] mb-6 ${title === "" ? "hidden" :"block"}`}>
