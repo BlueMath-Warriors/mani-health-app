@@ -18,13 +18,26 @@ const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
         <p>{label}</p>
       </Link>
       {hasDropdown && (
-        <Image
-          src={"/images/arrow-down-black.svg"}
-          alt="arrow down"
-          height={11}
-          width={14}
-          className="transition-transform duration-0 group-hover:rotate-180"
-        />
+        <>
+          <Image
+            src="/images/arrow-down-yellow.svg"
+            alt="arrow down yellow"
+            height={11}
+            width={14}
+            className={`${
+              selected ? "block" : "hidden"
+            }  group-hover:block group-hover:rotate-180`}
+          />
+          {!selected && (
+            <Image
+              src="/images/arrow-down-black.svg"
+              alt="arrow down black"
+              height={11}
+              width={14}
+              className="group-hover:hidden group-hover:rotate-180"
+            />
+          )}
+        </>
       )}
       {hasDropdown && (
         <div className="absolute left-0 top-[69.5%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-20 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
