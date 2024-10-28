@@ -7,9 +7,11 @@ import {
   SENIOR_LIVING_TEXTS,
 } from "@/Constants/seniorLivingData";
 import { CircleCheck } from "../components/common/CircleCheck";
+import ReferralAction from "../components/common/ReferralAction";
 
 const SeniorLiving = () => {
   return (
+    <>
     <div
       className={`relative bg-white text-neutral font-normal leading-normal text-4xl flex justify-center py-[45px] Sm:py-[90px] px-[25px] ${poppins.className}`}
     >
@@ -55,6 +57,8 @@ const SeniorLiving = () => {
         </ul>
       </div>
     </div>
+    <ReferralAction />
+    </>
   );
 };
 
