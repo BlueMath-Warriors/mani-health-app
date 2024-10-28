@@ -4,11 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from "../Menu";
 import { QUICK_LINKS } from "@/Constants/navbarDropdownLinks";
+import { usePathname } from "next/navigation";
 
-const NavItem = ({ label, href, links, hasDropdown = false }) => {
+const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
   return (
     <li className="relative group flex justify-between items-center gap-[9px] cursor-pointer h-full">
-      <Link href={href} className="flex justify-between items-center h-full hover:text-primary">
+      <Link
+        href={href}
+        className={`flex justify-between items-center h-full hover:text-primary ${
+          selected ? "text-primary" : "text-neutral"
+        }`}
+      >
         <p>{label}</p>
       </Link>
       {hasDropdown && (
@@ -45,6 +51,7 @@ const NavItem = ({ label, href, links, hasDropdown = false }) => {
 
 const StickyNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,6 +86,7 @@ const StickyNavbar = () => {
               href={item.destination}
               hasDropdown={item.hasDropdown}
               links={item.linksName}
+              selected={pathname === item.destination}
             />
           ))}
         </ul>
