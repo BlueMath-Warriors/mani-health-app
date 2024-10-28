@@ -17,9 +17,15 @@ export const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html className={`${poppins.className} antialiased`} lang="en">
+      <head>
+        <link
+          rel="icon"
+          href="/images/Fav-Icon.svg"
+        />
+      </head>
       <body>
         <Header />
-        <BreadCrumb/>
+        <BreadCrumb />
         {children}
         <Footer />
       </body>
