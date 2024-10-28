@@ -21,7 +21,7 @@ const WhoWeServe = () => {
           recovery and management of injury cases.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex flex-wrap justify-center large:max-w-[1000px] desktop:max-w-[1320px] gap-8">
         {WHAT_WE_SERVE_CARDS_CONTENT.map((content, index) => (
           <ClientTypeCard
             icon={content.icon}
