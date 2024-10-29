@@ -22,12 +22,12 @@ const LegalSupportForInjurySection = () => {
             critical insights and expert opinions to aid in the resolution of
             legal disputes. Our services include:
           </p>
-          <h1 className="text-[#728452] text-[25px] lg:text-4xl font-semibold">
+          <h1 className="text-secondary text-[25px] lg:text-4xl font-semibold">
             Expert Evaluation and Reports
           </h1>
         </div>
         <DisplayPoints contentArray={EXPERT_EVALUATIONS} link={true} />
-        <h1 className="text-[#728452] text-[25px] lg:text-4xl font-semibold mb-8 mt-3">
+        <h1 className="text-secondary text-[25px] lg:text-4xl font-semibold mb-8 mt-3">
           Medical Services
         </h1>
         <DisplayPoints contentArray={MEDICAL_SERVICES} />

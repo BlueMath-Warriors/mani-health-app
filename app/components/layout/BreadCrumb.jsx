@@ -36,7 +36,7 @@ const BreadCrumb = () => {
         </div>
         <div className="flex  items-center breadcrumb-content pl-6 mid:pl-28 min-h-[50px] py-1.5 mid:py-2.5">
           <div className="flex items-center flex-wrap gap-x-2">
-            <div className="flex gap-2 cursor-pointer text-[#ce9100] hover:text-[#556b2f]">
+            <div className="flex gap-2 cursor-pointer text-primary hover:text-secondary">
               <Link href="/">
                 <div className="flex items-center gap-2">
                   <Image
