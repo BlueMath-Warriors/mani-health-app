@@ -67,6 +67,8 @@ const StickyNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { cookieAccepted } = useCheckCookies();
+  const shouldRender = cookieAccepted || !(pathname === "/terms-of-use" || pathname === "/privacy-policy");
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,7 +95,7 @@ const StickyNavbar = () => {
             className="h-full w-full"
           />
         </Link>
-        {cookieAccepted && (
+        {shouldRender && (
           <>
             <ul className="hidden large:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
               {QUICK_LINKS.map((item, index) => (

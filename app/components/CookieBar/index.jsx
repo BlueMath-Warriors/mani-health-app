@@ -1,5 +1,4 @@
 "use client";
-import useCheckCookies from "@/app/hooks/useCheckCookies";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,7 +6,6 @@ import React, { useEffect, useState } from "react";
 
 const CookieBar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { setCookieAccepted } = useCheckCookies();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -19,7 +17,7 @@ const CookieBar = () => {
 
   const handleAccept = () => {
     localStorage.setItem("cookieConsent", "true");
-    setCookieAccepted(true);
+    window.dispatchEvent(new Event("cookieConsentUpdated"));
     setIsVisible(false);
   };
 

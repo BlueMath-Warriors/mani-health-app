@@ -6,12 +6,13 @@ import {
   TERMS_MAPPING,
   TERMS_OF_USE,
 } from "@/Constants/termsOfUse";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TitleAndText } from "../components/common/TitleAndText";
 import useCheckCookies from "../hooks/useCheckCookies";
 
 const TermsOfUse = () => {
   const { cookieAccepted } = useCheckCookies();
+
   return (
     <div
       className={`relative ${

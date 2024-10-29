@@ -7,7 +7,7 @@ import {
   TABLE_DATA,
   TYPES_OF_PERSONAL_INFORMATION,
 } from "@/Constants/privacyPolicyData";
-import React, { useEffect } from "react";
+import React from "react";
 import { TitleAndText } from "../components/common/TitleAndText";
 import useCheckCookies from "../hooks/useCheckCookies";
 

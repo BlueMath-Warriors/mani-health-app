@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 
 const useCheckCookies = () => {
-  const [cookieAccepted, setCookieAccepted] = useState(() => {
-    return localStorage.getItem("cookieConsent") === "true";
-  });
-  const pathname = usePathname();
+  const [cookieAccepted, setCookieAccepted] = useState(
+    () => localStorage.getItem("cookieConsent") === "true"
+  );
 
   useEffect(() => {
-    const cookieConsent = localStorage.getItem("cookieConsent");
-    if (
-      (pathname === "/terms-of-use" || pathname === "/privacy-policy") &&
-      cookieConsent !== "true"
-    ) {
-      setCookieAccepted(false);
-    } else {
-      setCookieAccepted(true);
-    }
-  }, [pathname]);
+    const updateCookieAccepted = () => {
+      const consent = localStorage.getItem("cookieConsent") === "true";
+      setCookieAccepted(consent);
+    };
 
-  return { cookieAccepted, setCookieAccepted };
+    updateCookieAccepted();
+
+    window.addEventListener("storage", updateCookieAccepted);
+
+    window.addEventListener("cookieConsentUpdated", updateCookieAccepted);
+
+    return () => {
+      window.removeEventListener("storage", updateCookieAccepted);
+      window.removeEventListener("cookieConsentUpdated", updateCookieAccepted);
+    };
+  }, []);
+
+  return { cookieAccepted };
 };
 
 export default useCheckCookies;
