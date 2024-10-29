@@ -1,3 +1,4 @@
+"use client";
 import {
   CONTACT_US,
   DETAILS_MAP,
@@ -8,11 +9,13 @@ import {
 } from "@/Constants/privacyPolicyData";
 import React from "react";
 import { TitleAndText } from "../components/common/TitleAndText";
+import useCheckCookies from "../hooks/useCheckCookies";
 
 const PrivacyPolicy = () => {
+  const { cookieAccepted } = useCheckCookies();
   return (
     <div
-      className={`relative bg-white text-neutral font-normal leading-normal text-[13px] min-[370px]:text-sm min-[430px]:text-[15px] sm:text-base flex justify-center py-[48px] px-[25px]`}
+      className={`relative ${cookieAccepted? "pb-12" : "pb-[480px] sm:pb-[430px] md:pb-[420px] lg:pb-[370px] desktop:pb-64"} bg-white text-neutral font-normal leading-normal text-[13px] min-[370px]:text-sm min-[430px]:text-[15px] sm:text-base flex justify-center py-[48px] px-[25px]`}
     >
       <div className="sm:max-w-[516px] md:max-w-[696px] lg:max-w-[936px] large:max-w-[1116px] desktop:max-w-[1300px] flex flex-col items-start">
         <h1 className="font-medium text-[#212529] text-3xl sm:text-[32px] md:text-4xl lg:text-[40px] leading-[30px] sm:leading-[36px] md:leading-[42px] lg:leading-[48px] mb-2 md:mb-3">

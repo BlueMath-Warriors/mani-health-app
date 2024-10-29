@@ -5,6 +5,7 @@ import Image from "next/image";
 import Menu from "../Menu";
 import { QUICK_LINKS } from "@/Constants/navbarDropdownLinks";
 import { usePathname } from "next/navigation";
+import useCheckCookies from "@/app/hooks/useCheckCookies";
 
 const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
   return (
@@ -65,6 +66,7 @@ const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
 const StickyNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const { cookieAccepted } = useCheckCookies();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,19 +93,23 @@ const StickyNavbar = () => {
             className="h-full w-full"
           />
         </Link>
-        <ul className="hidden large:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
-          {QUICK_LINKS.map((item, index) => (
-            <NavItem
-              key={index}
-              label={item.name}
-              href={item.destination}
-              hasDropdown={item.hasDropdown}
-              links={item.linksName}
-              selected={pathname === item.destination}
-            />
-          ))}
-        </ul>
-        <Menu />
+        {cookieAccepted && (
+          <>
+            <ul className="hidden large:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
+              {QUICK_LINKS.map((item, index) => (
+                <NavItem
+                  key={index}
+                  label={item.name}
+                  href={item.destination}
+                  hasDropdown={item.hasDropdown}
+                  links={item.linksName}
+                  selected={pathname === item.destination}
+                />
+              ))}
+            </ul>
+            <Menu />
+          </>
+        )}
       </div>
     </div>
   );
