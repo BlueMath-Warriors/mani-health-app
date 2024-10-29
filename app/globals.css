@@ -334,6 +334,9 @@ textarea:not(:placeholder-shown) ~ label {
   left: 0;
   transform: translateY(0);
   -webkit-transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    color 0.7s cubic-bezier(0.165, 0.85, 0.45, 1),
+    transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
 }
 
 .hover-mask:hover .mask-lnk {
