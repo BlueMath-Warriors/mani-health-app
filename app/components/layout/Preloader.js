@@ -2,7 +2,15 @@
 import { useEffect, useState } from "react";
 const Preloader = () => {
   const [preloader, setPreloader] = useState(true);
+
   useEffect(() => {
+    setTimeout(() => {
+      const linesElement = document.querySelector(".lines");
+      if (linesElement) {
+        linesElement.className = "lines-off";
+      }
+    }, 3200);
+
     setTimeout(() => {
       document.querySelector(".lines").classList.add("ready");
     }, 3000);
