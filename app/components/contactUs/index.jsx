@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TextAreaInput, FormInput } from "../common/GetInTouchForm";
 import Button from "../common/Button";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
@@ -12,16 +12,47 @@ const ContactUs = () => {
     phone_number: "",
     message: "",
   });
+  const [location, setLocation] = useState({
+    lat: null,
+    lng: null,
+  });
 
   const mapStyles = {
     height: "400px",
     width: "100%",
+    marginBottom: "55px",
+    marginTop: "55px",
   };
 
   const defaultCenter = {
     lat: 26.2124,
     lng: -80.2498,
   };
+
+  const locationName = "Al Mani Health Institute, 7710 NW 71st Ct Suite 201, Tamarac, FL 33321, United States";
+
+  useEffect(() => {
+    const fetchCoordinates = async () => {
+      try {
+        const response = await fetch(
+          `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+            locationName
+          )}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+        );
+        const data = await response.json();
+        if (data.results[0]) {
+          const { lat, lng } = data.results[0].geometry.location;
+          setLocation({ lat, lng });
+        } else {
+          console.error("Location not found");
+        }
+      } catch (error) {
+        console.error("Error fetching location data:", error);
+      }
+    };
+
+    fetchCoordinates();
+  }, []);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -43,10 +74,10 @@ const ContactUs = () => {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="max-w-[1320px] flex flex-col mt-[90px] w-full px-6">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-0 px-4 py-8 text-center lg:text-left">
+      <div className="max-w-[1320px] flex flex-col mt-[90px] w-full ">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-0 px-4 py-8 text-center lg:text-left px-6">
           {/* Contact Information Section */}
-          <div className="contact-info w-full lg:w-1/2 flex flex-col items-start text-left">
+          <div className="contact-info w-full lg:w-1/2 flex flex-col items-start text-left ">
             <p className="text-4xl font-semibold mb-7 mx-auto lg:mx-0">
               Contact Information
             </p>
@@ -111,7 +142,7 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="flex flex-col text-base font-normal p-[50px]">
+        <div className="flex flex-col text-base font-normal w-full bg-[#fbfbfb] px-6 rounded-xl">
           <h1 className="text-[25px] lg:text-4xl font-semibold text-center sm:text-start mb-14 mt-4">
             Get In Touch With Us
           </h1>
@@ -185,13 +216,19 @@ const ContactUs = () => {
         </div>
 
         {/* Google Map Section */}
-        {/* <div className="mt-14 w-full">
-          <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-            <GoogleMap mapContainerStyle={mapStyles} zoom={15} center={defaultCenter}>
-              <Marker position={defaultCenter} />
+        <div className="mt-14 w-full">
+          <LoadScript
+            googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+          >
+            <GoogleMap
+              mapContainerStyle={mapStyles}
+              zoom={15}
+              center={location}
+            >
+              <Marker position={location} />
             </GoogleMap>
           </LoadScript>
-        </div> */}
+        </div>
       </div>
     </div>
   );
