@@ -1,69 +1,3 @@
-"use client";
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Menu from "../Menu";
-import { QUICK_LINKS } from "@/Constants/navbarDropdownLinks";
-import { usePathname } from "next/navigation";
-
-const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
-  return (
-    <li className="relative flex justify-between group items-center gap-[9px] cursor-pointer h-full ">
-      <Link
-        href={href}
-        className={`flex justify-between items-center h-full hover:text-primary  hover-mask ${
-          selected ? "text-primary" : "text-neutral"
-        }`}
-      >
-        <p className="mask-lnk">{label}</p>
-        <p className="mask-lnk-hover">{label}</p>
-      </Link>
-      {hasDropdown && (
-        <>
-          <Image
-            src="/images/arrow-down-yellow.svg"
-            alt="arrow down yellow"
-            height={11}
-            width={14}
-            className={`transition-all duration-300 ${
-              selected ? "block" : "hidden"
-            }  group-hover:block group-hover:rotate-180`}
-          />
-          {!selected && (
-            <Image
-              src="/images/arrow-down-black.svg"
-              alt="arrow down black"
-              height={11}
-              width={14}
-              className="group-hover:hidden group-hover:rotate-180"
-            />
-          )}
-        </>
-      )}
-      {hasDropdown && (
-        <div className="absolute left-0 top-[69.5%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-20 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
-          <ul className="text-sm top-full left-0">
-            {links?.map((link, index) => (
-              <li
-                key={index}
-                className="py-3 ml-3 border-b border-gray-300 last:border-none hover-mask"
-              >
-                <Link
-                  href={link.destination}
-                  className="break-words whitespace-normal"
-                >
-                  <p className="mask-lnk"> {link.name}</p>
-                  <p className="mask-lnk-hover"> {link.name}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </li>
-  );
-};
-
 const StickyNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -79,8 +13,8 @@ const StickyNavbar = () => {
 
   return (
     <div
-      className={`bg-white py-4 text-[#33302B] text-sm font-normal ${
-        isScrolled ? "fixed top-0 left-0 w-full shadow-lg z-50" : "relative"
+      className={`bg-white py-4 text-[#33302B] text-sm font-normal transition-all duration-500 ${
+        isScrolled ? "fixed top-0 left-0 w-full shadow-lg z-50 opacity-100 transform translate-y-0" : "relative opacity-0 -translate-y-full"
       }`}
     >
       <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] large:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
