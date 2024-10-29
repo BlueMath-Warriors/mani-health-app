@@ -10,7 +10,7 @@ const WhatWeOffer = () => {
   return (
     <div className="max-w-[1320px] mx-auto mt-11 px-3 py-11 flex flex-col gap-4 items-center justify-center w-full text-center ">
       <div className="flex flex-col gap-4 items-center justify-center w-3/5 mb-10">
-        <p className="text-[#556b2f] text-base md:text-2xl font-medium ">
+        <p className="text-[#f4538a] text-base md:text-2xl font-medium ">
           What We Offer?
         </p>
         <p className="text-[#282530] text-2xl md:text-4xl font-semibold mb-2 !leading-[150%]">

@@ -43,7 +43,7 @@ const Footer = () => {
           <h1 className="text-[20px] lg:text-[23px] font-bold mb-1">
             Services
           </h1>
-          <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
+          <div className="h-0.5 w-10 bg-[#59d5e0] mb-6 mt-2.5"></div>
           <ul>
             {SERVICES_LINKS.map((service, index) => (
               <li key={index} className="leading-4 mb-3 hover:scale-[1.02]">
@@ -56,7 +56,7 @@ const Footer = () => {
           <h1 className="text-[20px] lg:text-[23px] font-bold mb-1">
             Quick Links
           </h1>
-          <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
+          <div className="h-0.5 w-10 bg-[#59d5e0] mb-6 mt-2.5"></div>
           <ul>
             {QUICK_LINKS.map((service, index) => (
               <li key={index} className="leading-4 mb-3 hover:scale-[1.02]">
@@ -69,7 +69,7 @@ const Footer = () => {
           <h1 className="text-[20px] lg:text-[23px] font-bold mb-1">
             Contact Details
           </h1>
-          <div className="h-0.5 w-10 bg-[#CE9100] mb-6 mt-2.5"></div>
+          <div className="h-0.5 w-10 bg-[#59d5e0] mb-6 mt-2.5"></div>
           <ul className="flex flex-col gap-3">
             <li className="flex">
               <p className="w-1/4 lg:w-[28%] xl:w-1/4">Address:</p>
