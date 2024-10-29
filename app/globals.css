@@ -5,9 +5,9 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 :root {
-  --color-primary: #ce9100;
-  --color-primary-hover: #6b8e23;
-  --color-secondary: #556b2f;
+  --color-primary: #59d5e0;
+  --color-primary-hover: #f4538a;
+  --color-secondary: #f4538a;
   --color-secondary-hover: #bc8f8f;
   --color-neutral: #282520;
   --neutral-n-800: #33302b;
@@ -233,7 +233,7 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .custom-dots li.slick-active {
-  background-color: #ce9100;
+  background-color: #59d5e0;
 }
 
 .custom-dots li button {
@@ -361,7 +361,7 @@ textarea:not(:placeholder-shown) ~ label {
 .hover-mask:hover .mask-lnk-hover {
   position: relative;
   opacity: 1;
-  color: #ce9100;
+  color: #59d5e0;
   transform: translateY(0px);
   -webkit-transform: translateY(0px);
   animation-delay: 150ms;
@@ -425,7 +425,7 @@ textarea:not(:placeholder-shown) ~ label {
 .hover-mask:hover .mask-lnk-hover {
   position: relative;
   opacity: 1;
-  color: #ce9100;
+  color: #59d5e0;
   transform: translateY(0px);
   -webkit-transform: translateY(0px);
   animation-delay: 150ms;
@@ -439,7 +439,6 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .bradcrumb-bg {
-  /* background: rgba(0, 0, 128, 0.6); */
   background: #CE9100;
   background-blend-mode: multiply;
 }

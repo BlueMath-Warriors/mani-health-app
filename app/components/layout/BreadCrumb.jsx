@@ -56,7 +56,7 @@ const BreadCrumb = () => {
               const isLast = index === pathParts.length - 1;
               return (
                 <div key={index} className="flex items-center gap-2">
-                  <span className="text-[#ce9100] font-medium text-2xl">
+                  <span className="text-[#59d5e0] font-medium text-2xl">
                     {">"}
                   </span>
                   {isLast ? (
@@ -65,7 +65,7 @@ const BreadCrumb = () => {
                     </p>
                   ) : (
                     <Link href={`/${pathParts.slice(0, index + 1).join("/")}`}>
-                      <p className="text-[#ce9100] hover:text-[#556b2f] text-sm mid:text-base capitalize cursor-pointer">
+                      <p className="text-[#59d5e0] hover:text-[#f4538a] text-sm mid:text-base capitalize cursor-pointer">
                         {decodeURIComponent(part.replace(/-/g, " "))}
                       </p>
                     </Link>

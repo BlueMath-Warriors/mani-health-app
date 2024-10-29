@@ -59,7 +59,7 @@ const Input = ({
         required={required}
         disabled={disabled}
         onBlur={handleBlur}
-        className={`flex w-full px-4 py-3.5 items-start bg-[#fafbfb] border rounded outline-none active:outline-none focus:border-[#ce9100] ${
+        className={`flex w-full px-4 py-3.5 items-start bg-[#fafbfb] border rounded outline-none active:outline-none focus:border-[#59d5e0] ${
           error ? "border-red-500" : "border-[#bfc4ca]"
         }`} // Change border color if there's an error
         {...props}

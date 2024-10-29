@@ -16,7 +16,7 @@ const Button = ({
     fit: "w-fit",
   };
   const variantStyles = {
-    primary: "bg-primary text-white hover:bg-[#d6a42b] primary-btn-shadow ",
+    primary: "bg-primary text-white hover:bg-[#59d5e0] primary-btn-shadow ",
     "primary-outline":
       "border border-primary text-primary hover:bg-primary/10",
     outline: "border border-[#282520] text-[#282520]",

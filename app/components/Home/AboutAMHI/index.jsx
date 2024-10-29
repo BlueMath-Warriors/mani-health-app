@@ -26,7 +26,7 @@ const AboutAMHI = () => {
             isLeftInView ? "in-view" : ""
           }`}
         >
-          <p className="text-[#556b2f] text-base md:text-2xl font-medium mr-auto">
+          <p className="text-[#f4538a] text-base md:text-2xl font-medium mr-auto">
             About AMHI
           </p>
           <p className="text-[#282530] text-2xl md:text-4xl font-semibold mb-2 mr-auto">
@@ -60,7 +60,7 @@ const AboutAMHI = () => {
           <div className="flex flex-col col-span-2 large:col-span-1">
             <p className="text-[32px] font-semibold">
               Connect with{" "}
-              <span className="text-[#556b2f]">AMHI Health Care</span>
+              <span className="text-[#f4538a]">AMHI Health Care</span>
             </p>
             <div
               className="h-full bg-cover bg-center relative hidden large:block"
