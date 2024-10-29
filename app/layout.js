@@ -3,6 +3,8 @@ import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import BreadCrumb from "./components/layout/BreadCrumb";
 import { Poppins } from "next/font/google";
+import CookieBar from "./components/CookieBar";
+
 import Preloader from "./components/layout/Preloader";
 export const metadata = {
   title: "Al-Mani Health",
@@ -26,6 +28,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         <BreadCrumb />
+        <CookieBar />
         <Preloader />
         {children}
         <Footer />
