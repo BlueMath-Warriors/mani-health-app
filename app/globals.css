@@ -281,22 +281,6 @@ textarea:not(:placeholder-shown) ~ label {
   transition: all 0.3s ease;
 }
 
-@keyframes slideInUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-1 {
-  animation: slideInUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 0.1s;
-}
-
 .law-picture {
   background-image: linear-gradient(
       100deg,
@@ -320,19 +304,22 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .hand-shake-picture {
-  background-image: 
-    linear-gradient(270deg, rgba(226, 190, 105, 0.09) 23.37%, rgb(250, 244, 230) 86.19%),
-    url('/images/shakeHand.png');
-  background-position: right center; 
+  background-image: linear-gradient(
+      270deg,
+      rgba(226, 190, 105, 0.09) 23.37%,
+      rgb(250, 244, 230) 86.19%
+    ),
+    url("/images/shakeHand.png");
+  background-position: right center;
   background-size: 65% 100%;
   background-repeat: no-repeat;
-  background-color: rgb(250, 244, 230); 
+  background-color: rgb(250, 244, 230);
 }
 
 @media (max-width: 1024px) {
   .hand-shake-picture {
-    background-image: none; 
-    background-color: rgb(250, 244, 230); 
+    background-image: none;
+    background-color: rgb(250, 244, 230);
   }
 }
 
@@ -383,7 +370,9 @@ textarea:not(:placeholder-shown) ~ label {
     transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
 }
 
-.slick-slider div { transition: none; }
+.slick-slider div {
+  transition: none;
+}
 
 .bradcrumb-bg {
   background: rgba(0, 0, 128, 0.6);
@@ -391,7 +380,11 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .bradcrumb-gradient {
-  background-image: linear-gradient(270deg, hsla(42, 68%, 65%, 0.09) 23.37%, #faf4e6 86.19%);
+  background-image: linear-gradient(
+    270deg,
+    hsla(42, 68%, 65%, 0.09) 23.37%,
+    #faf4e6 86.19%
+  );
 }
 
 .hover-mask {
@@ -441,7 +434,9 @@ textarea:not(:placeholder-shown) ~ label {
     transform 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
 }
 
-.slick-slider div { transition: none; }
+.slick-slider div {
+  transition: none;
+}
 
 .bradcrumb-bg {
   background: rgba(0, 0, 128, 0.6);
@@ -449,5 +444,49 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .bradcrumb-gradient {
-  background-image: linear-gradient(270deg, hsla(42, 68%, 65%, 0.09) 23.37%, #faf4e6 86.19%);
+  background-image: linear-gradient(
+    270deg,
+    hsla(42, 68%, 65%, 0.09) 23.37%,
+    #faf4e6 86.19%
+  );
+}
+
+.fade-up {
+  transform: translate3d(0, 100px, 0);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.fade-left {
+  transform: translate3d(-100px, 0, 0);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.fade-right {
+  transform: translate3d(100px, 0, 0);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.in-view {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.animate-1 {
+  animation: slideInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }

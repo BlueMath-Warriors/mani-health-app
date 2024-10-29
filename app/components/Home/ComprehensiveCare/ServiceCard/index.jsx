@@ -1,11 +1,20 @@
 "use client";
+import { useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import useInView from "@/app/hooks/useInView"; // Adjust the import path as needed
+
 const ServiceCard = ({ bgImage, icon, title, caption, link }) => {
   const router = useRouter();
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef); // Use custom hook to check visibility
+
   return (
     <div
-      className="group service-card-2 relative overflow-hidden flex items-end bg-cover bg-center rounded-lg h-[415px] w-[350px] custom-transition text-left p-6 cursor-pointer"
+      ref={cardRef}
+      className={`group service-card-2 fade-up relative overflow-hidden flex items-end bg-cover bg-center rounded-lg h-[415px] w-[350px] custom-transition text-left p-6 cursor-pointer ${
+        isInView ? "in-view" : ""
+      }`}
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(217, 217, 217, 0) 2.29%, #2f2100 100%), url(${bgImage})`,
       }}
