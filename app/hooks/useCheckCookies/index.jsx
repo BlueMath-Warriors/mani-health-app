@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const useCheckCookies = () => {
-  const [cookieAccepted, setCookieAccepted] = useState(true);
+  const [cookieAccepted, setCookieAccepted] = useState(() => {
+    return localStorage.getItem("cookieConsent") === "true";
+  });
   const pathname = usePathname();
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const useCheckCookies = () => {
     } else {
       setCookieAccepted(true);
     }
-  }, [pathname, cookieAccepted]);
+  }, [pathname]);
 
   return { cookieAccepted, setCookieAccepted };
 };

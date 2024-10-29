@@ -7,12 +7,13 @@ import {
   TABLE_DATA,
   TYPES_OF_PERSONAL_INFORMATION,
 } from "@/Constants/privacyPolicyData";
-import React from "react";
+import React, { useEffect } from "react";
 import { TitleAndText } from "../components/common/TitleAndText";
 import useCheckCookies from "../hooks/useCheckCookies";
 
 const PrivacyPolicy = () => {
   const { cookieAccepted } = useCheckCookies();
+
   return (
     <div
       className={`relative ${cookieAccepted? "pb-12" : "pb-[480px] sm:pb-[430px] md:pb-[420px] lg:pb-[370px] desktop:pb-64"} bg-white text-neutral font-normal leading-normal text-[13px] min-[370px]:text-sm min-[430px]:text-[15px] sm:text-base flex justify-center py-[48px] px-[25px]`}

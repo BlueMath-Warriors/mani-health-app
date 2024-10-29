@@ -17,7 +17,7 @@ const TermsOfUse = () => {
       className={`relative ${
         cookieAccepted
           ? "pb-12"
-          : "pb-[450px] sm:pb-[430px] md:pb-[400px] lg:pb-72 large:pb-60 desktop:pb-40"
+          : "pb-[450px] sm:pb-[430px] md:pb-[400px] lg:pb-72 large:pb-60"
       } bg-white text-neutral font-normal leading-normal sm:text-base flex justify-center py-[48px] px-[25px]`}
     >
       <div className="sm:max-w-[516px] md:max-w-[696px] lg:max-w-[936px] large:max-w-[1116px] desktop:max-w-[1300px] flex flex-col items-start">
