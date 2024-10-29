@@ -1,18 +1,31 @@
 "use client";
+import { useRef } from "react";
 import Button from "../../common/Button";
 import List from "../../common/List";
 import Image from "next/image";
 import { ABOUT_LIST_CONTENT } from "@/Constants/PageContent/home";
-import { Router } from "next/router";
 import { useRouter } from "next/navigation";
+import useInView from "@/app/hooks/useInView"; // Adjust the import path as necessary
 
 const AboutAMHI = () => {
   const router = useRouter();
+  const leftSectionRef = useRef(null);
+  const rightSectionRef = useRef(null);
+
+  // Check if the sections are in view
+  const isLeftInView = useInView(leftSectionRef);
+  const isRightInView = useInView(rightSectionRef);
+
   return (
     <div className="flex items-center justify-center bg-[#fbfbfb]">
       <div className="grid mid:grid-cols-2 w-full max-w-[1320px] gap-4 items-start justify-center text-left px-3 py-11">
         {/* Left Section */}
-        <div className="flex flex-col gap-4 items-center justify-center text-left ">
+        <div
+          ref={leftSectionRef}
+          className={`flex flex-col gap-4 items-center justify-center text-left fade-left ${
+            isLeftInView ? "in-view" : ""
+          }`}
+        >
           <p className="text-[#556b2f] text-base md:text-2xl font-medium mr-auto">
             About AMHI
           </p>
@@ -38,7 +51,12 @@ const AboutAMHI = () => {
         </div>
 
         {/* Right Section */}
-        <div className="grid grid-cols-2 gap-6 -order-1 large:order-1">
+        <div
+          ref={rightSectionRef}
+          className={`grid grid-cols-2 gap-6 -order-1 large:order-1 fade-right ${
+            isRightInView ? "in-view" : ""
+          }`}
+        >
           <div className="flex flex-col col-span-2 large:col-span-1">
             <p className="text-[32px] font-semibold">
               Connect with{" "}

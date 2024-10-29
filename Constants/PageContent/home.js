@@ -113,3 +113,39 @@ export const SOCIAL_MEDIA_CONTENT = [
     link: "https://www.linkedin.com/in/al-mani-health-institute-14b612202/",
   },
 ];
+
+export const CAROUSEL_SLIDES_CONTENT = [
+  {
+    id: 1,
+    bgImage: "/images/slider/slider1.webp",
+    alt: "Slide 1",
+    service: "Orthopedic and Physical Therapy Care",
+    title: "Expert Care for Accident and Work Injuries",
+    detail:
+      "Offering specialized orthopedic and physical therapy services for individuals injured in road accidents or at work, supporting their full recovery journey",
+    btnText: "Explore Our Services",
+    btnLink: "/services",
+  },
+  {
+    id: 2,
+    bgImage: "/images/slider/slider2.webp",
+    alt: "Slide 2",
+    service: "Services for Legal and Insurance Professionals",
+    title: "Tailored Support for Workers’ Compensation and Road Accident Cases",
+    detail:
+      "Collaborating with lawyers and insurance professionals in road accident and workers’ compensation cases, providing essential medical insights and services.",
+    btnText: "Legal and Insurance Support",
+    btnLink: "/legal-support",
+  },
+  {
+    id: 3,
+    bgImage: "/images/slider/slider3.webp",
+    alt: "Slide 3",
+    service: "Comprehensive Services for Nursing Homes",
+    title: "Pharmacy and Medical Equipment for Nursing Homes",
+    detail:
+      "Supplying nursing homes with necessary medications and durable medical equipment, ensuring quality care for residents.",
+    btnText: "Nursing Home Partnerships",
+    btnLink: "/senior-living",
+  },
+];

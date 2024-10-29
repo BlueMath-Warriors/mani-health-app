@@ -16,7 +16,7 @@ export const poppins = Poppins({
 
 export default function RootLayout({ children }) {
   return (
-    <html className={`${poppins.className} antialiased`} lang="en">
+    <html className={`${poppins.className} antialiased overflow-x-hidden`} lang="en">
       <head>
         <link
           rel="icon"
