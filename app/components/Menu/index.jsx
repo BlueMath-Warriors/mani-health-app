@@ -109,7 +109,7 @@ const Menu = () => {
       <div
         className={`${
           isOpen ? "flex" : "hidden"
-        } absolute top-[81px] left-0 large:hidden h-[406px] px-[25px] w-full bg-white justify-start z-50`}
+        } absolute top-[81px] left-0 large:hidden h-[406px] px-[25px] w-full bg-white justify-start z-[500]`}
       >
         <ul className="w-full text-base flex flex-col">
           {QUICK_LINKS.map((link, index) => (

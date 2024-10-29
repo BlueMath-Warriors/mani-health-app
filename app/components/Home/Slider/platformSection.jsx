@@ -21,6 +21,7 @@ export const PlatformSection = () => {
               width={social.id === "facebook" ? 15 : 24}
               height={24}
               alt="socials icon"
+              className="hover:opacity-80"
             />
           </div>
         ))}

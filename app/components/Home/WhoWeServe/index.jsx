@@ -13,7 +13,7 @@ const WhoWeServe = () => {
           Who We Serve
         </p>
         <p className="text-[#282530] text-2xl md:text-4xl font-semibold mb-2">
-          Supporting a Deivese Range of Clients
+          Supporting a Diverse Range of Clients
         </p>
         <p className="font-normal text-base md:text-lg mb-10">
           At AMHI, we are committed to providing specialized care and support
@@ -21,7 +21,7 @@ const WhoWeServe = () => {
           recovery and management of injury cases.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex flex-wrap justify-center large:max-w-[1000px] desktop:max-w-[1320px] gap-8">
         {WHAT_WE_SERVE_CARDS_CONTENT.map((content, index) => (
           <ClientTypeCard
             icon={content.icon}

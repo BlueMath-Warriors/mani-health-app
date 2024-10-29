@@ -7,10 +7,10 @@ const ServicesLayout = ({ children, selectedLink }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   return (
     <div
-      className={`relative bg-white text-neutral font-normal leading-normal flex justify-center py-[60px] px-1 sm:px-[15px]`}
+      className={`relative bg-white text-neutral font-normal leading-normal flex justify-center py-[60px] px-1 sm:px-[15px] lg:px-14`}
     >
       <div className="max-w-[720px] lg:max-w-[1200px] desktop:max-w-[1320px] flex flex-col-reverse lg:flex-row items-center justify-center gap-12">
-        <div className={`w-full lg:max-w-[330px] flex flex-col h-full justify-start px-3`}>
+        <div className={`w-full lg:max-w-[240px] large:max-w-[290px] desktop:max-w-[330px] flex flex-col h-full justify-start px-3`}>
           <div
             className={`bg-primary text-white font-semibold flex justify-between text-[18px] cursor-pointer p-2.5 hover:opacity-80`}
             onClick={() => setIsExpanded((prev) => !prev)}
