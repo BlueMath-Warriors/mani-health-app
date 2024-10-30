@@ -1,9 +1,8 @@
+"use client";
 import { useEffect, useState } from "react";
 
 const useCheckCookies = () => {
-  const [cookieAccepted, setCookieAccepted] = useState(
-    () => localStorage.getItem("cookieConsent") === "true"
-  );
+  const [cookieAccepted, setCookieAccepted] = useState(true);
 
   useEffect(() => {
     const updateCookieAccepted = () => {

@@ -25,7 +25,7 @@ const CookieBar = () => {
   return (
     <>
       {pathname !== "/terms-of-use" && pathname !== "/privacy-policy" && (
-        <div className="fixed inset-0 bg-[#000000] opacity-50 z-[550]"></div>
+        <div className="fixed inset-0 bg-[#000000] opacity-50 z-[550] no-doc-scroll"></div>
       )}
       <div
         className={`fixed bottom-0 w-full bg-white text-neutral font-normal leading-normal flex justify-center py-[45px] px-[25px] z-[600]`}
