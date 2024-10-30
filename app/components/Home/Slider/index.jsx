@@ -53,7 +53,7 @@ const SlickCarousel = () => {
                   <div className="max-w-[1450px] w-full text-center sm:text-left px-0 sm:px-24 pt-24 sm:pt-[146px]">
                     <div className={`flex flex-col gap-4 max-w-[800px] transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}>
                       <p
-                        className={`text-lg leading-normal sm:text-2xl font-medium text-[#556B2F] ${isActive ? "animate-1" : ""}`}
+                        className={`text-lg leading-normal sm:text-2xl font-medium text-[#f4538a] ${isActive ? "animate-1" : ""}`}
                       >
                         {slide.service}
                       </p>

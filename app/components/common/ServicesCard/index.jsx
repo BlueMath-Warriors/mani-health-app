@@ -24,10 +24,10 @@ const ServicesCard = ({ image, title, caption, link = "#" }) => {
         className="relative h-56 bg-cover bg-center rounded-t-lg"
         style={{ backgroundImage: `url(${image})` }}
       >
-        <div className="absolute inset-0 bg-[#ce9100]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-[#59d5e0]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <div className="p-4 flex flex-col items-center text-center mid:text-left">
-        <h3 className="text-2xl text-[#33302b] font-semibold mb-2 group-hover:text-[#CE9100] mid:mr-auto">
+        <h3 className="text-2xl text-[#33302b] font-semibold mb-2 group-hover:text-[#59d5e0] mid:mr-auto">
           {title}
         </h3>
         <p className="text-[#666461] text-base font-normal three-lines mb-4">

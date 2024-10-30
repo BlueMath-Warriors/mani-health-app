@@ -83,34 +83,34 @@ const ContactUs = () => {
             </p>
 
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Phone Number</p>
+              <p className="text-[#f4538a] text-lg w-2/5 pr-2">Phone Number</p>
               <a
                 href="tel:9546335454"
-                className="text-[#403d39] w-3/5 px-2 text-right lg:text-left hover:text-[#CE9100] transition-colors duration-300"
+                className="text-[#403d39] w-3/5 px-2 text-right lg:text-left hover:text-[#59d5e0] transition-colors duration-300"
               >
                 (954)-633-5454
               </a>
             </div>
 
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Fax Number</p>
+              <p className="text-[#f4538a] text-lg w-2/5 pr-2">Fax Number</p>
               <p className="text-[#403d39] w-3/5 px-2 text-right lg:text-left">
                 (954)-678-2916
               </p>
             </div>
 
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Email Address</p>
+              <p className="text-[#f4538a] text-lg w-2/5 pr-2">Email Address</p>
               <a
                 href="mailto:info@almaniinstitute.org"
-                className="text-[#403d39] w-3/5 px-2 text-right lg:text-left hover:text-[#CE9100] transition-colors duration-300"
+                className="text-[#403d39] w-3/5 px-2 text-right lg:text-left hover:text-[#59d5e0] transition-colors duration-300"
               >
                 info@almaniinstitute.org
               </a>
             </div>
 
             <div className="flex items-center w-full mt-2.5 mb-4">
-              <p className="text-[#556b2f] text-lg w-2/5 pr-2">Address</p>
+              <p className="text-[#f4538a] text-lg w-2/5 pr-2">Address</p>
               <p className="text-[#403d39] w-3/5 px-2 text-right lg:text-left">
                 7710 NW 71st Court, Suite 201 A, Tamarac, FL 65355
               </p>

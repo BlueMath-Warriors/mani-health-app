@@ -11,7 +11,7 @@ const ReferralAction = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full bg-[#556b2f] px-6 py-[90px] text-white text-center">
+    <div className="flex items-center justify-center w-full bg-secondary px-6 py-[90px] text-white text-center">
       <div className=" flex flex-col gap-5 items-center justify-center w-full max-w-xl">
         <h3 className="text-4xl font-semibold leading-normal mb-2">
           Start Your Case Referral Today

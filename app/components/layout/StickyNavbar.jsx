@@ -9,14 +9,15 @@ import useCheckCookies from "@/app/hooks/useCheckCookies";
 
 const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
   return (
-    <li className="relative group flex justify-between items-center gap-[9px] cursor-pointer h-full">
+    <li className="relative flex justify-between group items-center gap-[9px] cursor-pointer h-full ">
       <Link
         href={href}
-        className={`flex justify-between items-center h-full hover:text-primary ${
+        className={`flex justify-between items-center h-full hover:text-primary  hover-mask ${
           selected ? "text-primary" : "text-neutral"
         }`}
       >
-        <p>{label}</p>
+        <p className="mask-lnk">{label}</p>
+        <p className="mask-lnk-hover">{label}</p>
       </Link>
       {hasDropdown && (
         <>
@@ -25,7 +26,7 @@ const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
             alt="arrow down yellow"
             height={11}
             width={14}
-            className={`${
+            className={`transition-all duration-300 ${
               selected ? "block" : "hidden"
             }  group-hover:block group-hover:rotate-180`}
           />
@@ -46,13 +47,14 @@ const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
             {links?.map((link, index) => (
               <li
                 key={index}
-                className="p-[13px] border-b border-gray-300 last:border-none"
+                className="py-3 ml-3 border-b border-gray-300 last:border-none hover-mask"
               >
                 <Link
                   href={link.destination}
                   className="break-words whitespace-normal"
                 >
-                  {link.name}
+                  <p className="mask-lnk"> {link.name}</p>
+                  <p className="mask-lnk-hover"> {link.name}</p>
                 </Link>
               </li>
             ))}
@@ -81,9 +83,7 @@ const StickyNavbar = () => {
 
   return (
     <div
-      className={`bg-white py-4 text-[#33302B] text-sm font-normal ${
-        isScrolled ? "fixed top-0 left-0 w-full shadow-lg z-50" : "relative"
-      }`}
+      className={`bg-white py-4 text-[#33302B] text-sm font-normal sticky top-0 left-0 w-full shadow-lg z-50 transition-all duration-300`}
     >
       <div className="flex w-full max-w-[1500px] justify-between items-center px-[25px] large:px-24 gap-0 large:gap-[57px] min-[1223px]:gap-0 mx-auto">
         <Link href="/" className="w-[100px] h-[50px]">

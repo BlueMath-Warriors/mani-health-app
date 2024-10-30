@@ -35,7 +35,7 @@ const SeniorLiving = () => {
           <p className="text-base lg:text-[18px] leading-7">
             {SENIOR_LIVING_TEXTS.DESCRIPTION}
           </p>
-          <h2 className="font-semibold text-[25px] lg:text-4xl text-[#728452]">
+          <h2 className="font-semibold text-[25px] lg:text-4xl text-secondary">
             {SENIOR_LIVING_TEXTS.KEY_SERVICE_AREAS_TITLE}
           </h2>
         </div>

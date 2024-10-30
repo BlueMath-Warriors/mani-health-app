@@ -10,7 +10,7 @@ const StepsTracker = ({ currentStep }) => {
         <div className="z-0 absolute w-full h-[3px] bg-black" />
         {/* Progress Line */}
         <div
-          className="z-10 left-0 absolute h-[3px] bg-[#CE9100]"
+          className="z-10 left-0 absolute h-[3px] bg-[#59d5e0]"
           style={{ width: progressWidth }}
         />
         {steps.map((step) => (
@@ -20,7 +20,7 @@ const StepsTracker = ({ currentStep }) => {
                 className={
                   "flex items-center justify-center bg-white border-[3px] rounded-full w-6 h-6 sm:w-8 sm:h-8 md:h-11 md:w-11 " +
                   (step < currentStep
-                    ? "border-[#CE9100] text-[#CE9100]"
+                    ? "border-[#59d5e0] text-[#59d5e0]"
                     : "border-[#A3AAB2] text-dark")
                 }
               >
