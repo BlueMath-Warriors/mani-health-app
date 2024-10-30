@@ -10,8 +10,8 @@ const PositionCard = ({
   return (
     <div
       className={
-        "flex w-full h-full items-center justify-center rounded-2xl border-[5px] p-0 sm:p-2 hover:border-[#ebd296] cursor-pointer transition-all ease-linear duration-300 " +
-        (position === value ? "border-[#ebd296]" : "border-transparent")
+        "flex w-full h-full items-center justify-center rounded-2xl border-[5px] p-0 sm:p-2 hover:border-primary cursor-pointer transition-all ease-linear duration-300 " +
+        (position === value ? "border-primary" : "border-transparent")
       }
       onClick={handleSelectPosition}
     >
@@ -44,7 +44,7 @@ const StepOne = ({ position, setPosition, showError }) => {
           position={position}
           title={"Employer or Lawyer"}
           value={"Employer_or_Lawyer"}
-          img={"/illustrations/Employer_or_Lawyer.svg"}
+          img={"/illustrations/lawyers.svg"}
           handleSelectPosition={() => {
             setPosition("Employer_or_Lawyer");
           }}

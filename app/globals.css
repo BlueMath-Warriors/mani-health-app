@@ -255,7 +255,7 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .client-type-card:hover {
-  border: 1px solid #e3bf6b;
+  border: 1px solid var(--color-primary);
   box-shadow: 0 4px 8px 0 rgba(206, 145, 0, 0.2);
   transition: border 0.15s ease-in, box-shadow 1s ease-in;
 }
