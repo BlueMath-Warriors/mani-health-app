@@ -3,7 +3,7 @@ import React from "react";
 
 const Toast = ({ setShowToast }) => {
   return (
-    <div className="fixed bottom-9 right-6 bg-white flex gap-3 w-[315px] h-[78px] p-4 shadow-custom-shadow-lg z-[600]">
+    <div className="fixed bottom-9 right-6 bg-white flex gap-3 w-[315px] h-[78px] p-4 rounded-md shadow-custom-shadow-lg z-[600]">
       <div className="flex items-center">
         <div className="bg-green-500 rounded-full w-5 h-5 flex justify-center items-center">
           <Image
