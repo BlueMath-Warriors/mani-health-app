@@ -7,9 +7,15 @@ import "react-toastify/dist/ReactToastify.css";
 const Referral = () => {
   const [step, setStep] = useState(1);
 
-  const showToast = () => {
+  const showSuccessToast = () => {
+    setStep(1);
     toast.success("Form submitted successfully", {
-      autoClose: 4000,
+      autoClose: 3000,
+    });
+  };
+  const showFailureToast = () => {
+    toast.error("Error in Submission, Please try again!", {
+      autoClose: 3000,
     });
   };
 
@@ -28,7 +34,8 @@ const Referral = () => {
           currentStep={step}
           nextStep={() => setStep(step + 1)}
           prevStep={() => setStep(step - 1)}
-          showToast={showToast}
+          showSuccessToast={showSuccessToast}
+          showFailureToast={showFailureToast}
         />
       </div>
     </>

@@ -2,12 +2,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const SocialLink = ({ link, key }) => {
+const SocialLink = ({ link }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <a
-      key={key}
       href={link.href}
       target="_blank"
       rel="noopener noreferrer"

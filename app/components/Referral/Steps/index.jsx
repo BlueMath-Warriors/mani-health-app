@@ -18,7 +18,7 @@ import {
 } from "@/app/constants/steps";
 import { submitReferralForm } from "@/app/lib/api";
 
-const Steps = ({ currentStep, nextStep, prevStep, showToast }) => {
+const Steps = ({ currentStep, nextStep, prevStep, showSuccessToast, showFailureToast }) => {
   const [position, setPosition] = useState();
   const [showError, setShowError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,8 @@ const Steps = ({ currentStep, nextStep, prevStep, showToast }) => {
 
     try {
       const response = await submitReferralForm(formData);
-      showToast();
+      showSuccessToast();
+
       setPosition();
       setUploadedFiles([]);
       setPatientInfo(INITIAL_PATIENT_INFO);
@@ -65,6 +66,7 @@ const Steps = ({ currentStep, nextStep, prevStep, showToast }) => {
       console.log("Form submitted successfully:", response);
     } catch (error) {
       console.error("Error submitting form:", error);
+      showFailureToast();
     }
   };
 
