@@ -25,12 +25,6 @@ const Toast = ({ setShowToast }) => {
         className="self-start mt-1"
         onClick={() => setShowToast(false)}
       />
-      <div className="relative h-2 rounded-full overflow-hidden">
-        <div
-          style={{ width: `${progress}%` }}
-          className="h-full bg-green-500 transition-all duration-100"
-        />
-      </div>
     </div>
   );
 };
