@@ -2,13 +2,23 @@
 import React, { useState } from "react";
 import Button from "../Button";
 import { submitContactForm } from "@/app/lib/api";
+import { DebounceInput } from "react-debounce-input";
+import { validateEmail, validatePhone } from "@/utils";
+import Toast from "../toast";
 
-export const FormInput = ({ type, placeholder, value, onChange }) => {
+export const FormInput = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+  error = false,
+  errorText,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <div className="relative w-full sm:w-1/2">
-      <input
+      <DebounceInput
         id={placeholder}
         type={type}
         placeholder=" "
@@ -23,6 +33,7 @@ export const FormInput = ({ type, placeholder, value, onChange }) => {
         className={`border border-[#DEE2E6] rounded-md text-[15px] w-full px-3 py-4 transition-all duration-300 ${
           isFocused || value ? "pt-[22px] pb-[10px]" : "pt-4"
         }`}
+        debounceTimeout={750}
         required
       />
       <label
@@ -33,16 +44,27 @@ export const FormInput = ({ type, placeholder, value, onChange }) => {
       >
         {placeholder}
       </label>
+      {error && (
+        <div className="text-[#FF0000] leading-6 mt-2">{errorText}</div>
+      )}
     </div>
   );
 };
 
-export const TextAreaInput = ({ placeholder, value, onChange }) => {
+export const TextAreaInput = ({
+  placeholder,
+  value,
+  onChange,
+  error = false,
+  errorText,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <>
-      <textarea
+      <DebounceInput
+        element="textarea"
+        debounceTimeout={750}
         name="message"
         id="message"
         placeholder=" "
@@ -67,6 +89,9 @@ export const TextAreaInput = ({ placeholder, value, onChange }) => {
       >
         {placeholder}
       </label>
+      {error && (
+        <div className="text-[#FF0000] leading-6 mt-[-22px]">{errorText}</div>
+      )}
     </>
   );
 };
@@ -79,6 +104,7 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
     phone_number: "",
     message: "",
   });
+  const [showToast, setShowToast] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -88,22 +114,55 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
     }));
   };
 
+  const validateForm = () => {
+    return !(
+      formData.first_name.length < 2 ||
+      formData.first_name.length > 50 ||
+      formData.last_name.length < 2 ||
+      formData.last_name.length > 50 ||
+      !validateEmail(formData.email) ||
+      formData.phone_number.length < 10 ||
+      formData.phone_number.length > 12 ||
+      validatePhone(formData.phone_number) ||
+      formData.message.length < 5
+    );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     try {
       const result = await submitContactForm(formData);
+      setFormData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        message: "",
+      });
+      displayToast();
       console.log("Form submitted successfully:", result);
     } catch (error) {
       console.error("Failed to submit contact form:", error);
     }
   };
 
+  const displayToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 4000);
+  };
+
   return (
     <div
-      className={`max-w-[520px] md:max-w-[700px] lg:max-w-[950px] flex flex-col flex-grow text-base text-neutral font-normal p-[50px] ${
+      className={`relative max-w-[520px] md:max-w-[700px] lg:max-w-[950px] flex flex-col flex-grow text-base text-neutral font-normal p-[50px] ${
         contactUsPageFlow ? "bg-[#FBFBFB]" : "bg-white"
       }`}
     >
+      {showToast && <Toast setShowToast={setShowToast} />}
       <h1 className="text-[25px] lg:text-4xl font-semibold text-center sm:text-start mb-14 mt-4">
         Get In Touch With Us
       </h1>
@@ -118,6 +177,16 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
                 target: { name: "first_name", value: e.target.value },
               })
             }
+            error={
+              (formData.first_name.length < 2 &&
+                formData.first_name.length > 0) ||
+              formData.first_name.length > 50
+            }
+            errorText={
+              formData.first_name.length > 50
+                ? "First Name can be at most 50 characters"
+                : "First Name must be at least 2 characters"
+            }
           />
           <FormInput
             type="text"
@@ -127,6 +196,16 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
               handleInputChange({
                 target: { name: "last_name", value: e.target.value },
               })
+            }
+            error={
+              (formData.last_name.length < 2 &&
+                formData.last_name.length > 0) ||
+              formData.last_name.length > 50
+            }
+            errorText={
+              formData.last_name.length > 50
+                ? "Last Name can be at most 50 characters"
+                : "Last Name must be at least 2 characters"
             }
           />
         </div>
@@ -140,6 +219,8 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
                 target: { name: "email", value: e.target.value },
               })
             }
+            error={!validateEmail(formData.email) && formData.email.length > 0}
+            errorText={"Invalid Email Address"}
           />
           <FormInput
             type="text"
@@ -149,6 +230,19 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
               handleInputChange({
                 target: { name: "phone_number", value: e.target.value },
               })
+            }
+            error={
+              (formData.phone_number.length < 10 ||
+                formData.phone_number.length > 12 ||
+                validatePhone(formData.phone_number)) &&
+              formData.phone_number.length > 0
+            }
+            errorText={
+              validatePhone(formData.phone_number)
+                ? "Invalid Phone Number format"
+                : formData.phone_number.length < 10
+                ? "Phone Number must be at least 10 characters"
+                : "Phone Number can be at most 12 characters"
             }
           />
         </div>
@@ -161,9 +255,11 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
                 target: { name: "message", value: e.target.value },
               })
             }
+            error={formData.message.length < 5 && formData.message.length > 0}
+            errorText={"Message must be at least 5 characters"}
           />
         </div>
-        <div className="flex justify-center sm:justify-start">
+        <div className="flex justify-center sm:justify-start mt-4">
           <Button
             type="submit"
             variant="primary"
