@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Image from "next/image";
 import StepsTracker from "../Steps-Tracker";
 import StepOne from "./StepOne";
@@ -17,7 +18,7 @@ import {
 } from "@/app/constants/steps";
 import { submitReferralForm } from "@/app/lib/api";
 
-const Steps = ({ currentStep, nextStep, prevStep }) => {
+const Steps = ({ currentStep, nextStep, prevStep, showSuccessToast, showFailureToast }) => {
   const [position, setPosition] = useState();
   const [showError, setShowError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -54,9 +55,18 @@ const Steps = ({ currentStep, nextStep, prevStep }) => {
 
     try {
       const response = await submitReferralForm(formData);
+      showSuccessToast();
+
+      setPosition();
+      setUploadedFiles([]);
+      setPatientInfo(INITIAL_PATIENT_INFO);
+      setAccidentDetails(INITIAL_ACCIDENT_DETAILS);
+      setInsuranceInfo(INITIAL_INSURANCE_INFO);
+      setAdjusterInfo(INITIAL_ADJUSTER_INFO);
       console.log("Form submitted successfully:", response);
     } catch (error) {
       console.error("Error submitting form:", error);
+      showFailureToast();
     }
   };
 
