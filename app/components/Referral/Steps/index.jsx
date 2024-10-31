@@ -153,54 +153,52 @@ const Steps = ({ currentStep, nextStep, prevStep, showToast }) => {
   };
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-center w-11/12 lg:max-w-[824px] lg:w-full px-6 py-5 lg:p-16 bg-white rounded-lg referral-card-shadow transition-all duration-200 ease-linear">
-        <div className="flex w-full items-center justify-center relative">
-          <Image
-            src={"/images/leftTop.svg"}
-            alt="left top image"
-            width={88}
-            height={88}
-            className="hidden xl:block absolute -top-20 -left-56 "
-          />
-          <Image
-            src={"/images/leftMiddle.svg"}
-            alt="left middle image"
-            width={40}
-            height={60}
-            className="hidden xl:block absolute top-60 -left-56 "
-          />
-          <Image
-            src={"/images/shapeRight.svg"}
-            alt="right image"
-            width={40}
-            height={60}
-            className="hidden xl:block absolute top-60 -right-56 "
-          />
-        </div>
-        <div className="w-full flex flex-col items-center justify-center ">
-          <h3 className="text-dark text-lg mb-0 sm:mb-4 md:mb-8 font-semibold">
-            {STEPS_TITLES[currentStep - 1]}
-          </h3>
-          <StepsTracker currentStep={currentStep} />
-          {steps[currentStep - 1]}
-        </div>
-        <div className="flex w-full flex-col gap-4 my-4 md:my-12">
-          {currentStep === 6 ? (
-            <Button onClick={handleReferralSubmission}>
-              {loading ? "...submitting" : "Submit"}
-            </Button>
-          ) : (
-            <Button onClick={handleNextStep}>Next</Button>
-          )}
-          {currentStep > 1 && (
-            <Button onClick={prevStep} variant="primary-outline">
-              Previous
-            </Button>
-          )}
-        </div>
+    <div className="flex flex-col items-center justify-center w-11/12 lg:max-w-[824px] lg:w-full px-6 py-5 lg:p-16 bg-white rounded-lg referral-card-shadow transition-all duration-200 ease-linear">
+      <div className="flex w-full items-center justify-center relative">
+        <Image
+          src={"/images/leftTop.svg"}
+          alt="left top image"
+          width={88}
+          height={88}
+          className="hidden xl:block absolute -top-20 -left-56 "
+        />
+        <Image
+          src={"/images/leftMiddle.svg"}
+          alt="left middle image"
+          width={40}
+          height={60}
+          className="hidden xl:block absolute top-60 -left-56 "
+        />
+        <Image
+          src={"/images/shapeRight.svg"}
+          alt="right image"
+          width={40}
+          height={60}
+          className="hidden xl:block absolute top-60 -right-56 "
+        />
       </div>
-    </>
+      <div className="w-full flex flex-col items-center justify-center ">
+        <h3 className="text-dark text-lg mb-0 sm:mb-4 md:mb-8 font-semibold">
+          {STEPS_TITLES[currentStep - 1]}
+        </h3>
+        <StepsTracker currentStep={currentStep} />
+        {steps[currentStep - 1]}
+      </div>
+      <div className="flex w-full flex-col gap-4 my-4 md:my-12">
+        {currentStep === 6 ? (
+          <Button onClick={handleReferralSubmission}>
+            {loading ? "...submitting" : "Submit"}
+          </Button>
+        ) : (
+          <Button onClick={handleNextStep}>Next</Button>
+        )}
+        {currentStep > 1 && (
+          <Button onClick={prevStep} variant="primary-outline">
+            Previous
+          </Button>
+        )}
+      </div>
+    </div>
   );
 };
 
