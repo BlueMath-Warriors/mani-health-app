@@ -4,6 +4,8 @@ import { TextAreaInput, FormInput } from "../common/GetInTouchForm";
 import Button from "../common/Button";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { submitContactForm } from "@/app/lib/api";
+import { validateEmail, validatePhone } from "@/utils";
+import Toast from "../common/toast";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -16,6 +18,7 @@ const ContactUs = () => {
     lat: null,
     lng: null,
   });
+  const [showToast, setShowToast] = useState(false);
 
   const mapStyles = {
     height: "400px",
@@ -29,7 +32,8 @@ const ContactUs = () => {
     lng: -80.2498,
   };
 
-  const locationName = "Al Mani Health Institute, 7710 NW 71st Ct Suite 201, Tamarac, FL 33321, United States";
+  const locationName =
+    "Al Mani Health Institute, 7710 NW 71st Ct Suite 201, Tamarac, FL 33321, United States";
 
   useEffect(() => {
     const fetchCoordinates = async () => {
@@ -61,19 +65,51 @@ const ContactUs = () => {
     });
   };
 
+  const validateForm = () => {
+    return !(
+      formData.first_name.length < 2 ||
+      formData.first_name.length > 50 ||
+      formData.last_name.length < 2 ||
+      formData.last_name.length > 50 ||
+      !validateEmail(formData.email) ||
+      formData.phone_number.length < 10 ||
+      formData.phone_number.length > 12 ||
+      validatePhone(formData.phone_number) ||
+      formData.message.length < 5
+    );
+  };
+
   const handleSubmit = async (e) => {
-    console.log("Apple");
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     try {
       const result = await submitContactForm(formData);
+      setFormData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        message: "",
+      });
+      displayToast();
       console.log("Form submitted successfully:", result);
     } catch (error) {
       console.error("Failed to submit contact form:", error);
     }
   };
 
+  const displayToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 4000);
+  };
+
   return (
-    <div className="w-full flex justify-center">
+    <div className="relative w-full flex justify-center">
+      {showToast && <Toast setShowToast={setShowToast} />}
       <div className="max-w-[1320px] flex flex-col mt-[90px] w-full ">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-0 px-4 py-8 text-center lg:text-left px-6">
           {/* Contact Information Section */}
@@ -157,6 +193,16 @@ const ContactUs = () => {
                     target: { name: "first_name", value: e.target.value },
                   })
                 }
+                error={
+                  (formData.first_name.length < 2 &&
+                    formData.first_name.length > 0) ||
+                  formData.first_name.length > 50
+                }
+                errorText={
+                  formData.first_name.length > 50
+                    ? "First Name can be at most 50 characters"
+                    : "First Name must be at least 2 characters"
+                }
               />
               <FormInput
                 type="text"
@@ -166,6 +212,16 @@ const ContactUs = () => {
                   handleInputChange({
                     target: { name: "last_name", value: e.target.value },
                   })
+                }
+                error={
+                  (formData.last_name.length < 2 &&
+                    formData.last_name.length > 0) ||
+                  formData.last_name.length > 50
+                }
+                errorText={
+                  formData.last_name.length > 50
+                    ? "Last Name can be at most 50 characters"
+                    : "Last Name must be at least 2 characters"
                 }
               />
             </div>
@@ -179,6 +235,10 @@ const ContactUs = () => {
                     target: { name: "email", value: e.target.value },
                   })
                 }
+                error={
+                  !validateEmail(formData.email) && formData.email.length > 0
+                }
+                errorText={"Invalid Email Address"}
               />
               <FormInput
                 type="text"
@@ -188,6 +248,19 @@ const ContactUs = () => {
                   handleInputChange({
                     target: { name: "phone_number", value: e.target.value },
                   })
+                }
+                error={
+                  (formData.phone_number.length < 10 ||
+                    formData.phone_number.length > 12 ||
+                    validatePhone(formData.phone_number)) &&
+                  formData.phone_number.length > 0
+                }
+                errorText={
+                  validatePhone(formData.phone_number)
+                    ? "Invalid Phone Number format"
+                    : formData.phone_number.length < 10
+                    ? "Phone Number must be at least 10 characters"
+                    : "Phone Number can be at most 12 characters"
                 }
               />
             </div>
@@ -200,6 +273,10 @@ const ContactUs = () => {
                     target: { name: "message", value: e.target.value },
                   })
                 }
+                error={
+                  formData.message.length < 5 && formData.message.length > 0
+                }
+                errorText={"Message must be at least 5 characters"}
               />
             </div>
             <div className="flex justify-center sm:justify-start mt-6">
