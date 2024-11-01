@@ -5,7 +5,8 @@ import Button from "../common/Button";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { submitContactForm } from "@/app/lib/api";
 import { validateEmail, validatePhone } from "@/utils";
-import Toast from "../common/toast";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -18,7 +19,6 @@ const ContactUs = () => {
     lat: null,
     lng: null,
   });
-  const [showToast, setShowToast] = useState(false);
 
   const mapStyles = {
     height: "400px",
@@ -30,6 +30,17 @@ const ContactUs = () => {
   const defaultCenter = {
     lat: 26.2124,
     lng: -80.2498,
+  };
+
+  const showSuccessToast = () => {
+    toast.success("Thank you! Your message has been sent successfully.", {
+      autoClose: 3000,
+    });
+  };
+  const showFailureToast = () => {
+    toast.error("Error in Submission, Please try again!", {
+      autoClose: 3000,
+    });
   };
 
   const locationName =
@@ -93,23 +104,17 @@ const ContactUs = () => {
         phone_number: "",
         message: "",
       });
-      displayToast();
+      showSuccessToast();
       console.log("Form submitted successfully:", result);
     } catch (error) {
+      showFailureToast();
       console.error("Failed to submit contact form:", error);
     }
   };
 
-  const displayToast = () => {
-    setShowToast(true);
-    setTimeout(() => {
-      setShowToast(false);
-    }, 4000);
-  };
-
   return (
     <div className="relative w-full flex justify-center">
-      {showToast && <Toast setShowToast={setShowToast} />}
+      <ToastContainer />
       <div className="max-w-[1320px] flex flex-col mt-[90px] w-full ">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-0 px-4 py-8 text-center lg:text-left px-6">
           {/* Contact Information Section */}

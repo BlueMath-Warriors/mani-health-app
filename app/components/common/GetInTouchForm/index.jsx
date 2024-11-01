@@ -4,7 +4,6 @@ import Button from "../Button";
 import { submitContactForm } from "@/app/lib/api";
 import { DebounceInput } from "react-debounce-input";
 import { validateEmail, validatePhone } from "@/utils";
-import Toast from "../toast";
 
 export const FormInput = ({
   type,
@@ -96,7 +95,7 @@ export const TextAreaInput = ({
   );
 };
 
-const GetInTouchForm = ({ contactUsPageFlow = false }) => {
+const GetInTouchForm = ({ contactUsPageFlow = false, showSuccessToast, showFailureToast }) => {
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -104,7 +103,6 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
     phone_number: "",
     message: "",
   });
-  const [showToast, setShowToast] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -142,18 +140,12 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
         phone_number: "",
         message: "",
       });
-      displayToast();
+      showSuccessToast();
       console.log("Form submitted successfully:", result);
     } catch (error) {
+      showFailureToast();
       console.error("Failed to submit contact form:", error);
     }
-  };
-
-  const displayToast = () => {
-    setShowToast(true);
-    setTimeout(() => {
-      setShowToast(false);
-    }, 4000);
   };
 
   return (
@@ -162,7 +154,6 @@ const GetInTouchForm = ({ contactUsPageFlow = false }) => {
         contactUsPageFlow ? "bg-[#FBFBFB]" : "bg-white"
       }`}
     >
-      {showToast && <Toast setShowToast={setShowToast} />}
       <h1 className="text-[25px] lg:text-4xl font-semibold text-center sm:text-start mb-14 mt-4">
         Get In Touch With Us
       </h1>
