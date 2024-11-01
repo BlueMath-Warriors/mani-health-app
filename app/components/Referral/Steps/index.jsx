@@ -18,7 +18,13 @@ import {
 } from "@/app/constants/steps";
 import { submitReferralForm } from "@/app/lib/api";
 
-const Steps = ({ currentStep, nextStep, prevStep, showSuccessToast, showFailureToast }) => {
+const Steps = ({
+  currentStep,
+  nextStep,
+  prevStep,
+  showSuccessToast,
+  showFailureToast,
+}) => {
   const [position, setPosition] = useState();
   const [showError, setShowError] = useState(false);
   const [loading, setLoading] = useState(false);

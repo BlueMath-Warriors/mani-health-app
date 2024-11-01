@@ -7,7 +7,7 @@ const StepThree = ({ accidentDetails, setAccidentDetails }) => {
       ...accidentDetails,
       [name]: value,
     });
-};
+  };
 
   return (
     <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
@@ -23,8 +23,8 @@ const StepThree = ({ accidentDetails, setAccidentDetails }) => {
 
       <Input
         label="Time of Injury/Accident"
-        name="time"
-        value={accidentDetails.time}
+        name="time_of_injury"
+        value={accidentDetails.time_of_injury}
         onChange={handleChange}
         type="time"
         className="col-span-6"
@@ -32,16 +32,16 @@ const StepThree = ({ accidentDetails, setAccidentDetails }) => {
 
       <Input
         label="Location of Injury/Accident"
-        name="location"
-        value={accidentDetails.location}
+        name="location_of_injury"
+        value={accidentDetails.location_of_injury}
         onChange={handleChange}
         className="col-span-12"
       />
 
       <Input
         label="Circumstances of Injury/Accident"
-        name="circumstance"
-        value={accidentDetails.circumstance}
+        name="circumstances_of_injury"
+        value={accidentDetails.circumstances_of_injury}
         onChange={handleChange}
         className="col-span-12"
       />
