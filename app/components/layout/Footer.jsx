@@ -13,7 +13,7 @@ const Footer = () => {
     <div
       className={`${
         cookieAccepted ? "flex" : "hidden"
-      } bg-[#403D39] text-white flex flex-col items-center font-normal text-[13px] lg:text-sm px-[25px] py-[60px] lg:py-0 lg:pb-0 lg:pt-[100px]`}
+      } bg-[#5BC074] text-white flex flex-col items-center font-normal text-[13px] lg:text-sm px-[25px] py-[60px] lg:py-0 lg:pb-0 lg:pt-[100px]`}
     >
       <div className="max-w-[1320px] flex flex-wrap justify-between responsive-padding md:ml-4 lg:ml-0">
         <div className="w-full md:w-1/2 lg:w-[30%] px-3">
