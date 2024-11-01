@@ -378,7 +378,7 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .bradcrumb-bg {
-  background: rgba(206, 145, 0, 0.6);
+  background: rgba(35, 83, 147, 0.6);
   background-blend-mode: multiply;
 }
 
@@ -442,7 +442,7 @@ textarea:not(:placeholder-shown) ~ label {
 }
 
 .bradcrumb-bg {
-  background: rgba(206, 145, 0, 0.6);
+  background: rgba(35, 83, 147, 0.6);
   background-blend-mode: multiply;
 }
 
