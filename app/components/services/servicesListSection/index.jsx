@@ -1,4 +1,3 @@
-import { poppins } from "@/app/layout";
 import {
   SERVICES_LIST,
   SERVICES_LIST_SECTION_TEXTS,
@@ -8,7 +7,7 @@ import ServicesCard from "../../common/ServicesCard";
 const ServicesListSection = () => {
   return (
     <div
-      className={`relative bg-white text-neutral font-normal leading-normal flex justify-center py-[45px] px-[25px] ${poppins.className}`}
+      className={`relative bg-white text-neutral font-normal leading-normal flex justify-center py-[45px] px-[25px]`}
     >
       <div className="max-w-[1200px] flex flex-col items-center justify-center">
         <div className="flex flex-col text-center mb-12">
