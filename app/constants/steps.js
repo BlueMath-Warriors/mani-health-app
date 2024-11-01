@@ -16,9 +16,9 @@ export const INITIAL_PATIENT_INFO = {
 
 export const INITIAL_ACCIDENT_DETAILS = {
   date_of_injury: "",
-  time: "",
-  location: "",
-  circumstance: "",
+  time_of_injury: "",
+  location_of_injury: "",
+  circumstances_of_injury: "",
 };
 
 export const INITIAL_INSURANCE_INFO = {
@@ -29,6 +29,6 @@ export const INITIAL_INSURANCE_INFO = {
 
 export const INITIAL_ADJUSTER_INFO = {
   adjuster_full_name: "",
-  adjsuter_phone_number: "",
-  adjsuter_email: "",
+  adjuster_phone_number: "",
+  adjuster_email: "",
 };
