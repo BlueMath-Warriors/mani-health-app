@@ -105,6 +105,7 @@ const Steps = ({
     />,
     <StepSix
       key={6}
+      position={position}
       adjusterInfo={adjusterInfo}
       setAdjusterInfo={setAdjusterInfo}
     />,
@@ -187,6 +188,11 @@ const Steps = ({
       </div>
       <div className="w-full flex flex-col items-center justify-center ">
         <h3 className="text-dark text-lg mb-0 sm:mb-4 md:mb-8 font-semibold">
+          {currentStep === 6
+            ? position === "Adjuster"
+              ? "Adjuster's"
+              : "Employer or Lawyer"
+            : ""}{" "}
           {STEPS_TITLES[currentStep - 1]}
         </h3>
         <StepsTracker currentStep={currentStep} />

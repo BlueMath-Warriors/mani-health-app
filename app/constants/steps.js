@@ -4,7 +4,7 @@ export const STEPS_TITLES = [
   "Injury/Accident Details",
   "Medical Records",
   "Insurance Information",
-  "Adjuster’s Information",
+  " Information",
 ];
 
 export const INITIAL_PATIENT_INFO = {
