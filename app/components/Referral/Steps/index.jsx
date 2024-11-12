@@ -191,7 +191,7 @@ const Steps = ({
           {currentStep === 6
             ? position === "Adjuster"
               ? "Adjuster's"
-              : "Employer's"
+              : "Employer or Lawyer"
             : ""}{" "}
           {STEPS_TITLES[currentStep - 1]}
         </h3>

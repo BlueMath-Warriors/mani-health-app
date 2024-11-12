@@ -9,7 +9,7 @@ const StepSix = ({ adjusterInfo, setAdjusterInfo, position }) => {
     });
   };
 
-  const userType = position === "Employer_or_Lawyer" ? "Employer's" : "Adjuster's";
+  const userType = position === "Employer_or_Lawyer" ? "Employer or Lawyer" : "Adjuster's";
 
   return (
     <form className="grid grid-cols-6 md:grid-cols-12 gap-x-4 gap-y-3 w-full items-start">
