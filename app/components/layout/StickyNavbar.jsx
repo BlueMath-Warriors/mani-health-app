@@ -17,29 +17,16 @@ const NavItem = ({
 }) => {
   return (
     <li className="relative flex justify-between group items-center gap-[9px] cursor-pointer h-full ">
-      {isExternal ? (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex justify-between items-center h-full hover:text-primary hover-mask ${
-            selected ? "text-primary" : "text-neutral"
-          }`}
-        >
-          <p className="mask-lnk">{label}</p>
-          <p className="mask-lnk-hover">{label}</p>
-        </a>
-      ) : (
-        <Link
-          href={href}
-          className={`flex justify-between items-center h-full hover:text-primary hover-mask ${
-            selected ? "text-primary" : "text-neutral"
-          }`}
-        >
-          <p className="mask-lnk">{label}</p>
-          <p className="mask-lnk-hover">{label}</p>
-        </Link>
-      )}
+      <Link
+        href={href}
+        target={isExternal ? "_blank" : "_self"}
+        className={`flex justify-between items-center h-full hover:text-primary hover-mask ${
+          selected ? "text-primary" : "text-neutral"
+        }`}
+      >
+        <p className="mask-lnk">{label}</p>
+        <p className="mask-lnk-hover">{label}</p>
+      </Link>
 
       {hasDropdown && (
         <>
@@ -64,15 +51,16 @@ const NavItem = ({
         </>
       )}
       {hasDropdown && (
-        <div className="absolute left-0 top-[69.5%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-20 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[489px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
+        <div className="absolute left-0 top-[69.5%] mt-4 w-80 bg-white shadow-[0_4px_8px_-2px_rgba(0,0,0,0.1),_0_-4px_8px_-2px_rgba(0,0,0,0.1)] z-20 max-h-0 opacity-0 overflow-hidden group-hover:max-h-[600px] group-hover:opacity-100 transition-[max-height,opacity] duration-100 ease-in-out">
           <ul className="text-sm top-full left-0">
             {links?.map((link, index) => (
               <li
                 key={index}
-                className="py-3 ml-3 border-b border-gray-300 last:border-none hover-mask"
+                className="py-2.5 ml-3 border-b border-gray-300 last:border-none hover-mask"
               >
                 <Link
                   href={link.destination}
+                  target={isExternal ? "_blank" : "_self"}
                   className="break-words whitespace-normal"
                 >
                   <p className="mask-lnk"> {link.name}</p>
@@ -120,7 +108,7 @@ const StickyNavbar = () => {
         </Link>
         {shouldRender && (
           <>
-            <ul className="hidden large:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
+            <ul className="hidden xl:flex justify-between gap-x-[38px] h-[50px] text-base whitespace-nowrap">
               {QUICK_LINKS.map((item, index) => (
                 <NavItem
                   key={index}
