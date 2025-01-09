@@ -52,7 +52,7 @@ export const SHOP_LINKS = [
   { name: "Maternity", destination: "https://shop.almaniinstitute.org/collections/maternity", isExternal: true },
   { name: "Nebulizers & Supplies", destination: "https://shop.almaniinstitute.org/collections/nebulizers-supplies", isExternal: true },
   { name: "Oxygen & Supplies", destination: "https://www.instagram.com/reels/DEnL9STBt8y/", isExternal: true },
-  { name: "PPE", destination: "/https://shop.almaniinstitute.org/collections/ppe", isExternal: true },
+  { name: "PPE", destination: "https://shop.almaniinstitute.org/collections/ppe", isExternal: true },
   { name: "Respiratory", destination: "https://shop.almaniinstitute.org/collections/respiratory", isExternal: true },
   { name: "Wheelchairs", destination: "https://shop.almaniinstitute.org/collections/wheelchairs", isExternal: true },
 
