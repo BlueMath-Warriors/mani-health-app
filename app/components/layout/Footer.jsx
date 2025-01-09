@@ -60,7 +60,17 @@ const Footer = () => {
           <ul>
             {QUICK_LINKS.map((service, index) => (
               <li key={index} className="leading-4 mb-3 hover:scale-[1.02]">
-                <Link href={service.destination}>{service.name}</Link>
+                {service.isExternal ? (
+                  <a
+                    href={service.destination}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {service.name}
+                  </a>
+                ) : (
+                  <Link href={service.destination}>{service.name}</Link>
+                )}
               </li>
             ))}
           </ul>

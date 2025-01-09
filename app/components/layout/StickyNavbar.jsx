@@ -7,18 +7,40 @@ import { QUICK_LINKS } from "@/Constants/navbarDropdownLinks";
 import { usePathname } from "next/navigation";
 import useCheckCookies from "@/app/hooks/useCheckCookies";
 
-const NavItem = ({ label, href, links, hasDropdown = false, selected }) => {
+const NavItem = ({
+  label,
+  href,
+  links,
+  hasDropdown = false,
+  selected,
+  isExternal,
+}) => {
   return (
     <li className="relative flex justify-between group items-center gap-[9px] cursor-pointer h-full ">
-      <Link
-        href={href}
-        className={`flex justify-between items-center h-full hover:text-primary  hover-mask ${
-          selected ? "text-primary" : "text-neutral"
-        }`}
-      >
-        <p className="mask-lnk">{label}</p>
-        <p className="mask-lnk-hover">{label}</p>
-      </Link>
+      {isExternal ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex justify-between items-center h-full hover:text-primary hover-mask ${
+            selected ? "text-primary" : "text-neutral"
+          }`}
+        >
+          <p className="mask-lnk">{label}</p>
+          <p className="mask-lnk-hover">{label}</p>
+        </a>
+      ) : (
+        <Link
+          href={href}
+          className={`flex justify-between items-center h-full hover:text-primary hover-mask ${
+            selected ? "text-primary" : "text-neutral"
+          }`}
+        >
+          <p className="mask-lnk">{label}</p>
+          <p className="mask-lnk-hover">{label}</p>
+        </Link>
+      )}
+
       {hasDropdown && (
         <>
           <Image
@@ -69,8 +91,9 @@ const StickyNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { cookieAccepted } = useCheckCookies();
-  const shouldRender = cookieAccepted || !(pathname === "/terms-of-use" || pathname === "/privacy-policy");
-
+  const shouldRender =
+    cookieAccepted ||
+    !(pathname === "/terms-of-use" || pathname === "/privacy-policy");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,6 +129,7 @@ const StickyNavbar = () => {
                   hasDropdown={item.hasDropdown}
                   links={item.linksName}
                   selected={pathname === item.destination}
+                  isExternal={item.isExternal}
                 />
               ))}
             </ul>

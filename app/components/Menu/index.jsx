@@ -12,6 +12,7 @@ const NavItem = ({
   isOpen,
   setIsOpen,
   toggleDropdown,
+  isExternal,
 }) => {
   return (
     <li
@@ -19,14 +20,27 @@ const NavItem = ({
         label !== "Contact" ? "border-b-2 border-gray-300" : null
       } relative group flex justify-between`}
     >
-      <Link
-        href={href}
-        className="relative flex items-center hover-mask ml-4"
-        onClick={() => setIsOpen(false)}
-      >
-        <span className="mask-lnk">{label}</span>
-        <span className="mask-lnk mask-lnk-hover">{label}</span>
-      </Link>
+      {isExternal ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex items-center hover-mask ml-4"
+          onClick={() => setIsOpen(false)}
+        >
+          <span className="mask-lnk">{label}</span>
+          <span className="mask-lnk mask-lnk-hover">{label}</span>
+        </a>
+      ) : (
+        <Link
+          href={href}
+          className="relative flex items-center hover-mask ml-4"
+          onClick={() => setIsOpen(false)}
+        >
+          <span className="mask-lnk">{label}</span>
+          <span className="mask-lnk mask-lnk-hover">{label}</span>
+        </Link>
+      )}
       {dropdownLinks && (
         <Image
           src={
@@ -122,6 +136,7 @@ const Menu = () => {
               isOpen={openDropdownIndex === index}
               setIsOpen={setIsOpen}
               toggleDropdown={() => toggleDropdown(index)}
+              isExternal={link.isExternal}
             />
           ))}
         </ul>
